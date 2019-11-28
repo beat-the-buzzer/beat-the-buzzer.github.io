@@ -1,3 +1,4 @@
+
 ---
 title: CSS3 动画
 date: {{ date }}
@@ -49,7 +50,7 @@ series: css
 
 3、页面的切换过渡、小游戏
 
-![https://gitee.com/beat-the-buzzer/pictures/raw/master/c3-animation/c3-animation-01.png](https://gitee.com/beat-the-buzzer/pictures/raw/master/c3-animation/c3-animation-01.png)
+![](https://gitee.com/beat-the-buzzer/pictures/raw/master/c3-animation/c3-animation-01.png)
 
 #### CSS3动画的学习目标
 
