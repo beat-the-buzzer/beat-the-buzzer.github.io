@@ -1,0 +1,13 @@
+global:
+  search_input_hint: "输入感兴趣的关键字"
+
+post:
+  continue_reading: "阅读全文…"
+  last_updated: "最后更新时间："
+
+footer:
+  license: '博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议'
+
+tag:
+  all: "全部"
+  tags: "标签"
