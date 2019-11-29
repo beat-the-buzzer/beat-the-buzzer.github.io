@@ -1,11 +1,10 @@
-
 ---
 title: CSS3 动画
 date: {{ date }}
-tags: [css, css3, animation]
+tags: [CSS, CSS3, 动画]
 categories: 
-- css
-series: css
+- CSS
+series: CSS
 ---
 
 #### 什么是动画

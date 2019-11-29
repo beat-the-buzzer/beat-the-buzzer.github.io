@@ -1,10 +1,10 @@
 ---
 title: 宽松相等和严格相等
 date: {{ date }}
-tags: [javascript, vue]
+tags: [JavaScript, Vue]
 categories: 
-- javascript
-series: javascript
+- JavaScript
+series: JavaScript
 ---
 
 这篇文章有一个Vue标签，是因为做了一个Vue相关的项目，列举了几乎所有宽松相等和严格相等的情况，项目地址：[https://github.com/beat-the-buzzer/vue-equality-table.git](https://github.com/beat-the-buzzer/vue-equality-table.git)
