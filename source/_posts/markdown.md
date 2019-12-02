@@ -61,7 +61,7 @@ Markdown Pad：一个所见即所得的Markdown编辑工具，提供导出HTML�
 
 ![](https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc3.jpg)
 
-#### 其他语法简介
+### 其他语法简介
 
 1、代码块
 

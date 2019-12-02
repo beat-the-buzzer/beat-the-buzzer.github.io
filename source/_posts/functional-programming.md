@@ -7,6 +7,8 @@ categories:
 series: JavaScript
 ---
 
+Git地址： [https://github.com/beat-the-buzzer/functional-programming.git](https://github.com/beat-the-buzzer/functional-programming.git)
+
 #### 抛砖引玉
 
 从一道容易出错的题开始：
