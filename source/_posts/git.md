@@ -20,7 +20,7 @@ git config user.email
 
 ```shell
 git config --global user.name 'name'
-git conggi --global user.email 'email'
+git config --global user.email 'email'
 ```
 
 密码操作：
