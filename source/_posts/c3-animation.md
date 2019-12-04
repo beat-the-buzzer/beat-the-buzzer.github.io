@@ -157,7 +157,7 @@ perspective、backface-visibility、translate3d(0,0,0)
 
 2、实现跳动的元素
 
-#### Demo
+#### Demo——自由落体
 
 下面是一个Demo，实现物体的自由落体运动。
 
@@ -196,3 +196,9 @@ ease-in-out: 动画以低速开始和结束
 最终运行效果：
 
 [点击查看运行效果](https://beat-the-buzzer.github.io/c3-animation/)
+
+#### Demo——红包雨效果
+
+[点击查看项目源码](https://github.com/beat-the-buzzer/c3-animation/tree/master/demo)
+
+[点击查询红包雨效果](https://beat-the-buzzer.github.io/c3-animation/demo/rain.html)
