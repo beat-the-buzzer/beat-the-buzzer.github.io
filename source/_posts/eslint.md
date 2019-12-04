@@ -1,6 +1,6 @@
 ---
 title: ESLint配置教程（VSCode插件版）
-date: {{ date }}
+date: 2019-11-28
 tags: [ESLint, JavaScript, VSCode]
 categories: 
 - ESLint

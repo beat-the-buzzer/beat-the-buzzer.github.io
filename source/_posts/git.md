@@ -1,6 +1,6 @@
 ---
 title: Git基本用法总结
-date: {{ date }}
+date: 2019-11-29
 tags: [Git,GitHub]
 categories: 
 - Git

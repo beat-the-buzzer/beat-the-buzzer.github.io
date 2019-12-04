@@ -1,6 +1,6 @@
 ---
 title: 算法系列——排序算法
-date: {{ date }}
+date: 2019-12-03
 tags: [算法, JavaScript]
 categories: 
 - 算法

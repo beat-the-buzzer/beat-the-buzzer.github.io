@@ -1,6 +1,6 @@
 ---
 title: 宽松相等和严格相等
-date: {{ date }}
+date: 2019-12-02
 tags: [JavaScript, Vue]
 categories: 
 - JavaScript

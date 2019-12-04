@@ -1,6 +1,6 @@
 ---
 title: Markdown语法总结
-date: {{ date }}
+date: 2019-11-30
 tags: [MarkDown]
 categories: 
 - MarkDown

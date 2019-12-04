@@ -1,6 +1,6 @@
 ---
 title: 函数式编程
-date: {{ date }}
+date: 2019-12-01
 tags: [JavaScript,函数式编程]
 categories: 
 - JavaScript

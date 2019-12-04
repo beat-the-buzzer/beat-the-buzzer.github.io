@@ -1,6 +1,6 @@
 ---
 title: CSS3 动画
-date: {{ date }}
+date: 2019-11-27
 tags: [CSS, CSS3, 动画]
 categories: 
 - CSS
