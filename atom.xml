@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/beat-the-buzzer/"/>
-  <updated>2019-12-15T09:09:15.558Z</updated>
+  <updated>2020-01-02T15:19:01.996Z</updated>
   <id>https://github.com/beat-the-buzzer/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科学上网工具——shadowsocks</title>
+    <link href="https://github.com/beat-the-buzzer/2020/01/02/shadowsocks/"/>
+    <id>https://github.com/beat-the-buzzer/2020/01/02/shadowsocks/</id>
+    <published>2020-01-01T16:00:00.000Z</published>
+    <updated>2020-01-02T15:19:01.996Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="使用翻墙的场合"><a href="#使用翻墙的场合" class="headerlink" title="使用翻墙的场合"></a>使用翻墙的场合</h3><p>我们在平时工作的时候，难免会需要科学上网，例如：</p><ul><li><p>Google应用商店的一些工具或者插件</p><p><img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/my-tips/shadowsocks/ss-01.png" alt="图片取自Yapi"></p></li><li><p>一些国外的视频（图为babel官网）</p><p><img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/my-tips/shadowsocks/ss-02.png" alt="图片取自babel"></p></li><li><p>移动端真机调试</p><p><img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/my-tips/shadowsocks/ss-03.png" alt="真机调试页面"></p></li></ul><p>下面就使用shadowsocks工具以及网上可以查到的SS节点进行免费翻墙。</p><h3 id="shadowsocks工具下载和使用"><a href="#shadowsocks工具下载和使用" class="headerlink" title="shadowsocks工具下载和使用"></a>shadowsocks工具下载和使用</h3><h4 id="百度搜索关键字“free-ss”："><a href="#百度搜索关键字“free-ss”：" class="headerlink" title="百度搜索关键字“free ss”："></a>百度搜索关键字“free ss”：</h4><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/my-tips/shadowsocks/ss-04.png" alt="搜索页面" title="">                </div>                <div class="image-caption">搜索页面</div>            </figure><h4 id="在ishadow里面下载shadowsocks工具，根据自己的系统下载对应的安装包。"><a href="#在ishadow里面下载shadowsocks工具，根据自己的系统下载对应的安装包。" class="headerlink" title="在ishadow里面下载shadowsocks工具，根据自己的系统下载对应的安装包。"></a>在<code>ishadow</code>里面下载<code>shadowsocks</code>工具，根据自己的系统下载对应的安装包。</h4><p><a href="https://get.ishadowx.biz/" target="_blank" rel="noopener">https://get.ishadowx.biz/</a></p><h4 id="在这个网站上，我们还能获取到节点的信息，点击图中的位置，可以在屏幕上生成一个二维码。"><a href="#在这个网站上，我们还能获取到节点的信息，点击图中的位置，可以在屏幕上生成一个二维码。" class="headerlink" title="在这个网站上，我们还能获取到节点的信息，点击图中的位置，可以在屏幕上生成一个二维码。"></a>在这个网站上，我们还能获取到节点的信息，点击图中的位置，可以在屏幕上生成一个二维码。</h4><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/my-tips/shadowsocks/ss-05.png" alt="点击查看二维码" title="">                </div>                <div class="image-caption">点击查看二维码</div>            </figure><h4 id="打开shadowsocks，右键右下角的图标（Mac的图标在屏幕最上方），选择服务器-gt-扫描屏幕上的二维码"><a href="#打开shadowsocks，右键右下角的图标（Mac的图标在屏幕最上方），选择服务器-gt-扫描屏幕上的二维码" class="headerlink" title="打开shadowsocks，右键右下角的图标（Mac的图标在屏幕最上方），选择服务器 =&gt; 扫描屏幕上的二维码"></a>打开shadowsocks，右键右下角的图标（Mac的图标在屏幕最上方），选择服务器 =&gt; 扫描屏幕上的二维码</h4><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/my-tips/shadowsocks/ss-06.png" alt="识别二维码" title="">                </div>                <div class="image-caption">识别二维码</div>            </figure><h4 id="测试是否成功：https-www-google-com-hk-webhp-hl-zh-CN-amp-sourceid-cnhp-amp-gws-rd-ssl"><a href="#测试是否成功：https-www-google-com-hk-webhp-hl-zh-CN-amp-sourceid-cnhp-amp-gws-rd-ssl" class="headerlink" title="测试是否成功：https://www.google.com.hk/webhp?hl=zh-CN&amp;sourceid=cnhp&amp;gws_rd=ssl"></a>测试是否成功：<a href="https://www.google.com.hk/webhp?hl=zh-CN&sourceid=cnhp&gws_rd=ssl" target="_blank" rel="noopener">https://www.google.com.hk/webhp?hl=zh-CN&amp;sourceid=cnhp&amp;gws_rd=ssl</a></h4><h3 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h3><h4 id="二维码无法扫描或者扫描成功之后无法翻墙"><a href="#二维码无法扫描或者扫描成功之后无法翻墙" class="headerlink" title="二维码无法扫描或者扫描成功之后无法翻墙"></a>二维码无法扫描或者扫描成功之后无法翻墙</h4><p>不是所有的二维码都能成功，要多次尝试。</p><h4 id="500-Internal-Privoxy-Error"><a href="#500-Internal-Privoxy-Error" class="headerlink" title="500 Internal Privoxy Error"></a>500 Internal Privoxy Error</h4><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/my-tips/shadowsocks/ss-07.png" alt="报错页面" title="">                </div>                <div class="image-caption">报错页面</div>            </figure><p>我是换了工位之后出现了这个错误，网上搜了一下，需要重置网络。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">netsh interface ipv4 reset</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">netsh interface ipv6 reset</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">netsh winsock reset</span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;使用翻墙的场合&quot;&gt;&lt;a href=&quot;#使用翻墙的场合&quot; class=&quot;headerlink&quot; title=&quot;使用翻墙的场合&quot;&gt;&lt;/a&gt;使用翻墙的场合&lt;/h3&gt;&lt;p&gt;我们在平时工作的时候，难免会需要科学上网，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Google应用商
+      
+    
+    </summary>
+    
+    
+      <category term="Shadowsocks" scheme="https://github.com/beat-the-buzzer/categories/Shadowsocks/"/>
+    
+    
+      <category term="Shadowsocks" scheme="https://github.com/beat-the-buzzer/tags/Shadowsocks/"/>
+    
+  </entry>
   
   <entry>
     <title>算法系列——贪心算法</title>
@@ -38,9 +66,9 @@
       <category term="算法" scheme="https://github.com/beat-the-buzzer/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://github.com/beat-the-buzzer/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="JavaScript" scheme="https://github.com/beat-the-buzzer/tags/JavaScript/"/>
+    
+      <category term="算法" scheme="https://github.com/beat-the-buzzer/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -66,9 +94,9 @@
       <category term="算法" scheme="https://github.com/beat-the-buzzer/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://github.com/beat-the-buzzer/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="JavaScript" scheme="https://github.com/beat-the-buzzer/tags/JavaScript/"/>
+    
+      <category term="算法" scheme="https://github.com/beat-the-buzzer/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -94,9 +122,9 @@
       <category term="算法" scheme="https://github.com/beat-the-buzzer/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://github.com/beat-the-buzzer/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="JavaScript" scheme="https://github.com/beat-the-buzzer/tags/JavaScript/"/>
+    
+      <category term="算法" scheme="https://github.com/beat-the-buzzer/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -234,9 +262,9 @@
       <category term="ESLint" scheme="https://github.com/beat-the-buzzer/categories/ESLint/"/>
     
     
-      <category term="JavaScript" scheme="https://github.com/beat-the-buzzer/tags/JavaScript/"/>
-    
       <category term="ESLint" scheme="https://github.com/beat-the-buzzer/tags/ESLint/"/>
+    
+      <category term="JavaScript" scheme="https://github.com/beat-the-buzzer/tags/JavaScript/"/>
     
       <category term="VSCode" scheme="https://github.com/beat-the-buzzer/tags/VSCode/"/>
     
