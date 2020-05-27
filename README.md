@@ -37,3 +37,11 @@ hexo server
 npm install hexo-deployer-git --save
 hexo deploy
 ```
+
+8、新建文章
+
+```shell
+hexo new + title
+hexo clean
+hexo deploy
+```
