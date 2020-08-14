@@ -25,11 +25,11 @@
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue修饰符总结（上篇）">
-<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2020&#x2F;06&#x2F;27&#x2F;vue-decorator&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2020&#x2F;06&#x2F;27&#x2F;vue-decorator01&#x2F;index.html">
 <meta property="og:site_name" content="前端学习笔记">
 <meta property="og:description" content="Demo演示地址： https:&#x2F;&#x2F;beat-the-buzzer.github.io&#x2F;my-demos&#x2F;#&#x2F;index&#x2F;my-decorator-01 Vue的修饰符为我们解决了很多通用的问题，如果我们了解这些修饰符，就能在开发的过程中节约大量的时间。 我们都知道使用v-on或者@在Vue中绑定事件，关于事件的修饰符，其实也是十分实用的。如果我们不了解这些修饰符，就会自己去写一些原生的实现方式，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-27T15:44:57.523Z">
+<meta property="og:updated_time" content="2020-07-13T02:18:44.966Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
@@ -167,7 +167,7 @@
     </aside>
 
 
-<article id="post-vue-decorator"
+<article id="post-vue-decorator01"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -224,7 +224,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-06-27T15:44:57.523Z" itemprop="dateUpdated">2020-06-27 23:44:57</time>
+    最后更新时间：<time datetime="2020-07-13T02:18:44.966Z" itemprop="dateUpdated">2020-07-13 10:18:44</time>
 </span><br>
 
 
@@ -259,7 +259,7 @@
     <div class="page-share" id="pageShare">
         <ul class="reset share-icons">
             <li>
-                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator01/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
                     <i class="icon icon-weibo"></i>
                 </a>
             </li>
@@ -269,7 +269,7 @@
                 </a>
             </li>
             <li>
-                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&source=" data-title=" QQ">
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator01/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&source=" data-title=" QQ">
                     <i class="icon icon-qq"></i>
                 </a>
             </li>
@@ -287,7 +287,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/07/13/vue-decorator02/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue修饰符总结（下篇）</h4>
+      </a>
+    </div>
   
 
   
@@ -384,7 +391,7 @@
     <div class="global-share" id="globalShare">
         <ul class="reset share-icons">
             <li>
-                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator01/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
                     <i class="icon icon-weibo"></i>
                 </a>
             </li>
@@ -394,7 +401,7 @@
                 </a>
             </li>
             <li>
-                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&source=" data-title=" QQ">
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/06/27/vue-decorator01/&title=《Vue修饰符总结（上篇）》 — 前端学习笔记&source=" data-title=" QQ">
                     <i class="icon icon-qq"></i>
                 </a>
             </li>
@@ -405,7 +412,7 @@
         <div class="page-modal wx-share" id="wxShare">
             <a class="close"><i class="icon icon-close"></i></a>
             <p>扫一扫，分享到微信</p>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3aUW7DMAwEUd//0u4BAiuzZFIg5PiraGVIzwUEkavrws/98JzHv/5MRp7Htx4ZMmT8LOM+Pk9jyMSvv3/i8XkfZ5QhQ8YCRrppnt8KpgcM8oFkyJAhI52ebKl8o5chQ4aMDqNzcEyPjzJkyJDBNz6yvfYL1y/W4jJkyPhBBu+6///PX8k3ZMiQ8VOMTmFJNsq00C2uSoYMGaMZfIOrRZX9dluwHhkyZAxlnDdB0qbnx7uUSsrji7wmQ4aMEQweSXZigFo7D30aGTJkrGfwAJIA+MYdzC5DhowFDH6Mq7XJ+AfiY2TIkLGHUcsEO6liejmDXy+TIUPGBkZnuZ0wgC+UHDFlyJAxj8Ffq4WLnWghiBBkyJCxkkGKzE7kmTby3rwrQ4aMBQx+vOPFZydaiJt9MmTIGM1IX+4EmeeR/NAZ/E9kyJAxgsEDxeIXwrBOm0+GDBmzGfzPncKVRwif+rgyZMiYxzj7atcm4vsdjaBUhgwZexj8oJY24/iV1rTcfUw5ZMiQMZSRTpYuolYS87hChgwZexi1IpOz01g0aLTJkCFjKOMOn1o8QEidRp4MGTJmM9KGV4qsLSUFy5AhYwODLI5EieSYyBm85SdDhow9DL7xdRpknypiZciQISM9ovEIId1SA6oMGTJklOpgftwkgeibg6YMGTIWMNJgkpS1fLPusGXIkLGBkV5xSJfVX2JtdhkyZIxg/AHGntsZdCXZmgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3awY6DMAxF0f7/T1NpVpVQw31xqAbnZlUVJuRQyRPbeb3wOP7G+fO3q5/jfOf4+/PVZUOGDBmPZRzDQR4/nmc8w/g1kbXJkCFjH0Zlah5S+cx8bTJkyJAxXjpnjBdKkDJkyJCRMkjYJQwejmXIkCGDpKBpSY6DSeq7LBeXIUPGAxmVxsDdn3/U35AhQ8Y/ZhxTo1KSI+lrvB4ZMmS0ZswV/Subv3EiytufF7m4DBkyWjPSUn59N8pf1sVqZciQ0ZpB0si0KFY5ljEXrGXIkNGbUQ+46YEJPmfwumXIkNGaMbfLStPRtfcEW1IZMmQ8nLHqAfwb3osMArEMGTI2YKQlsPRvKxtEUoCTIUPGDgx+YCINpvfN8PXMiAwZMpoy0sYkmhqHYNKkvCjkyZAhYwMGb0BW0lrewowTYxkyZLRmzDUG+FaPl/PI6+AnK2TIkNGJwQ801DdwKYYX6WTIkLEbgy+FHMX4TcFOhgwZuzF4e2BVCzMOr6u2hjJkyHgIgy8iCH+FzeJcI0GGDBm9GWkAJcE3bkCCkt9FuJchQ0ZrxmRUDoNmJYnl4V6GDBldGUc4+BJ5asqvBr+ADBkyGjH4SJPb9BjHXMtBhgwZ+zB4kOUP48E6fSmT/z1kyJDRgpGGRXL/fUnsgn6sDBkyWjM4ptIqCEKtDBkyZOBGZv2llLJwGTJkbMDgSexcipuCSWJ8cXJEhgwZjRiVxgCZOi6cLWo/yJAhowXjDYIWW9EJwikbAAAAAElFTkSuQmCC" alt="微信分享二维码">
         </div>
         
         
