@@ -9,7 +9,7 @@ series: 读书笔记
 
 ![](https://gitee.com/beat-the-buzzer/pictures/raw/807f30b405857c268420d5f68d4a59a7dcbcc3de/reading-tips/reading-tips-1.png)
 
-[点击下载读书笔记的PDF](https://github.com/beat-the-buzzer/reading-tips/blob/main/%E6%97%A9%E8%B5%B7%E9%AD%94%E6%B3%95.pdf)
+[点击下载读书笔记的PDF](https://gitee.com/beat-the-buzzer/reading-tips/raw/main/%E6%97%A9%E8%B5%B7%E9%AD%94%E6%B3%95.pdf)
 
 **书名：《早起魔法》**
 

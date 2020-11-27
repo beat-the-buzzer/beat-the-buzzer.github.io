@@ -7,4 +7,6 @@ categories:
 series: 读书笔记
 ---
 
+图片和资源全部保存在码云Gitee上
+
 [1. 早起的奇迹](https://beat-the-buzzer.github.io/2020/11/27/reading-tips-1)
