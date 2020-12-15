@@ -10,3 +10,5 @@ series: 读书笔记
 图片和资源全部保存在码云Gitee上
 
 [1. 早起的奇迹](https://beat-the-buzzer.github.io/2020/11/27/reading-tips-1)
+
+[2. 吃掉那只青蛙](https://beat-the-buzzer.github.io/2020/12/09/reading-tips-2/)
