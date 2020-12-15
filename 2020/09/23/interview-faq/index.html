@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="前端学习笔记">
 <meta property="og:description" content="面试的时候遇到这个问题，我们要先考虑这个问题的意图是什么，是要考察你哪些方面的能力。  你的沟通能力，表达能力  技术能力（业务难题，技术难题）  领导能力（团队资源协调，总结，分享，成长）   下面是根据我自身职业的需要列出来的回答： 代码规范问题维护了很长一段时间的旧代码，这个我觉得是几乎所有企业都会有的问题，就是一些旧代码很难维护，逻辑、文档、规范等等，对于需要长期使用的代码，有很多维护的成">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-09-24T02:53:43.005Z">
+<meta property="og:updated_time" content="2020-12-15T11:19:07.166Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
@@ -162,7 +162,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码规范问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">代码规范问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兼容CSS3、ES6"><span class="post-toc-number">2.</span> <span class="post-toc-text">兼容CSS3、ES6</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码规范问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">代码规范问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兼容CSS3、ES6"><span class="post-toc-number">2.</span> <span class="post-toc-text">兼容CSS3、ES6</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局修改或兼容旧版本发现了代码优化空间"><span class="post-toc-number">3.</span> <span class="post-toc-text">全局修改或兼容旧版本发现了代码优化空间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新规范的问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">更新规范的问题</span></a></li></ol>
         </nav>
     </aside>
 
@@ -195,9 +195,16 @@
 </ul>
 <p>下面是根据我自身职业的需要列出来的回答：</p>
 <h3 id="代码规范问题"><a href="#代码规范问题" class="headerlink" title="代码规范问题"></a>代码规范问题</h3><p>维护了很长一段时间的旧代码，这个我觉得是几乎所有企业都会有的问题，就是一些旧代码很难维护，逻辑、文档、规范等等，对于需要长期使用的代码，有很多维护的成本。对于代码规范，我把<code>ESLint</code>带进了我们的公司，像缩进、空格、引号、ES6简写等等，这些规范可以节约大量的维护成本。</p>
-<p>本来是想把这个检验的步骤放到编译平台的，但是由于老项目特别多，所以只是在本地去进行。</p>
+<p>本来是想把这个检验的步骤放到编译平台的，但是由于老项目特别多，所以只是在本地去进行。其实我第一家公司把ESLint写到编译平台上了，不符合规则的时候，直接不允许编译通过。</p>
 <h3 id="兼容CSS3、ES6"><a href="#兼容CSS3、ES6" class="headerlink" title="兼容CSS3、ES6"></a>兼容CSS3、ES6</h3><p>我之前也说了，我维护了很长一段时间的旧代码，有时候在旧代码的基础上开发的时候，我想用一些相对比较新的技术，例如CSS3、ES6，就会发现，有些低版本的手机不支持。以前解决这个问题的方法就是不使用CSS3、ES6，但是我在<code>ESLint</code>上面引用了ES6的规范，造成了一个冲突。</p>
 <p>解决方法就是在自动化编译平台里面，使用<code>Gulp</code>把所有JS文件进行了编译操作。对于CSS3的浏览器厂商前缀，我也是用<code>gulp</code>写了一个配置，处理所有的CSS文件。</p>
+<h3 id="全局修改或兼容旧版本发现了代码优化空间"><a href="#全局修改或兼容旧版本发现了代码优化空间" class="headerlink" title="全局修改或兼容旧版本发现了代码优化空间"></a>全局修改或兼容旧版本发现了代码优化空间</h3><p>在全局位置维护一个全局配置常量，例如，币种以前是0、1、2对应人民币、美元、港币，现在突然改成CNY、USD、HKD，我在改的时候发现所有用到的地方都要改，此时我就在全局位置写了一个常量，这样以后如果有修改的话，只需要改一个地方。另外，就是让代码语义化。我们直接在代码里写0、1、2，这个就叫做魔术数字。</p>
+<h3 id="更新规范的问题"><a href="#更新规范的问题" class="headerlink" title="更新规范的问题"></a>更新规范的问题</h3><p>我们有个老项目用到的是版本很早的jQuery，然后客户在做安全监测的时候发现了一些漏洞，然后就要替换成更新版本的jQuery。结果发现代码里其他地方用到了一些只有低版本jQuery才有的方法，导致更新之后有很多报错。比如<code>$(ele).size()</code></p>
+<p>然后平时工作中也会遇到类似的问题，就是后端更新之后，导致一些功能无法正常运行。随后我们就制定了一个更新的规范，每次更新都要包含：新增了哪些功能，修改了哪些功能，删除了哪些功能，即将删除哪些功能。针对即将删除的功能，要提前对影响范围作出改造优化的计划。</p>
+<blockquote>
+<p>技术和实现的问题，总会有解决方案。人员的沟通、协调、遵守规范，其实占用了更多的时间。</p>
+</blockquote>
+<p>其实，这个问题没有必要用各种高深的技术来回答，任何自己做过的优化或者解决的问题都可以拿出来分享一下，关键在于解决的过程、收获的描述。</p>
 
         </div>
 
@@ -206,7 +213,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-09-24T02:53:43.005Z" itemprop="dateUpdated">2020-09-24 10:53:43</time>
+    最后更新时间：<time datetime="2020-12-15T11:19:07.166Z" itemprop="dateUpdated">2020-12-15 19:19:07</time>
 </span><br>
 
 

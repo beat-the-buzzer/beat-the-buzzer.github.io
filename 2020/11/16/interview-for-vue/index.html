@@ -21,15 +21,15 @@
     
     
     <meta name="keywords" content="面试">
-    <meta name="description" content="Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我在阅读源码的过程中整理出来的，可能会遇到的问题。  Vue2.x 使用了哪种类型检查工具，有什么好处flow 在运行之前就可以检测出一些由于类型错误可能会出现的问题 Vue的构建工具是什么，你还了解哪些其他的构建工具rollup  Vue的核心思想是什么数据驱动 组件化 n">
+    <meta name="description" content="Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我在阅读源码的过程中整理出来的，可能会遇到的问题。  Vue2.x 使用了哪种类型检查工具，有什么好处Flow 在运行之前就可以检测出一些由于类型错误可能会出现的问题，类似的还有 TypeScript。 Vue的构建工具是什么，你还了解哪些其他的构建工具rollup 适用于打">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试题系列——vue相关">
 <meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2020&#x2F;11&#x2F;16&#x2F;interview-for-vue&#x2F;index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我在阅读源码的过程中整理出来的，可能会遇到的问题。  Vue2.x 使用了哪种类型检查工具，有什么好处flow 在运行之前就可以检测出一些由于类型错误可能会出现的问题 Vue的构建工具是什么，你还了解哪些其他的构建工具rollup  Vue的核心思想是什么数据驱动 组件化 n">
+<meta property="og:description" content="Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我在阅读源码的过程中整理出来的，可能会遇到的问题。  Vue2.x 使用了哪种类型检查工具，有什么好处Flow 在运行之前就可以检测出一些由于类型错误可能会出现的问题，类似的还有 TypeScript。 Vue的构建工具是什么，你还了解哪些其他的构建工具rollup 适用于打">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-17T08:34:11.374Z">
+<meta property="og:updated_time" content="2020-12-15T08:01:51.266Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
@@ -187,9 +187,13 @@
             <blockquote>
 <p>Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我在阅读源码的过程中整理出来的，可能会遇到的问题。</p>
 </blockquote>
-<h3 id="Vue2-x-使用了哪种类型检查工具，有什么好处"><a href="#Vue2-x-使用了哪种类型检查工具，有什么好处" class="headerlink" title="Vue2.x 使用了哪种类型检查工具，有什么好处"></a>Vue2.x 使用了哪种类型检查工具，有什么好处</h3><p>flow 在运行之前就可以检测出一些由于类型错误可能会出现的问题</p>
-<h3 id="Vue的构建工具是什么，你还了解哪些其他的构建工具"><a href="#Vue的构建工具是什么，你还了解哪些其他的构建工具" class="headerlink" title="Vue的构建工具是什么，你还了解哪些其他的构建工具"></a>Vue的构建工具是什么，你还了解哪些其他的构建工具</h3><p>rollup </p>
-<h3 id="Vue的核心思想是什么"><a href="#Vue的核心思想是什么" class="headerlink" title="Vue的核心思想是什么"></a>Vue的核心思想是什么</h3><p>数据驱动 组件化</p>
+<h3 id="Vue2-x-使用了哪种类型检查工具，有什么好处"><a href="#Vue2-x-使用了哪种类型检查工具，有什么好处" class="headerlink" title="Vue2.x 使用了哪种类型检查工具，有什么好处"></a>Vue2.x 使用了哪种类型检查工具，有什么好处</h3><p>Flow 在运行之前就可以检测出一些由于类型错误可能会出现的问题，类似的还有 TypeScript。</p>
+<h3 id="Vue的构建工具是什么，你还了解哪些其他的构建工具"><a href="#Vue的构建工具是什么，你还了解哪些其他的构建工具" class="headerlink" title="Vue的构建工具是什么，你还了解哪些其他的构建工具"></a>Vue的构建工具是什么，你还了解哪些其他的构建工具</h3><p>rollup 适用于打包成一个JS库。</p>
+<p>Rollup官方：Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序</p>
+<p>webpack官方：webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p>
+<p>Gulp官方：基于流的自动化构建工具</p>
+<h3 id="Vue的核心思想是什么"><a href="#Vue的核心思想是什么" class="headerlink" title="Vue的核心思想是什么"></a>Vue的核心思想是什么</h3><p>数据驱动：数据和视图建立一种映射关系，如果期望页面改变，只需要改变数据。</p>
+<p>组件化：</p>
 <h3 id="new-Vue-的时候发生了什么"><a href="#new-Vue-的时候发生了什么" class="headerlink" title="new Vue()的时候发生了什么"></a>new Vue()的时候发生了什么</h3><h3 id="实例挂载在DOM上是如何实现的"><a href="#实例挂载在DOM上是如何实现的" class="headerlink" title="实例挂载在DOM上是如何实现的"></a>实例挂载在DOM上是如何实现的</h3><h3 id="render方法有什么作用"><a href="#render方法有什么作用" class="headerlink" title="render方法有什么作用"></a>render方法有什么作用</h3><h3 id="虚拟DOM是什么，有什么好处，如何创建"><a href="#虚拟DOM是什么，有什么好处，如何创建" class="headerlink" title="虚拟DOM是什么，有什么好处，如何创建"></a>虚拟DOM是什么，有什么好处，如何创建</h3><h3 id="update方法的更新机制是什么样子的"><a href="#update方法的更新机制是什么样子的" class="headerlink" title="update方法的更新机制是什么样子的"></a>update方法的更新机制是什么样子的</h3><h3 id="如何将虚拟DOM更新成真实DOM"><a href="#如何将虚拟DOM更新成真实DOM" class="headerlink" title="如何将虚拟DOM更新成真实DOM"></a>如何将虚拟DOM更新成真实DOM</h3><h3 id="Vue组件的生命周期是什么样子的"><a href="#Vue组件的生命周期是什么样子的" class="headerlink" title="Vue组件的生命周期是什么样子的"></a>Vue组件的生命周期是什么样子的</h3><h3 id="Vue响应式的原理"><a href="#Vue响应式的原理" class="headerlink" title="Vue响应式的原理"></a>Vue响应式的原理</h3>
         </div>
 
@@ -198,7 +202,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-11-17T08:34:11.374Z" itemprop="dateUpdated">2020-11-17 16:34:11</time>
+    最后更新时间：<time datetime="2020-12-15T08:01:51.266Z" itemprop="dateUpdated">2020-12-15 16:01:51</time>
 </span><br>
 
 
@@ -264,9 +268,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2020/11/27/reading-tips-1/" id="post-prev" class="post-nav-link">
+      <a href="/2020/11/27/reading-tips-contents/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">读书笔记系列——早起魔法</h4>
+        <h4 class="title">读书笔记目录</h4>
       </a>
     </div>
   
