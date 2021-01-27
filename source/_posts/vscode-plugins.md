@@ -3,8 +3,7 @@ title: VSCode装机必备的插件
 date: 2020-03-14
 tags: [VSCode]
 categories: 
-- VSCode
-series: VSCode
+- 其他
 ---
 
 ### 先换主题——SynthWave '84

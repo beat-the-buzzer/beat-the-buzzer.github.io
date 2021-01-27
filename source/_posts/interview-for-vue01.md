@@ -4,7 +4,6 @@ date: 2020-11-16
 tags: [面试]
 categories: 
 - 面试
-series: 面试
 ---
 
 > Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我在阅读源码的过程中整理出来的，可能会遇到的问题。
@@ -101,7 +100,7 @@ for (macroTask of macroTaskQueue) {
 }
 ```
 
-数据的变化到 DOM 的重新渲染是一个异步过程。如果需要在数据变化之后取到变化后的DOM，可以使用 nextTick 方法。这个方法和React中的 this.setState的第二个参数类似。
+数据的变化到 DOM 的重新渲染是一个异步过程。如果需要在数据变化之后取到变化后的DOM，可以使用 nextTick 方法。这个方法和React中的 this.setState 的第二个参数类似。
 
 ### 有没有一些情况，当你改变了数据，但是DOM没有更新
 

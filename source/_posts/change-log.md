@@ -3,8 +3,7 @@ title: 如何维护更新日志
 date: 2020-09-22
 tags: [Git, MarkDown]
 categories: 
-- Git
-series: Git
+- 其他
 ---
 
 ### 更新日志是什么

@@ -4,7 +4,6 @@ date: 2019-12-03
 tags: [算法, JavaScript]
 categories: 
 - 算法
-series: 算法
 ---
 
 Git地址：[https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/sort](https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/sort)

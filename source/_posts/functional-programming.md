@@ -3,8 +3,7 @@ title: 函数式编程
 date: 2019-12-01
 tags: [JavaScript,函数式编程]
 categories: 
-- JavaScript
-series: JavaScript
+- 前端开发
 ---
 
 Git地址： [https://github.com/beat-the-buzzer/functional-programming.git](https://github.com/beat-the-buzzer/functional-programming.git)

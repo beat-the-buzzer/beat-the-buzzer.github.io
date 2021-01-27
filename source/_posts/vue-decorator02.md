@@ -3,8 +3,7 @@ title: Vue修饰符总结（下篇）
 date: 2020-07-13
 tags: [Vue]
 categories: 
-- Vue
-series: Vue
+- 前端开发
 ---
 
 Demo演示地址： [https://beat-the-buzzer.github.io/my-demos/#/index/my-decorator-02](https://beat-the-buzzer.github.io/my-demos/#/index/my-decorator-02)

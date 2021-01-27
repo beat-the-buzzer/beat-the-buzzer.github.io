@@ -3,8 +3,7 @@ title: Markdown语法总结
 date: 2019-11-30
 tags: [MarkDown]
 categories: 
-- MarkDown
-series: MarkDown
+- 其他
 ---
 
 ### Markdown简介

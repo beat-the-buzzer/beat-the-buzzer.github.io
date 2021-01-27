@@ -3,8 +3,7 @@ title: 移动端适配前置知识学习
 date: 2020-08-26
 tags: [CSS,CSS3,JavaScript,移动端适配]
 categories: 
-- 移动端适配
-series: 移动端适配
+- 前端开发
 ---
 
 什么是移动端适配？

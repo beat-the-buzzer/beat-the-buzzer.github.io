@@ -4,7 +4,6 @@ date: 2020-11-27
 tags: [读书笔记]
 categories: 
 - 读书笔记
-series: 读书笔记
 ---
 
 图片和资源全部保存在码云Gitee上

@@ -3,8 +3,7 @@ title: 科学上网工具——shadowsocks
 date: 2020-01-02
 tags: [Shadowsocks]
 categories: 
-- Shadowsocks
-series: Shadowsocks
+- 其他
 ---
 
 ### 使用翻墙的场合

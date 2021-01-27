@@ -4,7 +4,6 @@ date: 2020-11-27
 tags: [读书笔记]
 categories: 
 - 读书笔记
-series: 读书笔记
 ---
 
 ![](https://gitee.com/beat-the-buzzer/pictures/raw/807f30b405857c268420d5f68d4a59a7dcbcc3de/reading-tips/reading-tips-1.png)

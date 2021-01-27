@@ -3,8 +3,7 @@ title: Git基本用法总结
 date: 2019-11-29
 tags: [Git,GitHub]
 categories: 
-- Git
-series: Git
+- 其他
 ---
 
 ### 用户配置

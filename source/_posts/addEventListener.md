@@ -3,8 +3,7 @@ title: 探索addEventListener
 date: 2020-12-15
 tags: [JavaScript,函数式编程]
 categories: 
-- JavaScript
-series: JavaScript
+- 前端开发
 ---
 
 最近使用了 `default-passive-events` 解决滑动卡顿的问题，看源码的时候，发现这个node包是修改 `addEventListener` 的第三个参数的默认值，所以有必要先总结一下 `addEventListener` 的相关知识。

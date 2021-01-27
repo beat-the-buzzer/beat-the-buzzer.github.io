@@ -4,7 +4,6 @@ date: 2020-07-27
 tags: [面试]
 categories: 
 - 面试
-series: 面试
 ---
 
 面试的时候，要提前做好充分的准备，不仅仅是技术方面，还有项目经验、语言表达能力、价值观、职业规划等等。在这之前，我曾经写了一篇面试评价表：[https://beat-the-buzzer.github.io/2020/05/27/interview-set/](https://beat-the-buzzer.github.io/2020/05/27/interview-set/)，总结了面试的一些考察点。

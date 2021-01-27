@@ -4,7 +4,6 @@ date: 2019-12-15
 tags: [算法, JavaScript]
 categories: 
 - 算法
-series: 算法
 ---
 
 项目Git地址：[https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/greedy](https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/greedy)

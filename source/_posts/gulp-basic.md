@@ -3,8 +3,7 @@ title: 项目工程化——Gulp简单使用
 date: 2020-06-01
 tags: [工程化, Gulp]
 categories: 
-- 工程化
-series: 工程化
+- 前端开发
 ---
 
 项目Git地址：[https://github.com/beat-the-buzzer/gulp-test.git](https://github.com/beat-the-buzzer/gulp-test.git)

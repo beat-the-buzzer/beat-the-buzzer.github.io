@@ -3,8 +3,7 @@ title: 读书笔记系列——沟通心理学
 date: 2020-07-28
 tags: [阅读, 心理学]
 categories: 
-- 阅读
-series: 阅读
+- 读书笔记
 ---
 
 > 文件名 booklist-communication-psychology 对于超长单词的简写方式：c11n p8y，11和8意味着中间省略了 11个和 8个字母。

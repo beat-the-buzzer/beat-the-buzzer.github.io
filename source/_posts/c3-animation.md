@@ -3,8 +3,7 @@ title: CSS3 动画
 date: 2019-11-27
 tags: [CSS, CSS3, 动画]
 categories: 
-- CSS
-series: CSS
+- 前端开发
 ---
 
 项目Git地址：[https://github.com/beat-the-buzzer/c3-animation.git](https://github.com/beat-the-buzzer/c3-animation.git)

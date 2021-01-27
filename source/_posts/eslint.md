@@ -3,8 +3,7 @@ title: ESLint配置教程（VSCode插件版）
 date: 2019-11-28
 tags: [ESLint, JavaScript, VSCode]
 categories: 
-- ESLint
-series: ESLint
+- 其他
 ---
 
 Git项目地址：[https://github.com/beat-the-buzzer/eslint-test.git](https://github.com/beat-the-buzzer/eslint-test.git)

@@ -3,8 +3,7 @@ title: Git撤销操作汇总
 date: 2020-07-30
 tags: [Git,GitHub]
 categories: 
-- Git
-series: Git
+- 其他
 ---
 
 在任何一个阶段，你都有可能想要撤消某些操作。Ctrl ACV 我们很常用，Ctrl Z 使用频率也很高。同理，Git上的操作我们也经常需要去撤销一些操作，下面就简单总结一下。
