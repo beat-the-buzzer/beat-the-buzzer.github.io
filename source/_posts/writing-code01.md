@@ -53,10 +53,62 @@ p2.getName(); // Jerry
  ```
 
 ### call
+```js
+// 思路：将要改变this指向的方法挂到目标this上执行并返回
+Function.prototype.mycall = function (context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('not funciton')
+  }
+  context = context || window
+  context.fn = this
+  let arg = [...arguments].slice(1)
+  let result = context.fn(...arg)
+  delete context.fn
+  return result
+}
+```
 
 ### apply
 
+```js
+// 思路：将要改变this指向的方法挂到目标this上执行并返回
+Function.prototype.myapply = function (context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('not funciton')
+  }
+  context = context || window
+  context.fn = this
+  let result
+  if (arguments[1]) {
+    result = context.fn(...arguments[1])
+  } else {
+    result = context.fn()
+  }
+  delete context.fn
+  return result
+}
+```
+
 ### bind
+
+```js
+// 思路：类似call，但返回的是函数
+Function.prototype.mybind = function (context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('Error')
+  }
+  let _this = this
+  let arg = [...arguments].slice(1)
+  return function F() {
+    // 处理函数使用new的情况
+    if (this instanceof F) {
+      return new _this(...arg, ...arguments)
+    } else {
+      return _this.apply(context, arg.concat(...arguments))
+    }
+  }
+}
+```
 
 ### instanceof
 
@@ -75,8 +127,28 @@ function instanceOf(leftObj, rightObj) {
 }
 ```
 
-### 继承
-
 ### 排序
 
+关于排序，在之前一篇文章里已经写了：[算法系列——排序算法](/2019/12/03/sort/)
+
+如果是求稳，可以使用选择排序或者冒泡排序这样逻辑简单的；
+
+如果想更进一步，可以使用递归方式的归并排序；
+
+还想更进一步，就可以使用稍微有点复杂的快速排序；
+
+当然，这些排序算法的原理还是需要去弄清楚的。
+
 ### 去重
+
+去重的方法，之前也有总结过：[数组去重的N个方法](2020/01/11/unique/)
+
+其实面试主要考察的是思路，如果你的试卷上用Set一行解决，其实是很难得到高分的；
+
+求稳的大思路，应该是定义新的数组，然后遍历原数组，如果在新的数组里没有遍历的值的时候，就把数据放到新数组里面；
+
+更进一步的思路，是利用对象的Key、Map 的唯一性；
+
+新奇的思路，寻找元素首次出现的位置是否和当前位置的元素相等；
+
+面试的过程中，我们不仅仅是要提供问题的解决思路，也可以说一下我们这个思路的局限性。面试和工作的思路不一样，面试是为了展示能力，工作是为了解决问题。
