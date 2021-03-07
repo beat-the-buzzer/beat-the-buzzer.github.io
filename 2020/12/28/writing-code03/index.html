@@ -21,15 +21,15 @@
     
     
     <meta name="keywords" content="面试">
-    <meta name="description" content="双向绑定观察者模式">
+    <meta name="description" content="EventBus1&#x2F;&#x2F; 组件通信，一个触发与监听的过程2class EventEmitter &amp;#123;3  constructor () &amp;#123;4    &#x2F;&#x2F; 存储事件5    this.events &#x3D; this.events || new Map()6  &amp;#125;7  &#x2F;&#x2F; 监听事件8  addListener (type, fn) &amp;#123;9    if (!this.ev">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试之手写代码系列（进阶篇）">
 <meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2020&#x2F;12&#x2F;28&#x2F;writing-code03&#x2F;index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="双向绑定观察者模式">
+<meta property="og:description" content="EventBus1&#x2F;&#x2F; 组件通信，一个触发与监听的过程2class EventEmitter &amp;#123;3  constructor () &amp;#123;4    &#x2F;&#x2F; 存储事件5    this.events &#x3D; this.events || new Map()6  &amp;#125;7  &#x2F;&#x2F; 监听事件8  addListener (type, fn) &amp;#123;9    if (!this.ev">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-27T11:05:57.255Z">
+<meta property="og:updated_time" content="2021-03-07T15:23:57.079Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
@@ -162,7 +162,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#双向绑定"><span class="post-toc-number">1.</span> <span class="post-toc-text">双向绑定</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#观察者模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">观察者模式</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EventBus"><span class="post-toc-number">1.</span> <span class="post-toc-text">EventBus</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#双向绑定"><span class="post-toc-number">2.</span> <span class="post-toc-text">双向绑定</span></a></li></ol>
         </nav>
     </aside>
 
@@ -184,7 +184,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3>
+            <h3 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组件通信，一个触发与监听的过程</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EventEmitter</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">constructor</span> () &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 存储事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.events = <span class="keyword">this</span>.events || <span class="keyword">new</span> <span class="built_in">Map</span>()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 监听事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  addListener (type, fn) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.events.get(type)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">this</span>.events.set(type, fn)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 触发事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  emit (type) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">let</span> handle = <span class="keyword">this</span>.events.get(type)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    handle.apply(<span class="keyword">this</span>, [...arguments].slice(<span class="number">1</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> emitter = <span class="keyword">new</span> EventEmitter()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">emitter.addListener(<span class="string">'ages'</span>, age =&gt; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(age)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 触发事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">emitter.emit(<span class="string">'ages'</span>, <span class="number">18</span>)  <span class="comment">// 18</span></span></pre></td></tr></table></figure>
+
+<h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><p>核心点就是当数据变化的时候，触发DOM的更新，DOM通过用户操作更新的时候，改变数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> input = <span class="built_in">document</span>.getElementById(<span class="string">'input'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> span = <span class="built_in">document</span>.getElementById(<span class="string">'span'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据劫持</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'text'</span>, &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  configurable: <span class="literal">true</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  enumerable: <span class="literal">true</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">get</span>() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">'获取数据了'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">set</span>(newVal) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">'数据更新了'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    input.value = newVal</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    span.innerHTML = newVal</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输入监听</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">input.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">  obj.text = e.target.value</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -192,7 +195,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-01-27T11:05:57.255Z" itemprop="dateUpdated">2021-01-27 19:05:57</time>
+    最后更新时间：<time datetime="2021-03-07T15:23:57.079Z" itemprop="dateUpdated">2021-03-07 23:23:57</time>
 </span><br>
 
 
@@ -258,18 +261,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2021/01/27/reading-tips-3/" id="post-prev" class="post-nav-link">
+      <a href="/2020/12/28/writing-code01/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">读书笔记系列——少有人走的路：心智成熟的旅程</h4>
+        <h4 class="title">前端面试之手写代码系列（基础篇）</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2020/12/28/writing-code02/" id="post-next" class="post-nav-link">
+      <a href="/2020/12/23/interview-for-vue02/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">前端面试之手写代码系列（应用篇）</h4>
+        <h4 class="title">面试题系列——vue相关（应用篇）</h4>
       </a>
     </div>
   

@@ -21,15 +21,15 @@
     
     
     <meta name="keywords" content="面试">
-    <meta name="description" content="防抖节流科里化Promise深拷贝">
+    <meta name="description" content="防抖与节流关于防抖与节流，在之前一篇文章里已经写了：防抖节流操作总结 文章里还做了科里化的操作，就是下面即将要写的，目的是把防抖和节流做成一个公共的方法。 科里化与函数式编程关于科里化与函数式编程，在之前一篇文章里已经写了：函数式编程 文章里有大量的举例和应用场景。 深拷贝简单版本1：先stringfy再parse，无法处理值为日期、函数等类型的数据； 简单版本2：ES6扩展运算符，只能处理一层数">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试之手写代码系列（应用篇）">
 <meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2020&#x2F;12&#x2F;28&#x2F;writing-code02&#x2F;index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="防抖节流科里化Promise深拷贝">
+<meta property="og:description" content="防抖与节流关于防抖与节流，在之前一篇文章里已经写了：防抖节流操作总结 文章里还做了科里化的操作，就是下面即将要写的，目的是把防抖和节流做成一个公共的方法。 科里化与函数式编程关于科里化与函数式编程，在之前一篇文章里已经写了：函数式编程 文章里有大量的举例和应用场景。 深拷贝简单版本1：先stringfy再parse，无法处理值为日期、函数等类型的数据； 简单版本2：ES6扩展运算符，只能处理一层数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-27T11:05:49.649Z">
+<meta property="og:updated_time" content="2021-03-07T15:17:57.142Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
@@ -162,7 +162,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防抖"><span class="post-toc-number">1.</span> <span class="post-toc-text">防抖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#节流"><span class="post-toc-number">2.</span> <span class="post-toc-text">节流</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#科里化"><span class="post-toc-number">3.</span> <span class="post-toc-text">科里化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">4.</span> <span class="post-toc-text">Promise</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深拷贝"><span class="post-toc-number">5.</span> <span class="post-toc-text">深拷贝</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防抖与节流"><span class="post-toc-number">1.</span> <span class="post-toc-text">防抖与节流</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#科里化与函数式编程"><span class="post-toc-number">2.</span> <span class="post-toc-text">科里化与函数式编程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深拷贝"><span class="post-toc-number">3.</span> <span class="post-toc-text">深拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Rem基本设置"><span class="post-toc-number">4.</span> <span class="post-toc-text">Rem基本设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">5.</span> <span class="post-toc-text">Promise</span></a></li></ol>
         </nav>
     </aside>
 
@@ -184,7 +184,21 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><h3 id="科里化"><a href="#科里化" class="headerlink" title="科里化"></a>科里化</h3><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3>
+            <h3 id="防抖与节流"><a href="#防抖与节流" class="headerlink" title="防抖与节流"></a>防抖与节流</h3><p>关于防抖与节流，在之前一篇文章里已经写了：<a href="/2020/09/12/debounce-throttle/">防抖节流操作总结</a></p>
+<p>文章里还做了科里化的操作，就是下面即将要写的，目的是把防抖和节流做成一个公共的方法。</p>
+<h3 id="科里化与函数式编程"><a href="#科里化与函数式编程" class="headerlink" title="科里化与函数式编程"></a>科里化与函数式编程</h3><p>关于科里化与函数式编程，在之前一篇文章里已经写了：<a href="/2019/12/01/functional-programming/">函数式编程</a></p>
+<p>文章里有大量的举例和应用场景。</p>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>简单版本1：先<code>stringfy</code>再<code>parse</code>，无法处理值为日期、函数等类型的数据；</p>
+<p>简单版本2：ES6扩展运算符，只能处理一层数据，对于深层次的对象无法处理；</p>
+<p>简单版本3：ES6 <code>Object.assign({}, ...)</code></p>
+<p>简单版本4：Jquery <code>$.extends()</code>方法</p>
+<p>算法版本：主要是用了递归的思想</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function">(<span class="params">target, cache = <span class="keyword">new</span> <span class="built_in">WeakMap</span>(</span>)) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(target === <span class="literal">null</span> || <span class="keyword">typeof</span> target !== <span class="string">'object'</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> target</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(cache.get(target)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> target</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> copy = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  cache.set(target, copy)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">Object</span>.keys(target).forEach(<span class="function"><span class="params">key</span> =&gt;</span> copy[key] = deepClone(obj[key], cache))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> copy</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h3 id="Rem基本设置"><a href="#Rem基本设置" class="headerlink" title="Rem基本设置"></a>Rem基本设置</h3><p>关于Rem基本设置，在之前一篇文章里已经写了：<a href="/2020/08/26/mobile-adaptation/">移动端适配之淘宝方案分析</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">refreshRem</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> width = docEl.getBoundingClientRect().width;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (width / dpr &gt; <span class="number">540</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    width = <span class="number">540</span> * dpr;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> rem = width / <span class="number">10</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 意味着100%的宽度就是10rem</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  docEl.style.fontSize = rem + <span class="string">'px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  flexible.rem = win.rem = rem;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  clearTimeout(tid);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  tid = setTimeout(refreshRem, <span class="number">300</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;, <span class="literal">false</span>);</span></pre></td></tr></table></figure>
+
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3>
         </div>
 
         <blockquote class="post-copyright">
@@ -192,7 +206,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-01-27T11:05:49.649Z" itemprop="dateUpdated">2021-01-27 19:05:49</time>
+    最后更新时间：<time datetime="2021-03-07T15:17:57.142Z" itemprop="dateUpdated">2021-03-07 23:17:57</time>
 </span><br>
 
 
@@ -258,9 +272,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2020/12/28/writing-code03/" id="post-prev" class="post-nav-link">
+      <a href="/2021/01/27/reading-tips-3/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">前端面试之手写代码系列（进阶篇）</h4>
+        <h4 class="title">读书笔记系列——少有人走的路：心智成熟的旅程</h4>
       </a>
     </div>
   
