@@ -150,14 +150,14 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-display"
+            <article id="post-webpack-basic"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-03-08 00:00:00" datetime="2021-03-07T16:00:00.000Z"  itemprop="datePublished">2021-03-08</time>
+        <time class="post-time" title="2021-03-11 00:00:00" datetime="2021-03-10T16:00:00.000Z"  itemprop="datePublished">2021-03-11</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a></li></ul>
 
 
 
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/03/08/display/">CSS——display详解</a>
+      <a class="post-title-link" href="/2021/03/11/webpack-basic/">前端工程化——Webpack简单总结</a>
     </h3>
   
 
@@ -178,21 +178,198 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        display有很多属性值，我们在这里只介绍几个常用的，重要的，以及他们之间可能存在的一些问题和差异。
-block设置了block元素，那么这个元素就遵循盒子模型的规则，宽高、边距都是可以设置的。
-块元素独占一行。
-inlineinline元素理解为盒子内部的“流”元素，他的形状完全取决于容器，手动设置宽高都是无效的。
-inline-block外部看是“流”，内部看是“块”，比如一行内有多个...
+        什么是webpack，使用webpack有什么好处webpack 是个静态模块打包工具。在 webpack 看来，项目里所有资源皆模块，利用资源依赖关系，把各模块之间关联起来。
+简单讲就: webpack 对有依赖关系的多个模块文件进行打包处理后，生成浏览器可以直接高效运行的资源。
+通过入口文件开始，利用递归找到直接依赖或间接依赖的所有模块，并在内部构建一个能映射出项目所需的所有模块的依赖图...
     
 
-        <a href="/2021/03/08/display/" class="post-more waves-effect waves-button">
+        <a href="/2021/03/11/webpack-basic/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-http-cache"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-11 00:00:00" datetime="2021-03-10T16:00:00.000Z"  itemprop="datePublished">2021-03-11</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/11/http-cache/">http缓存：强制缓存和协商缓存</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        cache-control：缓存控制，可以设置有效期，可以跳过强缓存，可以不缓存。
+etag 和 last-modified：设置协商缓存，需要客户端和服务端共同处理。
+发请求–&gt;看资源是否过期–&gt;过期–&gt;请求服务器–&gt;服务器对比资源是否真的过期–&gt;没过期–&gt;返回304状态码–&gt;客户端用缓存的老资源。
+我们可以在性能优化的问题里提到强制缓存和协商缓存...
+    
+
+        <a href="/2021/03/11/http-cache/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-http-type"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/10/http-type/">HTTP请求类型总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        GET: 获取资源GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器 端解析后返回响应内容。
+例如：请求图片资源、html资源
+POST: 传输实体主体POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用 POST 方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。
+GET参数会带到U...
+    
+
+        <a href="/2021/03/10/http-type/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-http-code"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/10/http-code/">HTTP状态码总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        什么是状态码HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。
+状态码的类别
+
+
+状态码
+类别
+原因
+
+
+
+1XX
+信息性状态码
+接收的请求正在处理
+
+
+2XX
+成功状态码
+请求正常处理完毕
+
+
+3XX
+重定向状态码
+需要进行附加操作以完成请求
+
+
+4XX
+客户端错误状态码
+服务器无法处理请求
+
+
+5XX
+服务器错误状态码
+服务器处理请求出...
+    
+
+        <a href="/2021/03/10/http-code/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li></ul>
 
     </div>
     
@@ -254,6 +431,57 @@ inline-block外部看是“流”，内部看是“块”，比如一行内有�
         </li>
     
         <li class="post-list-item fade">
+            <article id="post-display"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-08 00:00:00" datetime="2021-03-07T16:00:00.000Z"  itemprop="datePublished">2021-03-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/08/display/">CSS——display详解</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        display有很多属性值，我们在这里只介绍几个常用的，重要的，以及他们之间可能存在的一些问题和差异。
+block设置了block元素，那么这个元素就遵循盒子模型的规则，宽高、边距都是可以设置的。
+块元素独占一行。
+inlineinline元素理解为盒子内部的“流”元素，他的形状完全取决于容器，手动设置宽高都是无效的。
+inline-block外部看是“流”，内部看是“块”，比如一行内有多个...
+    
+
+        <a href="/2021/03/08/display/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-reading-tips-3"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -306,60 +534,6 @@ inline-block外部看是“流”，内部看是“块”，比如一行内有�
     <div class="post-footer">
         
 	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-writing-code01"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2020-12-28 00:00:00" datetime="2020-12-27T16:00:00.000Z"  itemprop="datePublished">2020-12-28</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2020/12/28/writing-code01/">前端面试之手写代码系列（基础篇）</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        下面的几个是JS里面比较基础和常用的东西，通过用代码实现，可以让我们更深刻地了解这些方法的底层原理，以及解决了哪些问题。大部分的方法实现在《你不知道的JavaScript》里面都有。
-疫情的存在，使得我们几乎都是线上面试，几乎无法现场手写代码。但是，手写代码是面试中很重要的一环，因为这个比较综合、全面、深刻。
-new
-先创建一个新的、空的实例对象
-
-将实例对象的原型指向构造函数的原型
-
-将构...
-    
-
-        <a href="/2020/12/28/writing-code01/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
 
     </div>
     
@@ -467,11 +641,11 @@ new
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-interview-for-vue03"
+            <article id="post-writing-code01"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2020-12-23 00:00:00" datetime="2020-12-22T16:00:00.000Z"  itemprop="datePublished">2020-12-23</time>
+        <time class="post-time" title="2020-12-28 00:00:00" datetime="2020-12-27T16:00:00.000Z"  itemprop="datePublished">2020-12-28</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
@@ -485,7 +659,7 @@ new
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2020/12/23/interview-for-vue03/">面试题系列——vue相关（进阶篇）</a>
+      <a class="post-title-link" href="/2020/12/28/writing-code01/">前端面试之手写代码系列（基础篇）</a>
     </h3>
   
 
@@ -495,13 +669,17 @@ new
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我在阅读源码的过程中整理出来的，可能会遇到的问题。
+        下面的几个是JS里面比较基础和常用的东西，通过用代码实现，可以让我们更深刻地了解这些方法的底层原理，以及解决了哪些问题。大部分的方法实现在《你不知道的JavaScript》里面都有。
+疫情的存在，使得我们几乎都是线上面试，几乎无法现场手写代码。但是，手写代码是面试中很重要的一环，因为这个比较综合、全面、深刻。
+new
+先创建一个新的、空的实例对象
 
+将实例对象的原型指向构造函数的原型
 
+将构...
     
 
-        <a href="/2020/12/23/interview-for-vue03/" class="post-more waves-effect waves-button">
+        <a href="/2020/12/28/writing-code01/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -509,173 +687,6 @@ Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么
     <div class="post-footer">
         
 	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-interview-for-vue02"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2020-12-23 00:00:00" datetime="2020-12-22T16:00:00.000Z"  itemprop="datePublished">2020-12-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2020/12/23/interview-for-vue02/">面试题系列——vue相关（应用篇）</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我总结的一些使用技巧，以问题的方式总结出来。
-
-Vue 如何在组件间传值
-父组件传给子组件，props，
-
-子组件传给父组件，父组件绑定了一个事件之后，子组件使用 $emit 
-
-另外，父组件可以拿到子组件对象，然后去调用子组件的方法或者获取子组件里面定义的值；
-
-兄弟...
-    
-
-        <a href="/2020/12/23/interview-for-vue02/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-addEventListener"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2020-12-15 00:00:00" datetime="2020-12-14T16:00:00.000Z"  itemprop="datePublished">2020-12-15</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2020/12/15/addEventListener/">探索addEventListener</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        最近使用了 default-passive-events 解决滑动卡顿的问题，看源码的时候，发现这个node包是修改 addEventListener 的第三个参数的默认值，所以有必要先总结一下 addEventListener 的相关知识。
-addEventListener的定义EventTarget.addEventListener() 方法将指定的监听器注册到 EventTarget ...
-    
-
-        <a href="/2020/12/15/addEventListener/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-reading-tips-2"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2020-12-09 00:00:00" datetime="2020-12-08T16:00:00.000Z"  itemprop="datePublished">2020-12-09</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2020/12/09/reading-tips-2/">读书笔记系列——吃掉那只青蛙</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-                
-                    
-                    
-                
-                
-            
-
-点击下载读书笔记的PDF
-书名：《吃掉那只青蛙》
-作者：[美] 博恩·崔西
-
-【内容简介】
-面对艰巨、重要的任务，
-不要拖延，立即采取行动，吃掉那只青蛙。
-每天吃掉三只青蛙，让你...
-    
-
-        <a href="/2020/12/09/reading-tips-2/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
 
     </div>
     
@@ -688,7 +699,7 @@ addEventListener的定义EventTarget.addEventListener() 方法将指定的监听
     
 <nav id="page-nav">
     <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
     </div>
 </nav>
 
