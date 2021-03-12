@@ -22,4 +22,14 @@ categories:
 
 6. Vuex，是一种状态管理工具，我们可以共享组件的状态，功能类似于 React 中的 Redux 或者 Mobx；
 
+### Vue 的生命周期
+
+created => before
+
+mounted => before
+
+updated => before 
+
+destroyed => before
+
 ### 
