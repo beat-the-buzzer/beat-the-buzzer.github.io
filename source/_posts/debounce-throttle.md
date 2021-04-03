@@ -142,7 +142,9 @@ function throttle2(func, wait = 1000) {
 }
 ```
 
-经过上面的改造之后，我们就可以在项目中使用这些公共方法了：
+经过上面的改造之后，我们就可以在项目中使用这些公共方法了：obj = {
+  
+}
 
 ```html
 <input type="text" onchange="debounce(changeInput, 1500)(this.value)" />
@@ -153,3 +155,5 @@ function throttle2(func, wait = 1000) {
 至此，一个公共方法就完成了。
 
 其实我们还可以进一步进行封装，比如我们使用Vue或者React的时候，可以自己对button组件进行封装，新增参数控制是否需要防抖节流，这样，我们就可以直接在组件内部解决了这个问题。
+
+http三次握手
