@@ -6,7 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "depy": "git subtree push --prefix=public origin master "
   },
   "hexo": {
     "version": "4.0.0"

@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>前端学习笔记</title>
+  
+  <subtitle>平庸不止于平庸，巅峰不甘于巅峰</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/beat-the-buzzer/"/>
+  <updated>2023-01-30T13:08:59.467Z</updated>
+  <id>https://github.com/beat-the-buzzer/</id>
+  
+  <author>
+    <name>WangTao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络三定律</title>
+    <link href="https://github.com/beat-the-buzzer/2023/01/30/laws/IT-3-laws/"/>
+    <id>https://github.com/beat-the-buzzer/2023/01/30/laws/IT-3-laws/</id>
+    <published>2023-01-29T16:00:00.000Z</published>
+    <updated>2023-01-30T13:08:59.467Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摩尔定律——揭示信息技术进步速度"><a href="#摩尔定律——揭示信息技术进步速度" class="headerlink" title="摩尔定律——揭示信息技术进步速度"></a>摩尔定律——揭示信息技术进步速度</h2><blockquote><p>集成电路上可以容纳的晶体管数目在大约每经过18个月到24个月便会增加一倍。</p></blockquote><h2 id="吉尔德定律"><a href="#吉尔德定律" class="headerlink" title="吉尔德定律"></a>吉尔德定律</h2><blockquote><p>也叫胜利者浪费定律 ，由乔治·吉尔德提出，最为成功的商业运作模式是价格最低的资源将会被尽可能的消耗，以此来保存最昂贵的资源。</p></blockquote><h2 id="麦特卡夫定律"><a href="#麦特卡夫定律" class="headerlink" title="麦特卡夫定律"></a>麦特卡夫定律</h2><blockquote><p>网络价值同网络用户数量的平方成正比，即 N 个联结能创造 N 的2次方效益。如果将机器联成一个网络，在网络上，每一个人都可以看到所有其他人的内容，100人每人能看到100人的内容，所以效率是 10的4次方 。10 的4次方人的效率就是 10的8次方 。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;摩尔定律——揭示信息技术进步速度&quot;&gt;&lt;a href=&quot;#摩尔定律——揭示信息技术进步速度&quot; class=&quot;headerlink&quot; title=&quot;摩尔定律——揭示信息技术进步速度&quot;&gt;&lt;/a&gt;摩尔定律——揭示信息技术进步速度&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;集
+      
+    
+    </summary>
+    
+    
+      <category term="定律" scheme="https://github.com/beat-the-buzzer/categories/%E5%AE%9A%E5%BE%8B/"/>
+    
+    
+      <category term="网络" scheme="https://github.com/beat-the-buzzer/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>幸存者偏差</title>
+    <link href="https://github.com/beat-the-buzzer/2023/01/30/laws/survivorship-bias/"/>
+    <id>https://github.com/beat-the-buzzer/2023/01/30/laws/survivorship-bias/</id>
+    <published>2023-01-29T16:00:00.000Z</published>
+    <updated>2023-01-30T13:04:13.658Z</updated>
+    
+    <content type="html"><![CDATA[<p>“幸存者偏差”，是一种以偏概全的思维方式。就字面意思而言，“幸存者偏差”是指在收集信息的时候，只关注幸存者，而忽略死者，因为“死人是不会说话的”，这就会导致收集的信息不全面，进而使得出的结论与实际情况存在偏差。从心理学上讲，“幸存者偏差”是一种比较常见的逻辑谬误，是指通过某些经过筛选的信息得出结论，而没有意识到筛选的过程，也没有意识到被筛选掉的关键信息。</p><h2 id="飞机防护案例"><a href="#飞机防护案例" class="headerlink" title="飞机防护案例"></a>飞机防护案例</h2><p>二战期间，美国军方研究返航的战斗机的损毁情况后，发现这些战斗机都是机翼中弹，所以得出加固机翼的结论。但哥伦比亚大学统计学教授沃德指出，要想救飞行员的性命，更正确的方法是去研究那些被打中并坠毁的飞机。</p><h2 id="读书无用论"><a href="#读书无用论" class="headerlink" title="读书无用论"></a>读书无用论</h2><p>很多人得出“读书无用”的结论，是因为看到有些人“没有好好上学却仍然当老板、赚大钱”，却忽略了那些因为没有好好上学而默默无闻，甚至失魂落魄的人。</p><h2 id="如何应对"><a href="#如何应对" class="headerlink" title="如何应对"></a>如何应对</h2><ol><li><p>建立“概率论”思维。“概率论”告诉大家，在一段较长的时间内，一个事物的表现会趋于平均水平，即“均值回归”，根据这个理论，大家在做判断的时候应该避免盯着某些“小概率事件”不放，而要从更宏观、客观的角度思考问题。</p></li><li><p>避免陷入“简单逻辑”。研究证明，因为大脑每天都要处理很多信息，所以其更喜欢按照简单、省力的方式来运作，而“简单逻辑”便是一个人在面对某件事情时，不假思索就能出现的思维方式。但必须明确的是，“简单逻辑”有一定的好处，比如可以节约精力等，但有时候也可能会让人做出错误的判断，因此，在处理问题的时候，不妨多问自己一个为什么，多和别人进行一次交流。</p></li><li><p>学会拆分任务。“幸存者偏差”等逻辑谬误之所以会出现，一个很重要的原因是人们习惯于关注现存的、眼前的事物，即更相信“眼见为实”，而忽略某些隐藏信息和细节。对此，大家可以通过拆分任务的方式，让自己对任务更加明确，比如在制定目标的时候，可以将大目标拆分成一个个小目标；在完成任务的时候，可以将大任务拆分成一个个具体的步骤。</p></li></ol><p>参考文献：<a href="http://lxjk.people.cn/n1/2018/0608/c404177-30046770.html" target="_blank" rel="noopener">http://lxjk.people.cn/n1/2018/0608/c404177-30046770.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;“幸存者偏差”，是一种以偏概全的思维方式。就字面意思而言，“幸存者偏差”是指在收集信息的时候，只关注幸存者，而忽略死者，因为“死人是不会说话的”，这就会导致收集的信息不全面，进而使得出的结论与实际情况存在偏差。从心理学上讲，“幸存者偏差”是一种比较常见的逻辑谬误，是指通过某
+      
+    
+    </summary>
+    
+    
+      <category term="定律" scheme="https://github.com/beat-the-buzzer/categories/%E5%AE%9A%E5%BE%8B/"/>
+    
+    
+      <category term="心理学" scheme="https://github.com/beat-the-buzzer/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="认知" scheme="https://github.com/beat-the-buzzer/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub SSH认证</title>
+    <link href="https://github.com/beat-the-buzzer/2022/06/01/git-auth/"/>
+    <id>https://github.com/beat-the-buzzer/2022/06/01/git-auth/</id>
+    <published>2022-06-01T15:59:03.000Z</published>
+    <updated>2022-06-01T16:01:02.808Z</updated>
+    
+    <content type="html"><![CDATA[<p>GitHub提交代码现在需要密钥。</p><p><a href="https://blog.csdn.net/chuyouyinghe/article/details/122203309" target="_blank" rel="noopener">参考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;GitHub提交代码现在需要密钥。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/chuyouyinghe/article/details/122203309&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Git" scheme="https://github.com/beat-the-buzzer/tags/Git/"/>
+    
+      <category term="GitHub" scheme="https://github.com/beat-the-buzzer/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LDAP有什么用</title>
+    <link href="https://github.com/beat-the-buzzer/2022/02/20/LDAP/"/>
+    <id>https://github.com/beat-the-buzzer/2022/02/20/LDAP/</id>
+    <published>2022-02-19T16:00:00.000Z</published>
+    <updated>2022-02-20T13:06:07.670Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513890&idx=1&sn=9fead5feff4ecfb8fc1563e13f860b21&chksm=80d67be1b7a1f2f77627eafbae3676571de29104e785e364b78c5fb4d25e883082146b5e64a1&scene=21%23wechat_redirect" target="_blank" rel="noopener">参考资料：码农翻身</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&amp;mid=2665513890&amp;idx=1&amp;sn=9fead5feff4ecfb8fc1563e13f860b21&amp;chksm=80d67be1b7a1f2f
+      
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://github.com/beat-the-buzzer/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="https://github.com/beat-the-buzzer/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Command API</title>
+    <link href="https://github.com/beat-the-buzzer/2022/02/20/command-api/"/>
+    <id>https://github.com/beat-the-buzzer/2022/02/20/command-api/</id>
+    <published>2022-02-19T16:00:00.000Z</published>
+    <updated>2022-06-01T14:55:21.990Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在浏览器上调试的时候，无意中使用了JQuery的一些语句，但是在我的项目中没有引用过JQuery。然后在代码里使用<code>$(&#39;body&#39;)</code>是会报错的</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在浏览器上调试的时候，无意中使用了JQuery的一些语句，但是在我的项目中没有引用过JQuery。然后在代码里使用&lt;code&gt;$(&amp;#39;body&amp;#39;)&lt;/code&gt;是会报错的&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="前端开发" scheme="https://github.com/beat-the-buzzer/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="JavaScript" scheme="https://github.com/beat-the-buzzer/tags/JavaScript/"/>
+    
+      <category term="浏览器" scheme="https://github.com/beat-the-buzzer/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode装机必备的插件(二）</title>
+    <link href="https://github.com/beat-the-buzzer/2022/01/04/vscode-plugins-v2/"/>
+    <id>https://github.com/beat-the-buzzer/2022/01/04/vscode-plugins-v2/</id>
+    <published>2022-01-03T16:00:00.000Z</published>
+    <updated>2022-02-20T12:59:20.258Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Git-History"><a href="#Git-History" class="headerlink" title="Git History"></a>Git History</h3><p>对每次提交的变化、提交人、提交时间等等做个可视化的展示，就相当于我们使用git log命令打印出提交日志一样，这个插件可以让提交日志更好地展示出来。</p><h3 id="GitLens"><a href="#GitLens" class="headerlink" title="GitLens"></a>GitLens</h3><p>Git提交信息精确到行，可以看到每一行是谁提交的。这里要注意：慎重代码格式化，否则整个文件的修改人都是你了。</p><h3 id="KoroFileHeader"><a href="#KoroFileHeader" class="headerlink" title="KoroFileHeader"></a>KoroFileHeader</h3><p> 在VSCode中生成文件头部注释和函数注释，可以看到文件是在何时，由何人进行了修改。</p><blockquote><p>To Be Continued!</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Git-History&quot;&gt;&lt;a href=&quot;#Git-History&quot; class=&quot;headerlink&quot; title=&quot;Git History&quot;&gt;&lt;/a&gt;Git History&lt;/h3&gt;&lt;p&gt;对每次提交的变化、提交人、提交时间等等做个可视化的展示，就相当于我们
+      
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://github.com/beat-the-buzzer/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="VSCode" scheme="https://github.com/beat-the-buzzer/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022一季度OKR</title>
+    <link href="https://github.com/beat-the-buzzer/2022/01/03/okr-2022-q1/"/>
+    <id>https://github.com/beat-the-buzzer/2022/01/03/okr-2022-q1/</id>
+    <published>2022-01-02T16:00:00.000Z</published>
+    <updated>2022-01-04T16:28:12.380Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="2022年大目标"><a href="#2022年大目标" class="headerlink" title="2022年大目标"></a>2022年大目标</h3><p>希望能完成职业生涯的蜕变</p><h3 id="OKR详情"><a href="#OKR详情" class="headerlink" title="OKR详情"></a>OKR详情</h3><p>目标：关注身心健康，提升身体素质和精神状态</p><p>关键结果1：饮食：不错过每一顿，月均垃圾食品食用次数不超过2次</p><p>关键结果2：运动：日均步数10000步，每周一次爬山或其他高强度运动</p><p>关键结果3：睡眠：平均入睡时间在12:30之前，非必要情况下不超过1:00入睡</p><p>关键结果4：心理健康：具体指标待定</p><p>目标：持续学习，提升竞争力</p><p>关键结果1：每周一次进行有效学习，需要输出读书笔记、学习文档、Demo任何一种产出形式</p><p>关键结果2：学习一种完整的新技术，并且应用到平时的工作中，在工作中进行分享</p><p>目标：劳逸结合，适当娱乐，调节工作和生活</p><p>关键结果1：学会简单的视频剪辑，每月至少剪辑2个视频并且进行发布</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;2022年大目标&quot;&gt;&lt;a href=&quot;#2022年大目标&quot; class=&quot;headerlink&quot; title=&quot;2022年大目标&quot;&gt;&lt;/a&gt;2022年大目标&lt;/h3&gt;&lt;p&gt;希望能完成职业生涯的蜕变&lt;/p&gt;
+&lt;h3 id=&quot;OKR详情&quot;&gt;&lt;a href=&quot;#OKR详
+      
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://github.com/beat-the-buzzer/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="OKR" scheme="https://github.com/beat-the-buzzer/tags/OKR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书笔记系列——全职高手</title>
+    <link href="https://github.com/beat-the-buzzer/2021/04/18/reading-tips-4/"/>
+    <id>https://github.com/beat-the-buzzer/2021/04/18/reading-tips-4/</id>
+    <published>2021-04-17T16:00:00.000Z</published>
+    <updated>2021-04-18T07:02:43.437Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/reading-tips/reading-tips-4.jpeg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p><a href="https://gitee.com/beat-the-buzzer/reading-tips/raw/main/%E5%85%A8%E8%81%8C%E9%AB%98%E6%89%8B.pdf" target="_blank" rel="noopener">点击下载读书笔记的PDF</a></p><p><strong>书名：《全职高手》</strong></p><p><strong>作者：蝴蝶蓝</strong></p><hr><h1 id="【内容简介】"><a href="#【内容简介】" class="headerlink" title="【内容简介】"></a>【内容简介】</h1><ul><li>网游荣耀中被誉为教科书级别的顶尖高手叶修，因为种种原因遭到俱乐部的驱逐，离开职业圈的他栖身于一家网吧成了一个小小的网管，但是，拥有十年游戏经验的他，在荣耀新开的第十区重新投入了游戏，带着对往昔的会议，和一把未完成的自制银武器千机伞，开始了重返巅峰之路。</li></ul><hr><h1 id="【精彩摘抄】"><a href="#【精彩摘抄】" class="headerlink" title="【精彩摘抄】"></a>【精彩摘抄】</h1><ol><li>如果喜欢，就把这一切当做是荣耀，而不是炫耀。</li><li>攻略只是前人总结的经验而已，里面所写的东西只代表当下。一篇攻略，过上一年两年，甚至几个月内就会有人发现比攻略中更好的方案。这不仅仅是游戏更新的缘故，更重要的是玩家的技术水平在不断地提高进步。记录这种东西就是为了被打破而存在的，巅峰永远是存在于未来而不是过去。攻略只是参考，不应该一味参照，那样是没法取得进一步突破的。</li><li>君莫笑有能力刷出这个副本记录，他又为什么不去刷？系统设定出来这个竞争，可不就是让人去刷去竞争的吗？因为大公会需要这个记录来证明自己的实力，所以就不许君莫笑去杀？这又是一个多么可笑的逻辑。</li><li>你也是职业选手。</li><li>他的行为在针对的掩盖下，藏着的是恐惧、认可和信赖。因为害怕，他要跑去刺探对方的情况；因为认可，他偷回对方的打法就直接使用，因为他相信对方的打法已经是最佳的选择，不会有更优秀的战术。</li><li>是谁是谁是谁？跑什么，一堆33级的，连我一个27级的小剑客都怕吗？我要是垃圾，你们是不是连垃圾都不如？垃圾都不如的是什么，是不可回收的垃圾，完全没有利用价值的废弃物！没错，就是正在逃跑的你们！1、2、3、4、5、6、7、8、9、10、11、12、13、14，14坨垃圾，跑得很整齐啊！排队求回收吗？但你们忘了你们是不能回收的吗？有点觉悟，挖个坑把自己埋了吧！不要再继续污染环境了，你们存在的每一秒钟……</li><li>想要提高自己的话，这些单调乏味的练习是免不了的。道理就是如此。</li><li>不要试图在高速攻击过程中去避免失误。可以先慢一慢，保证没有失误，然后再尝试性地提高手速，循序渐进，不要急。</li><li>机会是留给有准备的人的，而他呢？此时根本就还没有准备好，就急着去想去抓住一些看起来不错的机会，结果自然只能是跌得头破血流。</li><li>我的终点完不完美，由我自己决定。</li><li>太弱的，会被轻视；太强的，会被排挤。只有档次差不多的，才能真正的和谐与共。</li><li>只有拥有了绝对的自信，才有可能在那种推翻过去一切努力的打击后，轻松从容地说出这样一句话。而这，还不过是个十几岁的少年。</li><li>那还不是因为老夫一见你就发现你这家伙獐头鼠目贼眉鼠眼，以我街头的眼光一眼就看出你周身上下弥漫着犯罪分子的气质。这要不让你拿个冠军指不定你这变态会因此产生报复心理给社会安定团结制造极大的负担，所以为了国家为了人民，我也只好忍痛放水，让你这混蛋拿了联盟的冠军，而且一拿就是三次，这才制止了无数的悲剧。看来现在你也长大了，懂事了，老夫也不用你报答，过来给爷磕一个聊表一下寸心吧！</li><li>坦白说，我们为之奋斗的东西，其实是很私人的理想，没有谁是为了取悦任何人才会这么做的。在取悦着你们的，只是联盟而已，我想你不要太会错意。你们的支持、鼓励，我们当然很感激，也会很感动，但是还是要很无情地说一句：为了你们在打比赛，这话有点假，至少对于我来说，完全不是。</li><li>小记者看起来人还蛮老实的，不然冲你撞伤我们老板，起码下你一条大腿。</li><li>他们这些玩战术的心都脏。</li><li>是啊！职业选手，都不应该喝酒的。</li><li>因为这一场比赛，我们准备了足足一年。</li><li>机会留给有准备的人。这道理老在说，谁都会说。但是当人人都有准备的时候，机会给谁呢？自然就是更有准备的那一个。</li><li>“我懂了，怪不得队长经常强调手速要收放自如的问题。”卢瀚文说。<br>“哈哈哈，因为他不需要面对这一难题啊！”黄少天说。</li><li>在保席的基础上，力争总冠军吧！</li><li>做不到，我就退出职业圈。</li><li>选择有时候无关对错，就看你有没有毅力去执行。</li><li>这些人，永远把自己摆在道德的至高点上，随意对别人指手划脚，好像不符合他们意志的做法，就一定是错的一样。他们此时个个说得好像都是为了唐柔好一般，但常先很清楚，他们无非是想看到唐柔难堪，想看到这个强硬的选手在他们面前低头而已，以此表现他们话语权的权威。</li><li>需要严肃批评的，是之后两位上场选手，两个人，却没有拿下对方一人？尤其是第三顺位出场的守擂大将方锐，战队花这么多钱把你弄来，是让你当废物点心的吗？连个王杰希都搞不定？</li><li>别在里面绕了，直接外面见，我们赶时间。</li><li>“放心吧！”魏琛说着，“我是一定会偷袭你的。”</li><li>我去，你敢不敢不用治疗？破技能回又回不了多少血除非关键时刻的一下瞬发其他时候你以为有用吗有用吗？我以为我这一剑劈上去伤害是多少啊？完全忽略不计你那点治疗你知道吗？你就不能专注一下攻击不要做这些杂七杂八的事情破坏比赛质量拉低对决的经典程度啊？</li><li>因为他是队长，他的肩上有着比其他人更多的职责和义务。他这个刺客，注定了不能是一个孤单行走的杀手，因为他代表的首先并不是他自己，而是一整支战队。</li><li>冠军，并不单单只是美丽和荣耀，还很残酷。得到它的，得不到它的，都出付出很多很多。</li><li>有趣？什么是有趣？热血豪迈地正面碰撞，激烈刺激的手速狂飙就叫有趣？那只是你们观众的定义罢了。对于每一个职业选手来说，他们所选择的战斗方式，就是他们认为最有趣的。或许也会有一些人，会刻意打成取悦观众的风格，这大概是这个圈子经历商业推广后所形成的风气。</li><li>如果他们当你是榜样，而不是靠山的话。</li><li>这可是有黄少天的比赛啊！现在是开场阶段又不用交手，公共频道里怎么会没有消息？啊！都已经过去七秒了，还是一条消息也没有！这是怎么回事？不会是出事了吧？比赛席里发生什么问题了吗？难道黄少天突然晕倒了？有没有人去看看啊！</li><li>失误这种东西，你怎么在意也无法完全避免的，反倒有可能让自己在比赛中崩得过紧。放轻松，只要集中精神，追求胜利，尽最大努力做到最好，保持这样的信念就行了。不要太在意失误这种细节。</li><li>这就好比考试，有些人是有能力考100分的，但经常因为这样那样的疏忽，最终只得了90分；而罗辑，就是一个只能考90分的人，而最后，他考出的成绩就是90分。如此一来，他的实际表现，和那些有能力考100最终却考出90分的人可就完全没有区别了。</li><li>荣耀，只会属于那些看重它的人。</li><li>这是喻文州的风格，也是蓝雨战队的战术风格，自从他们战队不可或缺的灵魂人物，前队长魏琛退役以后，蓝雨就走上了崛起之路……</li><li>我可是一个看着自己队友一个个都被杀死也能隐忍不动的耐心高手！</li><li>能让喻文州站到如此高度，没有万分之一是因为他的缺陷，而是他为了弥补缺陷，在其他方面所做出的努力，所体现出的才能。</li><li>再怎么精彩，也不过是避开了一次攻击而已。</li><li>冠军只有一个，这很残酷；但是，却每年都有一个，这，是永不停歇的希望。</li><li>每一个失败者，最终似乎都非得再经历一轮深深地抹黑，好像不这样就不足以映衬他们失败者的身份似的。</li><li>对于被冷落，乔一帆没有什么怨恨；但是对被重视，他肝脑涂地。</li><li>你远比自己想象的要出色！</li><li>目光不要局限在这一个对手身上，你的对手会有很多。向他学，目的不是单纯地为了战胜他，而是为了让你继续提高，收获更多的胜利。</li><li>只是很遗憾，每一次都不可能让所有人收获所期待的结果，每一次总会有人在中途就黯然退场。</li><li>在这个赛场上，努力是最不值得拿出来夸口的东西，因为这只是基本，是人人都会做到的，是最底层最渺小的东西。搞清楚这一点，再向高处攀登吧！</li><li>人生的路可是很长的……</li><li>我可是职业选手。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                   
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://github.com/beat-the-buzzer/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="https://github.com/beat-the-buzzer/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试总结</title>
+    <link href="https://github.com/beat-the-buzzer/2021/03/23/interview-conclusion/"/>
+    <id>https://github.com/beat-the-buzzer/2021/03/23/interview-conclusion/</id>
+    <published>2021-03-22T16:00:00.000Z</published>
+    <updated>2021-04-03T14:25:41.567Z</updated>
+    
+    <content type="html"><![CDATA[<p>经过一周多的时间的面试，工作方面终于是尘埃落定，下面就简单总结一下今年面试的情况和经验。</p><h3 id="简历的亮点"><a href="#简历的亮点" class="headerlink" title="简历的亮点"></a>简历的亮点</h3><p>简历中的亮点是十分重要的，它直接决定面试官是否有话可问，也直接反应了最近几年我们的工作质量。如果每天都仅仅是完成自己的开发任务，我觉得是远远不够的。</p><p>我记得两年之前我的简历亮点是：阅读过XXX框架的源码，但是很多相关的问题在实际面试的时候没有回答出来，导致所谓的“亮点”起到了反作用。</p><p>今年的面试，简历里的亮点的主要有这几个，也是受到提问最多的几点：</p><ol><li>带领团队进行 Code Review</li></ol><p>Code Review，这个是确实存在的，只不过没有我回答得那么深，但是也差不了多少。我主要是从三个层面回答这个问题：</p><ul><li><p>对于提交规范的检查，因为很多人喜欢在提交代码的时候，非常随意地把一天写的代码一股脑提交上去，这样在后面定位问题的时候，很难找到我们修改的部分。因此，我们制定了一个规范，就是每次提交的时候，按bug单号提交修改的部分，提交信息包括修改的bug单号、修复的版本号、修改内容。后续有面试官提出，可以写一个Git的钩子，让机器去检查。不过后来我也想过，如果是机器检查，也很难完全查出来规范。</p></li><li><p>对于代码书写规范的检查，这个一般都是使用<code>ESLint</code>工具进行检查，我后面加了一点内容，就是把这个规范放到自动化编译平台上面去，这样每次打包的时候，如果代码不符合规范，就会打包出错。事实上，我的第一家公司就是这么操作的。</p></li><li><p>对于代码文档、注释方面的规范，这个是需要把每个人写的代码投影出来，主要检查一些方法的注释是否规范，一些复杂的业务逻辑是否画了流程图，一些需求文档的地址是否写在README里面，等等。</p><blockquote><p>这个问题我个人觉得自己的发挥还是不错的，算是一个加分项。</p></blockquote></li></ul><ol start="2"><li><p>负责维护前端组件库</p><ul><li><p>是否是从零开始开发</p></li><li><p>开发一个公共组件的思路和注意事项</p></li></ul><blockquote><p>事实上，我不太清楚面试官问的重点和目的在哪</p></blockquote></li><li><p>负责招聘面试</p><ul><li>面试的时候主要关注哪些点</li></ul><blockquote><p>这个只有少部分的面试官问到了这个问题</p></blockquote></li></ol><h3 id="基础知识的掌握"><a href="#基础知识的掌握" class="headerlink" title="基础知识的掌握"></a>基础知识的掌握</h3><ol><li><p>闭包以及闭包的作用</p><ul><li><p>直到这次面试官问这个问题之前，我都不是很确定这个问题到底要如何回答。这次面试官问了这个问题之后，我又查了一些资料，进行了更深层次的理解，终于有所收获。</p></li><li><p>关于闭包，网上有一句话值得我深思：如果你觉得一个概念很难理解，那一定是因为你理解错了。</p></li></ul></li><li><p>JS有哪些数据类型，如何进行类型判断</p><ul><li><p>这个问题基本上都是必考题或者基础题，一旦出错，基本上就要告别这次面试了。</p></li><li><p>后来问了一个Object.prototype.toString.call 这个方法判断数据类型的原理是什么，这个打得我措手不及。</p></li></ul></li><li><p>为什么数字、字符串可以像对象那样去访问属性或者调用方法？</p><ul><li>包装对象，貌似《你不知道的JavaScript》中有这个概念 </li></ul></li><li><p>普通函数和箭头函数有什么区别</p><ul><li><p>this指向</p></li><li><p>后来补充一个，arguments对象</p></li></ul></li></ol><h3 id="一些代码题"><a href="#一些代码题" class="headerlink" title="一些代码题"></a>一些代码题</h3><ol><li><p>深拷贝和浅拷贝，以及如何实现一个深拷贝</p><ul><li><p>貌似第一场就问到了这个问题，但是当时我没有任何准备，所以惨败。后来仔细地看了相关方案，发现没有我想象中那么简单。其实不仅仅是要解决问题，更是要说好问题出现的原因和解决问题的过程。</p></li><li><p>例如，我们平时工作中，可能就只是简单地先<code>stringify</code>再<code>parse</code>，就可以解决项目中99.99%的问题，但是作为面试题，不能仅仅这么回答就完了，我们需要一步一步朝着完美方案去靠近。比如，我们之前的方案，一些特殊类型的数据，例如数组、日期，就会在转换的时候就会出问题，为了解决这个问题，我们需要换个思路，比如使用遍历对象的方式，如果待遍历的数据是个对象，就递归调用这个方法，否则，就把这个属性进行赋值操作。其实递归调用一般我们也都能想到，但是还有一个问题就是循环引用，比如对象的一个属性值是这个原始对象本身，我们如果不处理这样的情况，就会出现递归死循环的情况，所以我们需要一个空间，把拷贝过的对象存起来，每次拷贝对象之前，看看这个对象有没有存过，可以使用ES6的<code>Map</code>或者<code>WeakMap</code>。</p></li><li><p>其实面试官在问我深拷贝之前，还问了ES6的Map数据结构，没想到这两个问题是有一定联系的。</p></li></ul></li><li><p>flat 数组扁平化</p><ul><li><p>这个问题在一次视频面试中被要求现场手写代码，当时也没有看，所以又惨败。</p></li><li><p>其实实现的思想就是递归，不过也有其他的思路，比如转成字符串，然后把所有的方括号都清除，然后再在左右拼接一个括号，再转成数组。</p></li></ul></li><li><p>数组去重的思路</p><ul><li><p>这个问题我有特意准备过，因为之前的公司有一道笔试题就是这个。当时大多数人都写了用ES6的<code>Set</code>去进行转换，但是我觉得这应该是个算法题，不是方法题。</p></li><li><p>Set 数据结构</p></li><li><p>循环数组，把数组push到一个临时数组里，push之前需要判断一下当前数据是否已经存在于临时数组里</p></li><li><p>循环数组，判断每一项第一次出现的位置是否等于当前的位置，如果不等于，就需要剔除这条数据。</p></li><li><p>利用对象的key是唯一的这个特性，把数组的每一项都变成一个空对象的key，但是这种方式也有局限性，就是对象的key只能是字符串，因此我们为了解决这个问题，需要去使用ES6的<code>Map</code>数据结构，使得其他类型的数据也可以作为<code>Map</code>的key，并且是唯一的，这样就实现了去重。</p></li></ul></li><li><p>CSS 实现子元素相对于父元素水平垂直居中</p><ul><li>这个也是我平时喜欢问的问题，所以就没有问题。</li></ul></li></ol><blockquote><p>这一类题目，只能平时慢慢积累了。</p></blockquote><h3 id="常用框架相关"><a href="#常用框架相关" class="headerlink" title="常用框架相关"></a>常用框架相关</h3><ol><li><p>typeof JQuery/Vue/React 分别是什么</p><ul><li><p>这个是我遇到的最特别的问题，通过<code>JQuery</code>和<code>Vue</code>的使用方式，我知道它们的写法是和函数一样的，所以知道这两个是<code>function</code>，但是<code>React</code>我不是很确定。根据用法，我们一般都是写<code>React.Component</code>，所以应该是<code>object</code>。</p></li><li><p>然后还问了一个<code>class A{}</code>，然后<code>typeof A</code>，我也不是很确定，最终尝试一下，是<code>function</code>，后来编译了一下class，最后确实是个<code>function</code>。</p></li></ul></li><li><p>双向绑定和单项数据流</p><ul><li><p>其实对这两个的概念我一直都很模糊，直到有个面试官解答了这个问题。</p></li><li><p>双向绑定和单项数据流，是两个不同的概念。</p></li><li><p>Vue、React中都有单项数据流，就是改变数据或者调用setState的时候，DOM也会跟着去更新。</p></li><li><p>双向绑定，拿Vue来说，就是Vue提供了一个语法糖，用<code>v-model</code>的写法，使得我们在输入的时候，改变了DOM，同时也改变了数据，本质上，我们可以使用<code>oninput</code>去监听输入然后进行赋值操作。后来问到如果我们不想用oninput，要怎么做，这个因为平时我对此没有什么了解，所以惨败。</p></li></ul></li></ol><h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><ol><li><p>Webpack相关</p><ul><li><p>webpack里面有哪些接口</p></li><li><p>如何减小代码压缩的体积</p></li></ul></li></ol><p>貌似只有最开始的一家公司问了好多关于Webpack的，我完全招架不住。</p><ol start="2"><li><p>其他</p><ul><li>主要讲了一下自动化编译平台里面的一些东西</li></ul></li></ol><h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p>关于计算机网络，大部分都是第二轮 CTO 或者技术主管的面试会遇到。</p><ol><li><p>HTTP的状态码：304、401代表什么</p><ul><li>经过一次面试之后，我就把《图解HTTP》简单看了一遍，把一些比较关键的东西记了一下</li></ul></li><li><p>HTTP缓存有哪些方式，是否了解协商缓存</p><ul><li>第二轮面试经常会被问到的问题，也会和其他问题关联在一起，比如性能优化的方案，关于缓存，请求头等等</li></ul></li><li><p>HTTP请求头有哪些</p></li><li><p>HTTP2.0 相比于 HTTP1.1 做了哪些优化</p><ul><li>也是图解HTTP里面可以找到的，只不过平时工作不会去注意这方面的东西。 </li></ul></li><li><p>项目部署的更新机制，增量更新，缓存入口等等</p><ul><li>这些其实都是和平时的工作密不可分的，要充分理解平时的工作内容，就算自己不参与平台的建设，也需要稍微了解一下。</li></ul></li></ol><h3 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h3><ol><li><p>面试前的准备很重要，问的东西会比较全面，很多知识可能是盲区，但是也需要去了解一下，不要无话可说。</p></li><li><p>盲区之所以叫盲区，是因为我们自己意识不到。所以我们可以通过各种各样的面试练习去找到我们的盲区。</p></li><li><p>基础知识的积累很重要，有些非常底层的东西，如果深入了解，可能会有其他发现。</p></li><li><p>平时的工作，过程很重要，或许平时我们工作的时候注重的是结果，但是面试的时候，拼的是我们工作的过程。对过程的理解（不是了解），理解平时的一些操作的原因和原理。</p></li><li><p>心态很重要，我们可能会经历很多挫折，没有人喜欢失败，但是面试总会经历很多失败，有时候甚至会怀疑自己，但这些，都是磨炼，不是折磨，我们要正确面对和认识我们所有的经历，从中获得提高。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;经过一周多的时间的面试，工作方面终于是尘埃落定，下面就简单总结一下今年面试的情况和经验。&lt;/p&gt;
+&lt;h3 id=&quot;简历的亮点&quot;&gt;&lt;a href=&quot;#简历的亮点&quot; class=&quot;headerlink&quot; title=&quot;简历的亮点&quot;&gt;&lt;/a&gt;简历的亮点&lt;/h3&gt;&lt;p&gt;简历中的亮点
+      
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端工程化——Webpack简单总结</title>
+    <link href="https://github.com/beat-the-buzzer/2021/03/11/webpack-basic/"/>
+    <id>https://github.com/beat-the-buzzer/2021/03/11/webpack-basic/</id>
+    <published>2021-03-10T16:00:00.000Z</published>
+    <updated>2021-03-11T07:24:58.357Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是webpack，使用webpack有什么好处"><a href="#什么是webpack，使用webpack有什么好处" class="headerlink" title="什么是webpack，使用webpack有什么好处"></a>什么是webpack，使用webpack有什么好处</h3><p>webpack 是个静态模块打包工具。在 webpack 看来，项目里所有资源皆模块，利用资源依赖关系，把各模块之间关联起来。</p><p>简单讲就: webpack 对有依赖关系的多个模块文件进行打包处理后，生成浏览器可以直接高效运行的资源。</p><p>通过<code>入口文件</code>开始，利用<code>递归</code>找到直接依赖或间接依赖的所有模块，并在内部构建一个能映射出项目所需的所有模块的依赖图，并进行<code>webpack</code>打包生成一个或多个<code>bundle</code>文件。</p><h3 id="webpack输出了哪些？"><a href="#webpack输出了哪些？" class="headerlink" title="webpack输出了哪些？"></a>webpack输出了哪些？</h3><ul><li><p>entry</p></li><li><p>output</p></li><li><p>module</p></li><li><p>plugins</p></li></ul><h3 id="什么是-loader-什么是-plugin"><a href="#什么是-loader-什么是-plugin" class="headerlink" title="什么是 loader? 什么是 plugin?"></a>什么是 loader? 什么是 plugin?</h3><ul><li><p>loader：webpack只能解析JavaScript文件，而loader作用是让webpack拥有了加载和解析非JS文件的能力。使用module.rules对loader进行配置。</p></li><li><p>plugin：在webpack构建流程中的特定时机注入扩展逻辑，让它具有更多的灵活性。每个plugin都是一个实例，通过构造函数传递参数。</p></li></ul><h3 id="分别介绍-bundle，chunk，module-是什么"><a href="#分别介绍-bundle，chunk，module-是什么" class="headerlink" title="分别介绍 bundle，chunk，module 是什么"></a>分别介绍 bundle，chunk，module 是什么</h3><p>bundle：是由 webpack 打包出来的文件，</p><p>chunk：代码块，一个 chunk 由多个模块组合而成，用于代码的合并和分割。</p><p>module：是开发中的单个模块，在 webpack 的世界，一切皆模块，一个模块对应一个文件，webpack 会从配置的 entry 中递归开始找出所有依赖的模块。</p><h3 id="模块热更新（替换）HMR是什么"><a href="#模块热更新（替换）HMR是什么" class="headerlink" title="模块热更新（替换）HMR是什么"></a>模块热更新（替换）HMR是什么</h3><p>当你对代码修改并保存后，将会对代码进行重新打包，并将改动的模块发送到浏览器端，浏览器用新的模块替换掉旧的模块，去实现局部更新页面而非整体刷新页面。</p><h3 id="webpack-的构建流程是什么"><a href="#webpack-的构建流程是什么" class="headerlink" title="webpack 的构建流程是什么?"></a>webpack 的构建流程是什么?</h3><ul><li><p>初始化参数：比如<code>npm start</code>、<code>webpack -w</code></p></li><li><p>开始编译：读取webpack的配置</p></li><li><p>确定入口，entry，找出入口以及他们的依赖文件</p></li><li><p>编译模块：从入口文件出发，调用所有配置的 Loader 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理；</p></li><li><p>完成模块编译：在使用 Loader 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系；</p></li><li><p>输入资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 Chunk，再把每个 Chunk 转换成一个单独的文件加入到输出列表。</p></li><li><p>输入完成</p><h3 id="如何提高webpack的构建速度？"><a href="#如何提高webpack的构建速度？" class="headerlink" title="如何提高webpack的构建速度？"></a>如何提高webpack的构建速度？</h3></li><li><p>使用CommonsChunkPlugin来提取公共代码</p></li><li><p>通过externals配置来提取常用库</p></li><li><p>利用 DllPlugin 和 DllReferencePlugin 预编译资源模块 通过 DllPlugin 来对那些我们引用但是绝对不会修改的npm包来进行预编译，再通过 DllReferencePlugin 将预编译的模块加载进来。</p></li><li><p>使用 Happypack 实现多线程加速编译</p></li><li><p>使用 webpack-uglify-parallel 来提升 uglifyPlugin 的压缩速度。 原理上 webpack-uglify-parallel 采用了多核并行压缩来提升压缩速度</p></li><li><p>使用 Tree-shaking 和 Scope Hoisting 来剔除多余代码</p><h3 id="webpack与grunt、gulp的不同"><a href="#webpack与grunt、gulp的不同" class="headerlink" title="webpack与grunt、gulp的不同"></a>webpack与grunt、gulp的不同</h3></li><li><p>grunt和gulp是基于任务和流（Task、Stream）的。类似jQuery，找到一个（或一类）文件，对其做一系列链式操作，更新流上的数据， 整条链式操作构成了一个任务，多个任务就构成了整个web的构建流程。</p></li><li><p>webpack是基于入口的。webpack会自动地递归解析入口所需要加载的所有资源文件，然后用不同的Loader来处理不同的文件，用Plugin来扩展webpack功能。（依赖关系）</p><h3 id="如何在项目中实现按需加载"><a href="#如何在项目中实现按需加载" class="headerlink" title="如何在项目中实现按需加载"></a>如何在项目中实现按需加载</h3></li><li><p>对于 Element-UI 或者 Ant-Design，可以使用 babel-plugin-component 和 babel-plugin-import进行配置。</p></li><li><p>通过import()语句来控制加载时机，webpack内置了对于import()的解析，最终生成的chunk是一个Promise。所以我们最终需要在我们的环境中新增Promise的polyfill。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;什么是webpack，使用webpack有什么好处&quot;&gt;&lt;a href=&quot;#什么是webpack，使用webpack有什么好处&quot; class=&quot;headerlink&quot; title=&quot;什么是webpack，使用webpack有什么好处&quot;&gt;&lt;/a&gt;什么是webpack，
+      
+    
+    </summary>
+    
+    
+      <category term="工程化" scheme="https://github.com/beat-the-buzzer/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+      <category term="工程化" scheme="https://github.com/beat-the-buzzer/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+      <category term="webpack" scheme="https://github.com/beat-the-buzzer/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http缓存：强制缓存和协商缓存</title>
+    <link href="https://github.com/beat-the-buzzer/2021/03/11/http-cache/"/>
+    <id>https://github.com/beat-the-buzzer/2021/03/11/http-cache/</id>
+    <published>2021-03-10T16:00:00.000Z</published>
+    <updated>2021-03-12T07:56:35.896Z</updated>
+    
+    <content type="html"><![CDATA[<p>cache-control：缓存控制，可以设置有效期，可以跳过强缓存，可以不缓存。</p><p>etag 和 last-modified：设置协商缓存，需要客户端和服务端共同处理。</p><p>发请求–&gt;看资源是否过期–&gt;过期–&gt;请求服务器–&gt;服务器对比资源是否真的过期–&gt;没过期–&gt;返回304状态码–&gt;客户端用缓存的老资源。</p><p>我们可以在性能优化的问题里提到强制缓存和协商缓存，这个对于前端开发者来说是一个亮点。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;cache-control：缓存控制，可以设置有效期，可以跳过强缓存，可以不缓存。&lt;/p&gt;
+&lt;p&gt;etag 和 last-modified：设置协商缓存，需要客户端和服务端共同处理。&lt;/p&gt;
+&lt;p&gt;发请求–&amp;gt;看资源是否过期–&amp;gt;过期–&amp;gt;请求服务器–&amp;gt;服
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://github.com/beat-the-buzzer/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="http" scheme="https://github.com/beat-the-buzzer/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP请求类型总结</title>
+    <link href="https://github.com/beat-the-buzzer/2021/03/10/http-type/"/>
+    <id>https://github.com/beat-the-buzzer/2021/03/10/http-type/</id>
+    <published>2021-03-09T16:00:00.000Z</published>
+    <updated>2021-03-11T01:40:26.716Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="GET-获取资源"><a href="#GET-获取资源" class="headerlink" title="GET: 获取资源"></a>GET: 获取资源</h3><p>GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器 端解析后返回响应内容。</p><p>例如：请求图片资源、html资源</p><h3 id="POST-传输实体主体"><a href="#POST-传输实体主体" class="headerlink" title="POST: 传输实体主体"></a>POST: 传输实体主体</h3><p>POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用 POST 方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。</p><p>GET参数会带到URL上，POST参数会放到请求体里面。</p><h3 id="HEAD-获得报文首部"><a href="#HEAD-获得报文首部" class="headerlink" title="HEAD: 获得报文首部"></a>HEAD: 获得报文首部</h3><p>这个类型和GET类似，只不过这个类型是请求头部信息。</p><h3 id="PUT-传输文件"><a href="#PUT-传输文件" class="headerlink" title="PUT: 传输文件"></a>PUT: 传输文件</h3><h3 id="DELETE-删除文件"><a href="#DELETE-删除文件" class="headerlink" title="DELETE: 删除文件"></a>DELETE: 删除文件</h3><h3 id="OPTIONS-询问支持的方法"><a href="#OPTIONS-询问支持的方法" class="headerlink" title="OPTIONS: 询问支持的方法"></a>OPTIONS: 询问支持的方法</h3><p>一般是作为一个试探的请求，比如跨域请求发起的时候，会先发一个OPTIONS的请求。</p><h3 id="TRACE-追踪路径"><a href="#TRACE-追踪路径" class="headerlink" title="TRACE: 追踪路径"></a>TRACE: 追踪路径</h3><h3 id="CONNECT-要求用隧道协议连接代理"><a href="#CONNECT-要求用隧道协议连接代理" class="headerlink" title="CONNECT: 要求用隧道协议连接代理"></a>CONNECT: 要求用隧道协议连接代理</h3><h3 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h3><ol><li>GET 和 POST 有什么区别？</li></ol><p>传输方式不同，GET请求是在URL上，POST是通过请求体。</p><p>安全性不同，GET直接把参数暴露在URL上，所以安全性较差。</p><p>GET是只读的（幂等）</p><ol start="2"><li>PUT 和 POST 有什么区别</li></ol><p>也是幂等性的差别</p><ol start="3"><li><p>HTTP 请求报文是什么样子的</p><ul><li><p>请求行：包括请求类型 URL 协议版本</p></li><li><p>请求头：由键值对组成，包括 User-Agent、Accept、Host等等</p></li><li><p>请求体：请求携带的数据</p></li></ul></li><li><p>HTTP 响应的报文是什么样的</p><ul><li><p>响应行：包括协议版本、状态码、状态短语</p></li><li><p>响应头：响应首部</p></li><li><p>响应体：服务器返回的数据</p></li></ul></li><li><p>首部字段有哪些，有什么作用</p><p>通用首部字段 请求首部字段 响应首部字段 实体首部字段</p><ul><li><p>cache-control 控制缓存</p></li><li><p>connection 连接管理 keep-alive</p></li><li><p>transfer-encoding 报文的编码格式</p></li></ul><p>使用首部字段是为了给浏览器和服务器提供报文主体大小、所使用的语言、认证信息等内容。</p></li></ol><p>6、HTTPS是如何保证安全的？</p><p>https是安全版的http，因为http协议的数据都是明文进行传输的，所以对于一些敏感信息的传输就很不安全。</p><p>对称加密：加密密钥和解密密钥一样，不够安全。</p><p>非对称加密：公钥加密，私钥解密，性能不好。</p><p>结合这两种方式，使用对称加密，但是对称加密的密钥使用非对称加密进行处理。</p><p>我们需要一个可靠的中间人，也就是安全的第三方颁发证书（CA），确保密钥不会被替换。</p><p>为了保证证书的安全，我们使用单项散列函数，例如sha512去保证数据的完整性，也就是数字签名。</p><ol start="7"><li><p>HTTP2相对于HTTP1.x有什么优势和特点？</p><ul><li><p>多路复用，把把 HTTP 协议通信的基本单位缩小为一个一个的帧，使得在请求统一域名下的多个文件更加高效。共享一个连接。</p></li><li><p>首部压缩（Header Compression）</p></li><li><p>服务端推送</p></li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;GET-获取资源&quot;&gt;&lt;a href=&quot;#GET-获取资源&quot; class=&quot;headerlink&quot; title=&quot;GET: 获取资源&quot;&gt;&lt;/a&gt;GET: 获取资源&lt;/h3&gt;&lt;p&gt;GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器 端解析后返回响应内
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://github.com/beat-the-buzzer/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="http" scheme="https://github.com/beat-the-buzzer/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP状态码总结</title>
+    <link href="https://github.com/beat-the-buzzer/2021/03/10/http-code/"/>
+    <id>https://github.com/beat-the-buzzer/2021/03/10/http-code/</id>
+    <published>2021-03-09T16:00:00.000Z</published>
+    <updated>2021-03-10T07:58:30.590Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是状态码"><a href="#什么是状态码" class="headerlink" title="什么是状态码"></a>什么是状态码</h3><p>HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。</p><h3 id="状态码的类别"><a href="#状态码的类别" class="headerlink" title="状态码的类别"></a>状态码的类别</h3><table><thead><tr><th align="center">状态码</th><th align="center">类别</th><th align="center">原因</th></tr></thead><tbody><tr><td align="center">1XX</td><td align="center">信息性状态码</td><td align="center">接收的请求正在处理</td></tr><tr><td align="center">2XX</td><td align="center">成功状态码</td><td align="center">请求正常处理完毕</td></tr><tr><td align="center">3XX</td><td align="center">重定向状态码</td><td align="center">需要进行附加操作以完成请求</td></tr><tr><td align="center">4XX</td><td align="center">客户端错误状态码</td><td align="center">服务器无法处理请求</td></tr><tr><td align="center">5XX</td><td align="center">服务器错误状态码</td><td align="center">服务器处理请求出错</td></tr></tbody></table><h3 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h3><h4 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h4><p>表示客户端发来的请求在服务器端被正常处理了</p><h4 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h4><p>表示服务器接收的请求以及成功处理，返回的报文里不存在任何实体，因此返回204之后，页面不会进行更新。</p><p>一般只需要从客户端往服务器发送信息，客户端不需要发送信息的情况下，使用这个状态码。</p><p>应用场景：客户端埋点，收集用户操作习惯。</p><h4 id="206-Partial-Content"><a href="#206-Partial-Content" class="headerlink" title="206 Partial Content"></a>206 Partial Content</h4><p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由 Content-Range 指定范围的实体内容。</p><p>应用场景：下载文件</p><h3 id="3XX-重定向"><a href="#3XX-重定向" class="headerlink" title="3XX 重定向"></a>3XX 重定向</h3><h4 id="301-Moved-Permanently"><a href="#301-Moved-Permanently" class="headerlink" title="301 Moved Permanently"></a>301 Moved Permanently</h4><p>永久重定向，表示请求的资源已经被分配了新的URI，以后应使用资源现在所指的URI。</p><h4 id="302-Not-Found"><a href="#302-Not-Found" class="headerlink" title="302 Not Found"></a>302 Not Found</h4><p>临时性重定向。该状态码表示请求的资源已被分配了新的 URI，希望 用户(本次)能使用新的 URI 访问。</p><h4 id="303-See-Other"><a href="#303-See-Other" class="headerlink" title="303 See Other"></a>303 See Other</h4><p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。</p><h4 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h4><p>该状态码表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。</p><p>常见的应用就是和缓存相关。</p><h3 id="4XX-客户端错误"><a href="#4XX-客户端错误" class="headerlink" title="4XX 客户端错误"></a>4XX 客户端错误</h3><h4 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h4><p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。</p><h4 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h4><p>该状态码表示发送的请求需要有通过 HTTP 认证(BASIC 认证、 DIGEST 认证)的认证信息。</p><p>需要进行身份认证</p><h4 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h4><p>该状态码表明对请求资源的访问被服务器拒绝了。服务器端没有必要 给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就能让用户看到了。</p><p>比如用户没有权限访问某些资源，服务器就是返回这个错误信息。</p><h4 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h4><p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服 务器端拒绝请求且不想说明理由时使用。</p><h3 id="5XX服务器错误"><a href="#5XX服务器错误" class="headerlink" title="5XX服务器错误"></a>5XX服务器错误</h3><h4 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h4><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。</p><h4 id="503-Service-Unavailable"><a href="#503-Service-Unavailable" class="headerlink" title="503 Service Unavailable"></a>503 Service Unavailable</h4><p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法 处理请求。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;什么是状态码&quot;&gt;&lt;a href=&quot;#什么是状态码&quot; class=&quot;headerlink&quot; title=&quot;什么是状态码&quot;&gt;&lt;/a&gt;什么是状态码&lt;/h3&gt;&lt;p&gt;HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。&lt;/p
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://github.com/beat-the-buzzer/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="http" scheme="https://github.com/beat-the-buzzer/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>逐步实现深拷贝和浅拷贝</title>
+    <link href="https://github.com/beat-the-buzzer/2021/03/08/deep-copy/"/>
+    <id>https://github.com/beat-the-buzzer/2021/03/08/deep-copy/</id>
+    <published>2021-03-07T16:00:00.000Z</published>
+    <updated>2021-03-09T15:22:03.456Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="数据类型和存储方式"><a href="#数据类型和存储方式" class="headerlink" title="数据类型和存储方式"></a>数据类型和存储方式</h3><p>JavaScript的数据类型分为<strong>基本数据类型</strong>和<strong>引用数据类型</strong>。</p><p>基本数据类型：number，string，boolean，null，undefined，symbol</p><p>引用数据类型：统称为Object类型，细分的话，有：Object，Array，Date，Function等。</p><p>基本数据类型保存在栈内存，栈内存中分别存储着变量的标识符以及变量的值。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span></pre></td></tr></table></figure><p>引用数据类型保存在栈内存，变量名存在栈内存中，值存在于堆内存中，但是栈内存会提供一个引用的地址指向堆内存中的值。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  a: <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;; <span class="comment">// 假设存的地址是xxx</span></span></pre></td></tr></table></figure><p>所以这两种类型，赋值的时候就能体现出不同之处了：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> b = a; <span class="comment">// 重新开辟了一个空间存储b，重新开辟了一个空间存储b的值，也就是1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = obj; <span class="comment">// 重新开辟了一个空间存储obj1,重新开辟了一个空间存储obj1的值，也就是xxx(上面的假设)</span></span></pre></td></tr></table></figure><p>所以我们现在得出，obj存的xxx指向的值发生变化的时候，xxx是不变的，此时通过obj2去访问属性，也是会变化的。</p><h3 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h3><p>浅拷贝：创建一个新的数据，这个数据有着原始数据属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值，如果属性是引用类型，拷贝的就是内存地址，所以如果其中一个数据改变了这个地址，就会影响到另一个数据。</p><p>深拷贝：深拷贝会拷贝所有的属性，并拷贝属性指向的动态分配的内存。当对象和它所引用的对象一起拷贝时即发生深拷贝。深拷贝相比于浅拷贝速度较慢并且花销较大。在堆中重新分配内存，拥有不同的地址，且值是一样的，复制后的对象与原来的对象是完全隔离，互不影响。</p><h3 id="深拷贝的实现方式"><a href="#深拷贝的实现方式" class="headerlink" title="深拷贝的实现方式"></a>深拷贝的实现方式</h3><ol><li>先 stringify 再 parse</li></ol><p>缺点：忽略了undefined、symbol和函数；对象循环引用时，会报错；</p><ol start="2"><li>Object#assign 扩展运算符</li></ol><p>缺点：只能实现一层深拷贝</p><ol start="3"><li>jQuery的 $.extends 方法</li></ol><p>缺点：需要引用第三方库</p><ol start="3"><li>使用递归的方式，遍历对象中的属性</li></ol><p>step1: 遍历对象中的属性，先创建一个新的对象。遍历属性的时候，如果这个属性值是一个对象，那么我们需要把这个属性值再次做拷贝操作。如果属性值是基本类型，就直接赋值给前面创建的新对象。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> objClone = <span class="built_in">Array</span>.isArray(obj) ? []: &#123;&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(obj &amp;&amp; <span class="keyword">typeof</span> obj === <span class="string">"object"</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">if</span>(obj.hasOwnProperty(key))&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//判断obj子元素是否为对象，如果是，递归复制</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(obj[key] &amp;&amp; <span class="keyword">typeof</span> obj[key] === <span class="string">"object"</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">          objClone[key] = deepClone(obj[key]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">          <span class="comment">//如果不是，简单复制</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">          objClone[key] = obj[key];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> objClone;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">` </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="string"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="string">step2: 我们需要解决循环引用的问题，如果我们对象里其中一个属性指向了上一层的那个对象，那么我们上面的操作就会死循环。对于循环引用的问题，我们需要在进行拷贝之前，先判断这个对象之前是否被拷贝过，如果被拷贝过，就不需要再进行拷贝，直接返回这个对象就行了。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="string"></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="string">`</span><span class="string">``</span>js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">target, map = new Map(</span>)) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (target &amp;&amp; <span class="keyword">typeof</span> target === <span class="string">'object'</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">let</span> cloneTarget = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (map.get(target)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">      <span class="comment">// 先去存储的对象里找一下，该对象有没有被拷贝过，如果有 直接返回</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> map.get(target);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 下面的代码标识该对象没有被拷贝过，此时我们要先把该对象存起来，然后再进行进一步的拷贝操作</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">    map.set(target, cloneTarget);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">      cloneTarget[key] = clone(target[key], map);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> cloneTarget;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">  &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> target;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure><p>Map数据结构，允许字符串以外的类型的数据作为Map的key，并且这个key是唯一的。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myMap = <span class="keyword">new</span> <span class="built_in">Map</span>();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> keyObj = &#123;&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">myMap.set(keyObj, <span class="string">"和键 keyObj 关联的值"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">myMap.get(keyObj); <span class="comment">// "和键 keyObj 关联的值"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">myMap.get(&#123;&#125;); <span class="comment">// undefined, 因为 keyObj !== &#123;&#125;</span></span></pre></td></tr></table></figure><p>step3: 对于一些不可继续拷贝的对象，例如函数、Date()等，我们需要判断具体的类型，使用<code>Object#toString</code>方法。</p><h3 id="小结一下"><a href="#小结一下" class="headerlink" title="小结一下"></a>小结一下</h3><p>实现深拷贝的方式，上面说了很多种，有些可能是项目中使用的，有些是比较完整，但是项目中为了图省事没有这么写的。这里注意的是，如果我们是在面试的过程中被问到了这个问题，我们需要回答比较完整的那种方案，可以循循善诱，先把其他几种简单的说一下，然后说出这些方式的缺点，最后为了解决这些缺点，我们使用了XXX方案，这样才是面试官希望听到的答案。</p><p>回答要点：</p><p>step1: 其他几种方式极其缺点</p><p>step2: 描述递归：先判断目标的类型是否是可拷贝的值，然后创建一个新的空对象，再进行遍历属性，如果属性值也是一个可拷贝的值，就继续调用这个拷贝函数，如果不是，就直接返回这个值。然后可以解释一下什么叫做可拷贝的值，以及如何判断该值是可拷贝的值。</p><p>step3: 解决循环引用的问题，我们需要一个新的空间来存储已经被拷贝过的对象，每次在遍历对象之前，先去这个空间找一下该对象是否曾经被拷贝过。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;数据类型和存储方式&quot;&gt;&lt;a href=&quot;#数据类型和存储方式&quot; class=&quot;headerlink&quot; title=&quot;数据类型和存储方式&quot;&gt;&lt;/a&gt;数据类型和存储方式&lt;/h3&gt;&lt;p&gt;JavaScript的数据类型分为&lt;strong&gt;基本数据类型&lt;/strong&gt;和&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="前端开发" scheme="https://github.com/beat-the-buzzer/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="JavaScript" scheme="https://github.com/beat-the-buzzer/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS——display详解</title>
+    <link href="https://github.com/beat-the-buzzer/2021/03/08/display/"/>
+    <id>https://github.com/beat-the-buzzer/2021/03/08/display/</id>
+    <published>2021-03-07T16:00:00.000Z</published>
+    <updated>2021-03-08T06:01:10.534Z</updated>
+    
+    <content type="html"><![CDATA[<p>display有很多属性值，我们在这里只介绍几个常用的，重要的，以及他们之间可能存在的一些问题和差异。</p><h3 id="block"><a href="#block" class="headerlink" title="block"></a>block</h3><p>设置了block元素，那么这个元素就遵循盒子模型的规则，宽高、边距都是可以设置的。</p><p>块元素独占一行。</p><h3 id="inline"><a href="#inline" class="headerlink" title="inline"></a>inline</h3><p>inline元素理解为盒子内部的“流”元素，他的形状完全取决于容器，手动设置宽高都是无效的。</p><h3 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a>inline-block</h3><p>外部看是“流”，内部看是“块”，比如一行内有多个按钮，如果都是inline-block，那么这些按钮可以在一行内进行布局，并且可以设置他们的宽高。</p><h3 id="inline-block-容易产生的问题"><a href="#inline-block-容易产生的问题" class="headerlink" title="inline-block 容易产生的问题"></a>inline-block 容易产生的问题</h3><p>空白间隙</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="css"><span class="selector-class">.inline-block</span> &#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  display: inline-block;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inline-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inline-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inline-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure><p>显然，每个inline-block元素中间，都会有回车/Tab/空格，这些会造成三个inline-block元素之间存在一点间隙。</p><p>解决方案1：设置容器的字体大小：<code>font-size: 0</code></p><p>解决方案2：在HTML中不换行，当然这会降低代码的可读性，所以我们还有另外的方法，就是使用HTML中的注释：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span><span class="comment">&lt;!--</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">  --&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inline-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!--</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">  --&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inline-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!--</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">  --&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inline-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!--</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure><p>解决方案3：使用<code>Webpack</code>或者<code>Gulp</code>这样的工具，对代码进行压缩处理，消除空格、回车、Tab。</p><p><a href="https://github.com/beat-the-buzzer/gulp-test">使用gulp-htmlmin压缩html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;display有很多属性值，我们在这里只介绍几个常用的，重要的，以及他们之间可能存在的一些问题和差异。&lt;/p&gt;
+&lt;h3 id=&quot;block&quot;&gt;&lt;a href=&quot;#block&quot; class=&quot;headerlink&quot; title=&quot;block&quot;&gt;&lt;/a&gt;block&lt;/h3&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="前端开发" scheme="https://github.com/beat-the-buzzer/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="CSS" scheme="https://github.com/beat-the-buzzer/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书笔记系列——少有人走的路：心智成熟的旅程</title>
+    <link href="https://github.com/beat-the-buzzer/2021/01/27/reading-tips-3/"/>
+    <id>https://github.com/beat-the-buzzer/2021/01/27/reading-tips-3/</id>
+    <published>2021-01-26T16:00:00.000Z</published>
+    <updated>2021-01-27T11:08:17.799Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/reading-tips/reading-tips-3.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p><a href="https://gitee.com/beat-the-buzzer/reading-tips/raw/main/%E5%B0%91%E6%9C%89%E4%BA%BA%E8%B5%B0%E7%9A%84%E8%B7%AF%E2%80%94%E2%80%94%E5%BF%83%E6%99%BA%E6%88%90%E7%86%9F%E7%9A%84%E6%97%85%E7%A8%8B.pdf" target="_blank" rel="noopener">点击下载读书笔记的PDF</a></p><p><strong>书名：《少有人走的路——心智成熟的旅程》</strong></p><p><strong>作者：M·斯科特·派克</strong></p><hr><h1 id="【内容简介】"><a href="#【内容简介】" class="headerlink" title="【内容简介】"></a>【内容简介】</h1><ul><li>这本书处处透露出沟通与理解的意味，它跨越时代的限制，帮助我们探索爱的本质，引导我们过上崭新、宁静而丰富的生活；它帮助我们学习爱，也学习独立；它教诲我们成为更称职的、更有理解心的父母。归根到底，它告诉比我们怎样找到真正的自我。</li><li>正如开篇所言：人生苦难重重。M·斯科特·派克让我们更加清楚：人生是一场艰辛之旅，心智成熟的旅程相当漫长。但是，他没有让我们感到恐惧，相反，他带领我们去经历一系列艰难乃至痛苦的转变，最终达到自我认知的更高境界。</li></ul><hr><h1 id="【主要内容】"><a href="#【主要内容】" class="headerlink" title="【主要内容】"></a>【主要内容】</h1><h2 id="第一部分：自律"><a href="#第一部分：自律" class="headerlink" title="第一部分：自律"></a>第一部分：自律</h2><blockquote><p>自律是解决人生问题最主要的工具，也是消除人生痛苦最重要的方法。</p></blockquote><p>所谓自律，就是主动要求自己以积极的态度去承受痛苦，解决问题。</p><ol><li>推迟满足感</li></ol><p>推迟满足感，就是不贪图暂时的安逸，先苦后甜，重新设置人生快乐去痛苦的次序：首先，面对问题并感受痛苦；然后，解决问题并享受更大的快乐。在充满问题和痛苦的人生中，推迟满足感是唯一可行的生活方式。</p><p>家庭教育起相当大的作用。</p><p>父母遵守自律的原则，需要给孩子做出榜样；</p><p>人们容易忽视问题，等待问题自己消失，反映出人们不愿推迟满足感的心理。</p><ol start="2"><li>承担责任<ol><li>神经官能症：认为错在自己</li><li>人格失调症：把错误归咎于旁人<blockquote><p>你不能解决问题，你就会成为问题。</p></blockquote></li></ol></li><li>忠于事实<ol><li>移情：过时的地图<ol><li>定义：把产生和适用与童年时期的那些感知世界、对世界做出反应的方式，照搬到成年后的环境中，尽管这些方式已经不再适用于新的环境。</li><li>逃避现实的痛苦是人类的天性，只有通过自律，再次逐渐克服现实的痛苦。</li></ol></li><li>迎接挑战<ol><li>心理治疗，不仅仅是为了寻求安慰，更要迎接挑战，解决问题</li></ol></li><li>隐瞒真相<ol><li>白色谎言：隐瞒部分真相，善意的谎言</li><li>黑色谎言：叙述的情况与现实不符，指鹿为马</li></ol></li></ol></li><li>保持平衡<pre><code>1. 确立富有弹性的约束机制2. 灵活的情绪反馈系统3. 需要、目标、责任之间保持平衡，放弃是原则</code></pre><ol start="2"><li>抑郁的价值<ol><li>放弃过去的自我<ol><li>无需对外界要求作出回应的婴儿状态</li><li>无所不能的幻觉</li><li>完全占有父母的欲望</li><li>童年的依赖感</li><li>自己心中被扭曲了的父母形象</li><li>青春期自以为拥有无穷潜力的感觉</li><li>无拘无束的自由</li><li>青年时期的灵巧与活力</li><li>青春的性吸引力</li><li>长生不老的空想</li><li>对子女的权威</li><li>各种各样暂时性的权利</li><li>身体永远健康</li><li>自我以及生命本身</li></ol></li></ol></li><li>放弃与新生<ol><li>超越现有的一切<ol><li>清除熟悉的过去</li><li>追求新鲜的未来</li></ol></li><li>让事物进入自己的灵魂</li><li>获得的永远比放弃的</li></ol></li></ol></li></ol><h2 id="第二部分：爱"><a href="#第二部分：爱" class="headerlink" title="第二部分：爱"></a>第二部分：爱</h2><ol><li>爱的定义<ol><li>爱是人们自律的原动力</li><li>爱，是为了促进自己和他人心智成熟，而不断拓展自我界限，实现自我完善的一种意愿；</li><li>爱与非爱最显著的区别之一，就在于当事人意识和潜意识中的目标是否一致。如果不一致，就不是真正的爱；</li><li>爱是一个长期、渐进的过程。爱意味着心灵的不断成长和心智的不断成熟；</li><li>真正意义上的爱，既是爱自己，也是爱他人；</li><li>爱需要付出努力，去跨越原来的界限；不能停留在口头上，要付出行动；不能坐享其成，要真诚付出；</li><li>爱是一种意愿——只有强大到足以转化成心动的欲望，才叫意愿。</li></ol></li><li>自我界限<ol><li>婴儿能够区分出自己和外在世界更多的不同，这样的认知就是自我界限；</li><li>有人把自我界限当做保护伞</li><li>真正的爱是一种扩展自我的体验，所以它与自我界限密切相关；</li></ol></li><li>依赖不是爱<ol><li>过分的依赖导致病态的人生；</li><li>“消极性依赖人格失调症”，不在乎依赖的对象是谁，只在乎别人能为他们做什么，却从不考虑自己能为对方付出多少；</li></ol></li><li>精神贯注不完全是爱<ol><li>精神贯注：被自我界限之外的对象吸引，促使我们产生冲动，想把激情乃至生命献给对方；</li><li>那些与心智成熟无关，不能给心灵带来任何滋养的精神贯注，都不是真正意义上的爱；</li><li>培养某种爱好，是自我滋养的有效手段；</li><li>溺爱</li></ol></li><li>“自我牺牲”<ol><li>受虐狂：把自我牺牲当做真正的爱；潜意识里是恨，渴望得到发泄和补偿；</li><li>爱从某种意义上是自私的，最终追求的是自我完善；</li></ol></li><li>爱，不是感觉<ol><li>爱是实际行动，是真正的付出；</li><li>真正的爱，需要投入和奉献，需要付出全部的智慧和力量；</li></ol></li><li>关注的艺术<ol><li>努力倾听</li><li>倾听是双向的</li></ol></li><li>失落的风险</li><li>独立的风险<ol><li>自尊自爱</li></ol></li><li>投入的风险</li><li>冲突的风险<ol><li>以爱的名义去指责爱的人</li><li>自我反省：诚实和谦虚</li></ol></li><li>爱与自律</li><li>爱与独立<ol><li>爱者与被爱者都不是对方的附属品。</li></ol></li><li>爱与心理治疗</li><li>爱的神秘性</li></ol><h2 id="第三部分：成长与信仰"><a href="#第三部分：成长与信仰" class="headerlink" title="第三部分：成长与信仰"></a>第三部分：成长与信仰</h2><blockquote><p>人人都有自己的信仰，对人生的认识和了解就属于信仰的范畴。</p></blockquote><ol><li>信仰与世界观<ol><li>人的信仰都来自于其文化环境</li><li>形成信仰的基本因素来自我们成长的家庭环境</li><li>要建立与现实相适应的信仰与世界观，我们必须不断学习，增进对世界的认识。</li></ol></li><li>科学与信仰<ol><li>增加认知，扩大视野</li><li>逐步以科学的信仰来代替父母的信仰，向小宇宙法则提出挑战</li><li>真实、观察、知识、怀疑、经验</li></ol></li><li>案例一</li><li>案例二</li><li>案例三</li><li>案例四</li></ol><h2 id="第四部分：恩典"><a href="#第四部分：恩典" class="headerlink" title="第四部分：恩典"></a>第四部分：恩典</h2><blockquote><p>我们之所以能具备爱的能力和成长的意愿，不仅取决于童年时父母爱的滋养，也取决于我们一生中对恩典的接纳。</p></blockquote><ol><li>健康的奇迹<ol><li>生理上的疾病，未必一定和心理疾病有关，但事实上，二者之间的联系却是普遍存在的。我们往往知道是什么原因导致我们生病，却很少了解是什么原因让我们保持健康。</li></ol></li><li>潜意识的奇迹<ol><li>有时候，人们会无意识地暴露出自己内心深处的东西，这对心理治疗会有一定的帮助</li><li>梦的解析</li></ol></li><li>好运的奇迹</li><li>恩典的定义<ol><li>它们具有滋养生命、促进心智成熟的作用</li><li>它们的具体左右机制要么仍旧未被人们完全了解，要么完全不为人知</li><li>它们是人类世界中的普遍现象</li><li>尽管它们可能或多或少受到意识的影响，但它们的根源位于意识和主观思维之外</li></ol></li><li>进化的奇迹<ol><li><a href="https://www.zhihu.com/question/24053383" target="_blank" rel="noopener">https://www.zhihu.com/question/24053383</a></li><li>能量自然地从高处流向低处，使熵不断增加，熵增原理</li><li>进化实际上是从底层进化到顶层，违反了熵增原理</li><li>心灵的进化也是从原始的心灵进化成为成熟的心灵</li><li>这里其实书中的描述不是那么准确，生物之所以会进化，是因为如果不进化，就会无法生存甚至灭绝。</li><li>生物的进化，其实是要拼命活下去，心灵的进化，同样也需要不断努力；</li></ol></li><li>开始与结束</li><li>熵与原罪<ol><li>阻碍心智成熟的障碍，最大的障碍就是懒惰；</li></ol></li><li>邪恶的问题</li><li>意识的进化<ol><li>观察和认知</li></ol></li><li>力量的本质<ol><li>政治的力量和心灵的力量</li><li>愉快和谦逊</li><li>力量越多，越累，将军和士兵</li><li>孤独感</li></ol></li><li>俄瑞斯忒斯的传说</li><li>对恩典的抗拒<ol><li>心理治疗的本质，就是自律的工具</li></ol></li><li>迎接恩典降临</li></ol><hr><h1 id="【精彩摘抄】"><a href="#【精彩摘抄】" class="headerlink" title="【精彩摘抄】"></a>【精彩摘抄】</h1><ol><li>人生是一个不断面对问题并解决问题的过程。问题可以开启我们的智慧，激发我们的勇气。为解决问题而努力，我们的思想和心灵就会不断成长，心智就会不断成熟。</li><li>他们都面临一个共同的问题——感觉自己不能够“应付”或者改变现状，因此产生恐惧、无助感和自我怀疑。</li><li>生命的本质就是不断改变、成长和衰退的过程。选择了生活与成长，也就选择了面对死亡的可能性。</li><li>冲突或者批评，是人际关系中特殊的控制权力，如果恰当地运用，就可以改进人际关系的进程，甚至改变所爱的人的一生。如果它遭到滥用，就会产生消极的结果。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                   
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://github.com/beat-the-buzzer/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="https://github.com/beat-the-buzzer/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试之手写代码系列（应用篇）</title>
+    <link href="https://github.com/beat-the-buzzer/2020/12/28/writing-code02/"/>
+    <id>https://github.com/beat-the-buzzer/2020/12/28/writing-code02/</id>
+    <published>2020-12-27T16:00:00.000Z</published>
+    <updated>2021-03-07T15:17:57.142Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="防抖与节流"><a href="#防抖与节流" class="headerlink" title="防抖与节流"></a>防抖与节流</h3><p>关于防抖与节流，在之前一篇文章里已经写了：<a href="/2020/09/12/debounce-throttle/">防抖节流操作总结</a></p><p>文章里还做了科里化的操作，就是下面即将要写的，目的是把防抖和节流做成一个公共的方法。</p><h3 id="科里化与函数式编程"><a href="#科里化与函数式编程" class="headerlink" title="科里化与函数式编程"></a>科里化与函数式编程</h3><p>关于科里化与函数式编程，在之前一篇文章里已经写了：<a href="/2019/12/01/functional-programming/">函数式编程</a></p><p>文章里有大量的举例和应用场景。</p><h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>简单版本1：先<code>stringfy</code>再<code>parse</code>，无法处理值为日期、函数等类型的数据；</p><p>简单版本2：ES6扩展运算符，只能处理一层数据，对于深层次的对象无法处理；</p><p>简单版本3：ES6 <code>Object.assign({}, ...)</code></p><p>简单版本4：Jquery <code>$.extends()</code>方法</p><p>算法版本：主要是用了递归的思想</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function">(<span class="params">target, cache = <span class="keyword">new</span> <span class="built_in">WeakMap</span>(</span>)) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(target === <span class="literal">null</span> || <span class="keyword">typeof</span> target !== <span class="string">'object'</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> target</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(cache.get(target)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> target</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> copy = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  cache.set(target, copy)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">Object</span>.keys(target).forEach(<span class="function"><span class="params">key</span> =&gt;</span> copy[key] = deepClone(obj[key], cache))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> copy</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><h3 id="Rem基本设置"><a href="#Rem基本设置" class="headerlink" title="Rem基本设置"></a>Rem基本设置</h3><p>关于Rem基本设置，在之前一篇文章里已经写了：<a href="/2020/08/26/mobile-adaptation/">移动端适配之淘宝方案分析</a></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">refreshRem</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> width = docEl.getBoundingClientRect().width;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (width / dpr &gt; <span class="number">540</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    width = <span class="number">540</span> * dpr;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> rem = width / <span class="number">10</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 意味着100%的宽度就是10rem</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  docEl.style.fontSize = rem + <span class="string">'px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  flexible.rem = win.rem = rem;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  clearTimeout(tid);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  tid = setTimeout(refreshRem, <span class="number">300</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;, <span class="literal">false</span>);</span></pre></td></tr></table></figure><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;防抖与节流&quot;&gt;&lt;a href=&quot;#防抖与节流&quot; class=&quot;headerlink&quot; title=&quot;防抖与节流&quot;&gt;&lt;/a&gt;防抖与节流&lt;/h3&gt;&lt;p&gt;关于防抖与节流，在之前一篇文章里已经写了：&lt;a href=&quot;/2020/09/12/debounce-throttl
+      
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试之手写代码系列（基础篇）</title>
+    <link href="https://github.com/beat-the-buzzer/2020/12/28/writing-code01/"/>
+    <id>https://github.com/beat-the-buzzer/2020/12/28/writing-code01/</id>
+    <published>2020-12-27T16:00:00.000Z</published>
+    <updated>2021-02-27T08:31:11.696Z</updated>
+    
+    <content type="html"><![CDATA[<p>下面的几个是JS里面比较基础和常用的东西，通过用代码实现，可以让我们更深刻地了解这些方法的底层原理，以及解决了哪些问题。大部分的方法实现在《你不知道的JavaScript》里面都有。</p><p>疫情的存在，使得我们几乎都是线上面试，几乎无法现场手写代码。但是，手写代码是面试中很重要的一环，因为这个比较综合、全面、深刻。</p><h3 id="new"><a href="#new" class="headerlink" title="new"></a>new</h3><ul><li><p>先创建一个新的、空的实例对象</p></li><li><p>将实例对象的原型指向构造函数的原型</p></li><li><p>将构造函数内部的this，修改为指向实例</p></li><li><p>返回实例对象：判断构造函数的返回值是否为对象，如果是对象，就使用构造函数的返回值，否则返回创建的对象</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">New</span>(<span class="params">func</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 声明一个中间对象，该对象为最终返回的实例</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> res = &#123;&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (func.prototype !== <span class="literal">null</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 将实例的原型指向构造函数的原型</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    res.__proto__ = func.prototype;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// ret为构造函数的执行结果</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 将构造函数内部的this指向修改为指向res </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 通过apply实现</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> ret = func.apply(res, [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 当我们在构造函数中指定了返回的对象时，new执行的结果就是这个对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> ((<span class="keyword">typeof</span> ret === <span class="string">'object'</span> || <span class="keyword">typeof</span> ret === <span class="string">'function'</span>) &amp;&amp; ret !== <span class="literal">null</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> ret;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 默认返回res</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> res;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.name = name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p1 = New(Person, <span class="string">'Tom'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p2 = New(Person, <span class="string">'Jerry'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">p1.getName(); <span class="comment">// Tom</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">p2.getName(); <span class="comment">// Jerry</span></span></pre></td></tr></table></figure></li></ul><h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 思路：将要改变this指向的方法挂到目标this上执行并返回</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.mycall = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">'function'</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'not funciton'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  context = context || <span class="built_in">window</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  context.fn = <span class="keyword">this</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> arg = [...arguments].slice(<span class="number">1</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> result = context.fn(...arg)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">delete</span> context.fn</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> result</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 思路：将要改变this指向的方法挂到目标this上执行并返回</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myapply = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">'function'</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'not funciton'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  context = context || <span class="built_in">window</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  context.fn = <span class="keyword">this</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> result</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (<span class="built_in">arguments</span>[<span class="number">1</span>]) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    result = context.fn(...arguments[<span class="number">1</span>])</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    result = context.fn()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">delete</span> context.fn</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> result</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 思路：类似call，但返回的是函数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.mybind = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">'function'</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Error'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> _this = <span class="keyword">this</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> arg = [...arguments].slice(<span class="number">1</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 处理函数使用new的情况</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> <span class="keyword">instanceof</span> F) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> _this(...arg, ...arguments)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> _this.apply(context, arg.concat(...arguments))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>这个原理就是查找原型链，看看实例的原型是否在我们希望判断的对象的原型链上。调用的内置的函数<code>[[HasInstance]]</code></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数都是两个对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">instanceOf</span>(<span class="params">leftObj, rightObj</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> proto = leftObj.__proto__;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> prototype = rightObj.prototype</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(proto === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(proto === prototype) <span class="keyword">return</span> <span class="literal">true</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    proto = proto.__proto__;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>关于排序，在之前一篇文章里已经写了：<a href="/2019/12/03/sort/">算法系列——排序算法</a></p><p>如果是求稳，可以使用选择排序或者冒泡排序这样逻辑简单的；</p><p>如果想更进一步，可以使用递归方式的归并排序；</p><p>还想更进一步，就可以使用稍微有点复杂的快速排序；</p><p>当然，这些排序算法的原理还是需要去弄清楚的。</p><h3 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h3><p>去重的方法，之前也有总结过：<a href="2020/01/11/unique/">数组去重的N个方法</a></p><p>其实面试主要考察的是思路，如果你的试卷上用Set一行解决，其实是很难得到高分的；</p><p>求稳的大思路，应该是定义新的数组，然后遍历原数组，如果在新的数组里没有遍历的值的时候，就把数据放到新数组里面；</p><p>更进一步的思路，是利用对象的Key、Map 的唯一性；</p><p>新奇的思路，寻找元素首次出现的位置是否和当前位置的元素相等；</p><p>面试的过程中，我们不仅仅是要提供问题的解决思路，也可以说一下我们这个思路的局限性。面试和工作的思路不一样，面试是为了展示能力，工作是为了解决问题。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;下面的几个是JS里面比较基础和常用的东西，通过用代码实现，可以让我们更深刻地了解这些方法的底层原理，以及解决了哪些问题。大部分的方法实现在《你不知道的JavaScript》里面都有。&lt;/p&gt;
+&lt;p&gt;疫情的存在，使得我们几乎都是线上面试，几乎无法现场手写代码。但是，手写代码是
+      
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试之手写代码系列（进阶篇）</title>
+    <link href="https://github.com/beat-the-buzzer/2020/12/28/writing-code03/"/>
+    <id>https://github.com/beat-the-buzzer/2020/12/28/writing-code03/</id>
+    <published>2020-12-27T16:00:00.000Z</published>
+    <updated>2021-03-07T15:23:57.079Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组件通信，一个触发与监听的过程</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EventEmitter</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">constructor</span> () &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 存储事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.events = <span class="keyword">this</span>.events || <span class="keyword">new</span> <span class="built_in">Map</span>()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 监听事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  addListener (type, fn) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.events.get(type)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">this</span>.events.set(type, fn)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 触发事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  emit (type) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">let</span> handle = <span class="keyword">this</span>.events.get(type)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    handle.apply(<span class="keyword">this</span>, [...arguments].slice(<span class="number">1</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> emitter = <span class="keyword">new</span> EventEmitter()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">emitter.addListener(<span class="string">'ages'</span>, age =&gt; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(age)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 触发事件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">emitter.emit(<span class="string">'ages'</span>, <span class="number">18</span>)  <span class="comment">// 18</span></span></pre></td></tr></table></figure><h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><p>核心点就是当数据变化的时候，触发DOM的更新，DOM通过用户操作更新的时候，改变数据。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> input = <span class="built_in">document</span>.getElementById(<span class="string">'input'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> span = <span class="built_in">document</span>.getElementById(<span class="string">'span'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据劫持</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'text'</span>, &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  configurable: <span class="literal">true</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  enumerable: <span class="literal">true</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">get</span>() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">'获取数据了'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">set</span>(newVal) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">'数据更新了'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    input.value = newVal</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    span.innerHTML = newVal</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输入监听</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">input.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">  obj.text = e.target.value</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;EventBus&quot;&gt;&lt;a href=&quot;#EventBus&quot; class=&quot;headerlink&quot; title=&quot;EventBus&quot;&gt;&lt;/a&gt;EventBus&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class
+      
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试题系列——vue相关（应用篇）</title>
+    <link href="https://github.com/beat-the-buzzer/2020/12/23/interview-for-vue02/"/>
+    <id>https://github.com/beat-the-buzzer/2020/12/23/interview-for-vue02/</id>
+    <published>2020-12-22T16:00:00.000Z</published>
+    <updated>2021-03-11T10:27:22.678Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我总结的一些使用技巧，以问题的方式总结出来。</p></blockquote><h3 id="Vue-如何在组件间传值"><a href="#Vue-如何在组件间传值" class="headerlink" title="Vue 如何在组件间传值"></a>Vue 如何在组件间传值</h3><ol><li><p>父组件传给子组件，<code>props</code>，</p></li><li><p>子组件传给父组件，父组件绑定了一个事件之后，子组件使用 <code>$emit</code> </p></li><li><p>另外，父组件可以拿到子组件对象，然后去调用子组件的方法或者获取子组件里面定义的值；</p></li><li><p>兄弟组件，可以先找他们的一个公共的父组件，然后把问题转化成父子组件之间的传值；</p></li><li><p>EventBus，搭建一个桥梁，使得组件间的信息都可以互通；</p></li><li><p>Vuex，是一种状态管理工具，我们可以共享组件的状态，功能类似于 React 中的 Redux 或者 Mobx；</p></li></ol><h3 id="Vue-的生命周期"><a href="#Vue-的生命周期" class="headerlink" title="Vue 的生命周期"></a>Vue 的生命周期</h3><p>created =&gt; before</p><p>mounted =&gt; before</p><p>updated =&gt; before </p><p>destroyed =&gt; before</p><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我总结的一些使用技巧，以问题的方式总结出来。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Vue-如何在组件间传值&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="https://github.com/beat-the-buzzer/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+</feed>

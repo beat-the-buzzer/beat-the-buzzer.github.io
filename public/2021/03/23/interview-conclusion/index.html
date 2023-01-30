@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>面试总结 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="面试">
+    <meta name="description" content="经过一周多的时间的面试，工作方面终于是尘埃落定，下面就简单总结一下今年面试的情况和经验。 简历的亮点简历中的亮点是十分重要的，它直接决定面试官是否有话可问，也直接反应了最近几年我们的工作质量。如果每天都仅仅是完成自己的开发任务，我觉得是远远不够的。 我记得两年之前我的简历亮点是：阅读过XXX框架的源码，但是很多相关的问题在实际面试的时候没有回答出来，导致所谓的“亮点”起到了反作用。 今年的面试，简">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2021&#x2F;03&#x2F;23&#x2F;interview-conclusion&#x2F;index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="经过一周多的时间的面试，工作方面终于是尘埃落定，下面就简单总结一下今年面试的情况和经验。 简历的亮点简历中的亮点是十分重要的，它直接决定面试官是否有话可问，也直接反应了最近几年我们的工作质量。如果每天都仅仅是完成自己的开发任务，我觉得是远远不够的。 我记得两年之前我的简历亮点是：阅读过XXX框架的源码，但是很多相关的问题在实际面试的时候没有回答出来，导致所谓的“亮点”起到了反作用。 今年的面试，简">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-04-03T14:25:41.567Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" target="_blank" rel="noopener" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            面试总结
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            面试总结
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2021-03-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简历的亮点"><span class="post-toc-number">1.</span> <span class="post-toc-text">简历的亮点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基础知识的掌握"><span class="post-toc-number">2.</span> <span class="post-toc-text">基础知识的掌握</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一些代码题"><span class="post-toc-number">3.</span> <span class="post-toc-text">一些代码题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用框架相关"><span class="post-toc-number">4.</span> <span class="post-toc-text">常用框架相关</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工程化"><span class="post-toc-number">5.</span> <span class="post-toc-text">工程化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算机网络"><span class="post-toc-number">6.</span> <span class="post-toc-text">计算机网络</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单总结"><span class="post-toc-number">7.</span> <span class="post-toc-text">简单总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-interview-conclusion"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">面试总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-23 00:00:00" datetime="2021-03-22T16:00:00.000Z"  itemprop="datePublished">2021-03-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>经过一周多的时间的面试，工作方面终于是尘埃落定，下面就简单总结一下今年面试的情况和经验。</p>
+<h3 id="简历的亮点"><a href="#简历的亮点" class="headerlink" title="简历的亮点"></a>简历的亮点</h3><p>简历中的亮点是十分重要的，它直接决定面试官是否有话可问，也直接反应了最近几年我们的工作质量。如果每天都仅仅是完成自己的开发任务，我觉得是远远不够的。</p>
+<p>我记得两年之前我的简历亮点是：阅读过XXX框架的源码，但是很多相关的问题在实际面试的时候没有回答出来，导致所谓的“亮点”起到了反作用。</p>
+<p>今年的面试，简历里的亮点的主要有这几个，也是受到提问最多的几点：</p>
+<ol>
+<li>带领团队进行 Code Review</li>
+</ol>
+<p>Code Review，这个是确实存在的，只不过没有我回答得那么深，但是也差不了多少。我主要是从三个层面回答这个问题：</p>
+<ul>
+<li><p>对于提交规范的检查，因为很多人喜欢在提交代码的时候，非常随意地把一天写的代码一股脑提交上去，这样在后面定位问题的时候，很难找到我们修改的部分。因此，我们制定了一个规范，就是每次提交的时候，按bug单号提交修改的部分，提交信息包括修改的bug单号、修复的版本号、修改内容。后续有面试官提出，可以写一个Git的钩子，让机器去检查。不过后来我也想过，如果是机器检查，也很难完全查出来规范。</p>
+</li>
+<li><p>对于代码书写规范的检查，这个一般都是使用<code>ESLint</code>工具进行检查，我后面加了一点内容，就是把这个规范放到自动化编译平台上面去，这样每次打包的时候，如果代码不符合规范，就会打包出错。事实上，我的第一家公司就是这么操作的。</p>
+</li>
+<li><p>对于代码文档、注释方面的规范，这个是需要把每个人写的代码投影出来，主要检查一些方法的注释是否规范，一些复杂的业务逻辑是否画了流程图，一些需求文档的地址是否写在README里面，等等。</p>
+<blockquote>
+<p>这个问题我个人觉得自己的发挥还是不错的，算是一个加分项。</p>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li><p>负责维护前端组件库</p>
+<ul>
+<li><p>是否是从零开始开发</p>
+</li>
+<li><p>开发一个公共组件的思路和注意事项</p>
+</li>
+</ul>
+<blockquote>
+<p>事实上，我不太清楚面试官问的重点和目的在哪</p>
+</blockquote>
+</li>
+<li><p>负责招聘面试</p>
+<ul>
+<li>面试的时候主要关注哪些点</li>
+</ul>
+<blockquote>
+<p>这个只有少部分的面试官问到了这个问题</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="基础知识的掌握"><a href="#基础知识的掌握" class="headerlink" title="基础知识的掌握"></a>基础知识的掌握</h3><ol>
+<li><p>闭包以及闭包的作用</p>
+<ul>
+<li><p>直到这次面试官问这个问题之前，我都不是很确定这个问题到底要如何回答。这次面试官问了这个问题之后，我又查了一些资料，进行了更深层次的理解，终于有所收获。</p>
+</li>
+<li><p>关于闭包，网上有一句话值得我深思：如果你觉得一个概念很难理解，那一定是因为你理解错了。</p>
+</li>
+</ul>
+</li>
+<li><p>JS有哪些数据类型，如何进行类型判断</p>
+<ul>
+<li><p>这个问题基本上都是必考题或者基础题，一旦出错，基本上就要告别这次面试了。</p>
+</li>
+<li><p>后来问了一个Object.prototype.toString.call 这个方法判断数据类型的原理是什么，这个打得我措手不及。</p>
+</li>
+</ul>
+</li>
+<li><p>为什么数字、字符串可以像对象那样去访问属性或者调用方法？</p>
+<ul>
+<li>包装对象，貌似《你不知道的JavaScript》中有这个概念 </li>
+</ul>
+</li>
+<li><p>普通函数和箭头函数有什么区别</p>
+<ul>
+<li><p>this指向</p>
+</li>
+<li><p>后来补充一个，arguments对象</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="一些代码题"><a href="#一些代码题" class="headerlink" title="一些代码题"></a>一些代码题</h3><ol>
+<li><p>深拷贝和浅拷贝，以及如何实现一个深拷贝</p>
+<ul>
+<li><p>貌似第一场就问到了这个问题，但是当时我没有任何准备，所以惨败。后来仔细地看了相关方案，发现没有我想象中那么简单。其实不仅仅是要解决问题，更是要说好问题出现的原因和解决问题的过程。</p>
+</li>
+<li><p>例如，我们平时工作中，可能就只是简单地先<code>stringify</code>再<code>parse</code>，就可以解决项目中99.99%的问题，但是作为面试题，不能仅仅这么回答就完了，我们需要一步一步朝着完美方案去靠近。比如，我们之前的方案，一些特殊类型的数据，例如数组、日期，就会在转换的时候就会出问题，为了解决这个问题，我们需要换个思路，比如使用遍历对象的方式，如果待遍历的数据是个对象，就递归调用这个方法，否则，就把这个属性进行赋值操作。其实递归调用一般我们也都能想到，但是还有一个问题就是循环引用，比如对象的一个属性值是这个原始对象本身，我们如果不处理这样的情况，就会出现递归死循环的情况，所以我们需要一个空间，把拷贝过的对象存起来，每次拷贝对象之前，看看这个对象有没有存过，可以使用ES6的<code>Map</code>或者<code>WeakMap</code>。</p>
+</li>
+<li><p>其实面试官在问我深拷贝之前，还问了ES6的Map数据结构，没想到这两个问题是有一定联系的。</p>
+</li>
+</ul>
+</li>
+<li><p>flat 数组扁平化</p>
+<ul>
+<li><p>这个问题在一次视频面试中被要求现场手写代码，当时也没有看，所以又惨败。</p>
+</li>
+<li><p>其实实现的思想就是递归，不过也有其他的思路，比如转成字符串，然后把所有的方括号都清除，然后再在左右拼接一个括号，再转成数组。</p>
+</li>
+</ul>
+</li>
+<li><p>数组去重的思路</p>
+<ul>
+<li><p>这个问题我有特意准备过，因为之前的公司有一道笔试题就是这个。当时大多数人都写了用ES6的<code>Set</code>去进行转换，但是我觉得这应该是个算法题，不是方法题。</p>
+</li>
+<li><p>Set 数据结构</p>
+</li>
+<li><p>循环数组，把数组push到一个临时数组里，push之前需要判断一下当前数据是否已经存在于临时数组里</p>
+</li>
+<li><p>循环数组，判断每一项第一次出现的位置是否等于当前的位置，如果不等于，就需要剔除这条数据。</p>
+</li>
+<li><p>利用对象的key是唯一的这个特性，把数组的每一项都变成一个空对象的key，但是这种方式也有局限性，就是对象的key只能是字符串，因此我们为了解决这个问题，需要去使用ES6的<code>Map</code>数据结构，使得其他类型的数据也可以作为<code>Map</code>的key，并且是唯一的，这样就实现了去重。</p>
+</li>
+</ul>
+</li>
+<li><p>CSS 实现子元素相对于父元素水平垂直居中</p>
+<ul>
+<li>这个也是我平时喜欢问的问题，所以就没有问题。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>这一类题目，只能平时慢慢积累了。</p>
+</blockquote>
+<h3 id="常用框架相关"><a href="#常用框架相关" class="headerlink" title="常用框架相关"></a>常用框架相关</h3><ol>
+<li><p>typeof JQuery/Vue/React 分别是什么</p>
+<ul>
+<li><p>这个是我遇到的最特别的问题，通过<code>JQuery</code>和<code>Vue</code>的使用方式，我知道它们的写法是和函数一样的，所以知道这两个是<code>function</code>，但是<code>React</code>我不是很确定。根据用法，我们一般都是写<code>React.Component</code>，所以应该是<code>object</code>。</p>
+</li>
+<li><p>然后还问了一个<code>class A{}</code>，然后<code>typeof A</code>，我也不是很确定，最终尝试一下，是<code>function</code>，后来编译了一下class，最后确实是个<code>function</code>。</p>
+</li>
+</ul>
+</li>
+<li><p>双向绑定和单项数据流</p>
+<ul>
+<li><p>其实对这两个的概念我一直都很模糊，直到有个面试官解答了这个问题。</p>
+</li>
+<li><p>双向绑定和单项数据流，是两个不同的概念。</p>
+</li>
+<li><p>Vue、React中都有单项数据流，就是改变数据或者调用setState的时候，DOM也会跟着去更新。</p>
+</li>
+<li><p>双向绑定，拿Vue来说，就是Vue提供了一个语法糖，用<code>v-model</code>的写法，使得我们在输入的时候，改变了DOM，同时也改变了数据，本质上，我们可以使用<code>oninput</code>去监听输入然后进行赋值操作。后来问到如果我们不想用oninput，要怎么做，这个因为平时我对此没有什么了解，所以惨败。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><ol>
+<li><p>Webpack相关</p>
+<ul>
+<li><p>webpack里面有哪些接口</p>
+</li>
+<li><p>如何减小代码压缩的体积</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>貌似只有最开始的一家公司问了好多关于Webpack的，我完全招架不住。</p>
+<ol start="2">
+<li><p>其他</p>
+<ul>
+<li>主要讲了一下自动化编译平台里面的一些东西</li>
+</ul>
+</li>
+</ol>
+<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p>关于计算机网络，大部分都是第二轮 CTO 或者技术主管的面试会遇到。</p>
+<ol>
+<li><p>HTTP的状态码：304、401代表什么</p>
+<ul>
+<li>经过一次面试之后，我就把《图解HTTP》简单看了一遍，把一些比较关键的东西记了一下</li>
+</ul>
+</li>
+<li><p>HTTP缓存有哪些方式，是否了解协商缓存</p>
+<ul>
+<li>第二轮面试经常会被问到的问题，也会和其他问题关联在一起，比如性能优化的方案，关于缓存，请求头等等</li>
+</ul>
+</li>
+<li><p>HTTP请求头有哪些</p>
+</li>
+<li><p>HTTP2.0 相比于 HTTP1.1 做了哪些优化</p>
+<ul>
+<li>也是图解HTTP里面可以找到的，只不过平时工作不会去注意这方面的东西。 </li>
+</ul>
+</li>
+<li><p>项目部署的更新机制，增量更新，缓存入口等等</p>
+<ul>
+<li>这些其实都是和平时的工作密不可分的，要充分理解平时的工作内容，就算自己不参与平台的建设，也需要稍微了解一下。</li>
+</ul>
+</li>
+</ol>
+<h3 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h3><ol>
+<li><p>面试前的准备很重要，问的东西会比较全面，很多知识可能是盲区，但是也需要去了解一下，不要无话可说。</p>
+</li>
+<li><p>盲区之所以叫盲区，是因为我们自己意识不到。所以我们可以通过各种各样的面试练习去找到我们的盲区。</p>
+</li>
+<li><p>基础知识的积累很重要，有些非常底层的东西，如果深入了解，可能会有其他发现。</p>
+</li>
+<li><p>平时的工作，过程很重要，或许平时我们工作的时候注重的是结果，但是面试的时候，拼的是我们工作的过程。对过程的理解（不是了解），理解平时的一些操作的原因和原理。</p>
+</li>
+<li><p>心态很重要，我们可能会经历很多挫折，没有人喜欢失败，但是面试总会经历很多失败，有时候甚至会怀疑自己，但这些，都是磨炼，不是折磨，我们要正确面对和认识我们所有的经历，从中获得提高。</p>
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-04-03T14:25:41.567Z" itemprop="dateUpdated">2021-04-03 22:25:41</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2021/03/23/interview-conclusion/&title=《面试总结》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2021/03/23/interview-conclusion/&title=《面试总结》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/04/18/reading-tips-4/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">读书笔记系列——全职高手</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/03/11/webpack-basic/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">前端工程化——Webpack简单总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2021/03/23/interview-conclusion/&title=《面试总结》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2021/03/23/interview-conclusion/&title=《面试总结》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3awW5iMQwF0P7/T3ek2SLgXiemLE5WSLR5OUFK/Gz//MTj9//Iv/19GMlftv97beDh4eGNlv5sPE79+G1Ozbfs2XPzNePh4eFt85Kp2+M737L8bM/XjIeHh/cNvDzUbg/989AcDw8P7zt57eH++sJIAvQL242Hh4e3xkvC32S5s+RFvhGLuRY8PDy8mNcWwL7h82J9Dw8PD++gqp4navPLIG8muLBaPDw8vAXe7AGzolTbbnXr6Xh4eHh7vKT4lLzwz471dlVF8I2Hh4e3wMuLTPkRnxz9bVNssjVvfgA8PDy8Y179Yj9qLKj3eJSnxcPDw/sMr70AXmNmgXVbfquLYXh4eHgLvDxVmjNO0hwzTLRleHh4eMe8jUnzTUkSDW3zwZs3Bjw8PLxLvBwwS+O2QfxJ6hYPDw9vm9eG0XdTtPkRnxTMnm4fHh4e3kd4baHr9Tx3Gw6Sram7IfDw8PBKXnus5+BZyS0png1bEPDw8PCOeXnYmjOS8LcNpmfhPh4eHt42Lwmv25TB7I5q27neJHDx8PDw1nhtUiBPFlxoAhhdPHh4eHgbvFk4my/9vDB2Hr7j4eHh3eWdJw5a0sYl9HPy4+Lh4eFd4uWtAEmxKr8M2oLZm2/x8PDw1njJkT1L484ujzyhXHeT4eHh4V3lzfD5PCcJ2WGJDg8PD2+Bl6do28XNylr55zpLjYeHh3eJd4JpG61O2hTaRAYeHh7eX/HaElRe7D9J3RZBNh4eHt4CLx9RwSmu4ydXzizUxsPDw/sML78MToLstkg2S3/g4eHhfZJ3q7EgeWS+xPwee/pEPDw8vD/ltSnXdrn5JtYhNR4eHt5X8vYatk7WhoeHh7fHmzUBtI1W7abMymZ4eHh427y2AHarqpbMkATZw5oeHh4e3uTp/wDSsivwObPlDAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

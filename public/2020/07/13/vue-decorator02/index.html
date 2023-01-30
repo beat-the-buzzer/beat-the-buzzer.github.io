@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Vue修饰符总结（下篇） | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vue">
+    <meta name="description" content="Demo演示地址： https:&#x2F;&#x2F;beat-the-buzzer.github.io&#x2F;my-demos&#x2F;#&#x2F;index&#x2F;my-decorator-02 Vue的修饰符为我们解决了很多通用的问题，如果我们了解这些修饰符，就能在开发的过程中节约大量的时间。 我们都知道使用v-on或者@在Vue中绑定事件，关于事件的修饰符，其实也是十分实用的。如果我们不了解这些修饰符，就会自己去写一些原生的实现方式，">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue修饰符总结（下篇）">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2020&#x2F;07&#x2F;13&#x2F;vue-decorator02&#x2F;index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="Demo演示地址： https:&#x2F;&#x2F;beat-the-buzzer.github.io&#x2F;my-demos&#x2F;#&#x2F;index&#x2F;my-decorator-02 Vue的修饰符为我们解决了很多通用的问题，如果我们了解这些修饰符，就能在开发的过程中节约大量的时间。 我们都知道使用v-on或者@在Vue中绑定事件，关于事件的修饰符，其实也是十分实用的。如果我们不了解这些修饰符，就会自己去写一些原生的实现方式，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-01-27T11:05:19.709Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" target="_blank" rel="noopener" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            Vue修饰符总结（下篇）
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            Vue修饰符总结（下篇）
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-07-12T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2020-07-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#v-bind相关修饰符"><span class="post-toc-number">1.</span> <span class="post-toc-text">v-bind相关修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#prop-作为一个-DOM-property-绑定而不是作为-attribute-绑定。"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">.prop - 作为一个 DOM property 绑定而不是作为 attribute 绑定。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#camel-2-1-0-将-kebab-case-特性名转换为-camelCase-从-2-1-0-开始支持"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">.camel - (2.1.0+) 将 kebab-case 特性名转换为 camelCase. (从 2.1.0 开始支持)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sync-2-3-0-语法糖，会扩展成一个更新父组件绑定值的-v-on-侦听器"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">.sync (2.3.0+) 语法糖，会扩展成一个更新父组件绑定值的 v-on 侦听器</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#v-model相关修饰符"><span class="post-toc-number">2.</span> <span class="post-toc-text">v-model相关修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lazy-取代-input-监听-change-事件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">.lazy - 取代 input 监听 change 事件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#number-输入字符串转为有效的数字"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">.number - 输入字符串转为有效的数字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#trim-输入首尾空格过滤"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">.trim - 输入首尾空格过滤</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue-decorator02"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue修饰符总结（下篇）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-07-13 00:00:00" datetime="2020-07-12T16:00:00.000Z"  itemprop="datePublished">2020-07-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Demo演示地址： <a href="https://beat-the-buzzer.github.io/my-demos/#/index/my-decorator-02" target="_blank" rel="noopener">https://beat-the-buzzer.github.io/my-demos/#/index/my-decorator-02</a></p>
+<p>Vue的修饰符为我们解决了很多通用的问题，如果我们了解这些修饰符，就能在开发的过程中节约大量的时间。</p>
+<p>我们都知道使用<code>v-on</code>或者<code>@</code>在Vue中绑定事件，关于事件的修饰符，其实也是十分实用的。如果我们不了解这些修饰符，就会自己去写一些原生的实现方式，实际上Vue已经在内部有实现了。</p>
+<p>下篇主要是总结一下的修饰符，都是Vue官方文档上面的。</p>
+<h3 id="v-bind相关修饰符"><a href="#v-bind相关修饰符" class="headerlink" title="v-bind相关修饰符"></a>v-bind相关修饰符</h3><h4 id="prop-作为一个-DOM-property-绑定而不是作为-attribute-绑定。"><a href="#prop-作为一个-DOM-property-绑定而不是作为-attribute-绑定。" class="headerlink" title=".prop - 作为一个 DOM property 绑定而不是作为 attribute 绑定。"></a>.prop - 作为一个 DOM property 绑定而不是作为 attribute 绑定。</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- 绑定一个全是 attribute 的对象 --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">"&#123; id: id, 'class': 'blue' &#125;"</span>&gt;</span>blue<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 通过 prop 修饰符绑定 DOM attribute --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:innerHTML.prop</span>=<span class="string">"'red'"</span> <span class="attr">:className.prop</span>=<span class="string">"'red'"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<h4 id="camel-2-1-0-将-kebab-case-特性名转换为-camelCase-从-2-1-0-开始支持"><a href="#camel-2-1-0-将-kebab-case-特性名转换为-camelCase-从-2-1-0-开始支持" class="headerlink" title=".camel - (2.1.0+) 将 kebab-case 特性名转换为 camelCase. (从 2.1.0 开始支持)"></a>.camel - (2.1.0+) 将 kebab-case 特性名转换为 camelCase. (从 2.1.0 开始支持)</h4><p>下面的例子中，第二种写法是没有效果的，第三种方法可以正常展示。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">style</span>=<span class="string">"width:50px; height:50px"</span> <span class="attr">:viewBox</span>=<span class="string">"viewBox"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"50"</span> <span class="attr">fill</span>=<span class="string">"#fdd"</span> <span class="attr">stroke</span>=<span class="string">"none"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">style</span>=<span class="string">"width:50px; height:50px"</span> <span class="attr">:view-box</span>=<span class="string">"viewBox"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"50"</span> <span class="attr">fill</span>=<span class="string">"#fdd"</span> <span class="attr">stroke</span>=<span class="string">"none"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">style</span>=<span class="string">"width:50px; height:50px"</span> <span class="attr">:view-box.camel</span>=<span class="string">"viewBox"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"50"</span> <span class="attr">fill</span>=<span class="string">"#fdd"</span> <span class="attr">stroke</span>=<span class="string">"none"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<h4 id="sync-2-3-0-语法糖，会扩展成一个更新父组件绑定值的-v-on-侦听器"><a href="#sync-2-3-0-语法糖，会扩展成一个更新父组件绑定值的-v-on-侦听器" class="headerlink" title=".sync (2.3.0+) 语法糖，会扩展成一个更新父组件绑定值的 v-on 侦听器"></a>.sync (2.3.0+) 语法糖，会扩展成一个更新父组件绑定值的 v-on 侦听器</h4><p>这种情况下暂时不举例说明了。</p>
+<h3 id="v-model相关修饰符"><a href="#v-model相关修饰符" class="headerlink" title="v-model相关修饰符"></a>v-model相关修饰符</h3><h4 id="lazy-取代-input-监听-change-事件"><a href="#lazy-取代-input-监听-change-事件" class="headerlink" title=".lazy - 取代 input 监听 change 事件"></a>.lazy - 取代 input 监听 change 事件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在“change”时而非“input”时更新 --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.lazy</span>=<span class="string">"msg"</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<h4 id="number-输入字符串转为有效的数字"><a href="#number-输入字符串转为有效的数字" class="headerlink" title=".number - 输入字符串转为有效的数字"></a>.number - 输入字符串转为有效的数字</h4><p>如果这个值无法被 parseFloat() 解析，则会返回原始的值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.number</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"number"</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<h4 id="trim-输入首尾空格过滤"><a href="#trim-输入首尾空格过滤" class="headerlink" title=".trim - 输入首尾空格过滤"></a>.trim - 输入首尾空格过滤</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"name0"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入姓名"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.trim</span>=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入姓名：trim"</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小结： 或许以上的总结在实际项目中可能用不到，或者我们习惯了使用原生的解决方法，例如手动阻止默认事件，但是我们的目的不仅仅只是为了了解这个知识，更多的是通过了解这些用法，来重新温习一下JS的基础，在后面，还需要去阅读源码，了解这些装饰器在底层是如何实现的，这样才能真正走上进阶之路。</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-01-27T11:05:19.709Z" itemprop="dateUpdated">2021-01-27 19:05:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/07/13/vue-decorator02/&title=《Vue修饰符总结（下篇）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/07/13/vue-decorator02/&title=《Vue修饰符总结（下篇）》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/07/27/interview-non-technical/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">面试题系列之常见非技术问题</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/06/27/vue-decorator01/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue修饰符总结（上篇）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/07/13/vue-decorator02/&title=《Vue修饰符总结（下篇）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/07/13/vue-decorator02/&title=《Vue修饰符总结（下篇）》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3azY6DMAxF4b7/S3e2IzGh59rQEc5hVVVA8nXhxj+vF77e+Pp9//Hz6s3HVV53XDJkyHgsg2/ruEAKWL2TrLu6R4YMGfswSCgk9/OgfP4s35sMGTJknIfOdOHOEVOGDBky0oDLD3A8iU2DuwwZMnZj1Mpn59sl7/mHXFyGDBkPZPCq+/c/39LfkCFDxqMYVyWWJOCmQTnYlQwZMkYzeIAjZX0+SNFJepf7kSFDxjYMMmbBwyj5ho90xKdXGTJkjGDUHiML80yTl/CW+5QhQ8ZoBm8o1pYh7YG02SBDhozdGP1hLJ6IXnuPDBky9mHwY1x/eIIf7HjjIW5typAh44GMWmJJwCmMHwTR/4YMGTIGMch4Vhp2OyWzNA2WIUPGDoyrivWdpJdXBJfPypAhYzQjPfadI3nJLG2IogRYhgwZQxlkW7VjHN80n1/7MDMiQ4aMoYxa6KwV3dImREqSIUPGDoxa07G2cC1h/pA2y5AhYzSjP7fQ4fV/AhkyZOzA4OX+O9qZtXLeMomVIUPGNox0bILAam1L/mPJkCFjBwYp1qeFs5RaLLTJkCFjNOMdXrVDG38DD/EyZMjYh5EWvNIktraVq/4AZMiQMYmRBtl0Q+k4Bbm/2ImVIUPGwxk88JFS3d1JrAwZMmRwBi/ip62CmCpDhgwZOPj2WwX8PX8ksTJkyBjNIEvyo14tcHeaoDJkyJjNqI04pCH4qlGMVlNThgwZz2P8AIJhqHY/DkmZAAAAAElFTkSuQmCC" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

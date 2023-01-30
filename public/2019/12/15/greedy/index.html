@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>算法系列——贪心算法 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript,算法">
+    <meta name="description" content="项目Git地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;algorithm-for-javascript&#x2F;tree&#x2F;master&#x2F;greedy 贪心算法简介一个贪心算法总是做出当前最好的选择，也就是说，它期望通过局部最优选择从而得到全局最优的解决方案。 使用贪心算法的条件：  贪心选择性质：原问题的整体最优解可以通过一系列局部最优的选择得到  最优子结构：一个问题的最">
+<meta name="keywords" content="JavaScript,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法系列——贪心算法">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2019&#x2F;12&#x2F;15&#x2F;greedy&#x2F;index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="项目Git地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;algorithm-for-javascript&#x2F;tree&#x2F;master&#x2F;greedy 贪心算法简介一个贪心算法总是做出当前最好的选择，也就是说，它期望通过局部最优选择从而得到全局最优的解决方案。 使用贪心算法的条件：  贪心选择性质：原问题的整体最优解可以通过一系列局部最优的选择得到  最优子结构：一个问题的最">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman04.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman05.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman06.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman07.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman08.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman09.png">
+<meta property="og:updated_time" content="2021-01-27T11:03:03.545Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;gitee.com&#x2F;beat-the-buzzer&#x2F;pictures&#x2F;raw&#x2F;master&#x2F;algorithm&#x2F;huffman&#x2F;huffman01.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" target="_blank" rel="noopener" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            算法系列——贪心算法
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            算法系列——贪心算法
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-12-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#贪心算法简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">贪心算法简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#贪心算法demo"><span class="post-toc-number">2.</span> <span class="post-toc-text">贪心算法demo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最优装载问题"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">最优装载问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#背包问题"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">背包问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#哈夫曼树"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">哈夫曼树</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-greedy"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">算法系列——贪心算法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-15 00:00:00" datetime="2019-12-14T16:00:00.000Z"  itemprop="datePublished">2019-12-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>项目Git地址：<a href="https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/greedy">https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/greedy</a></p>
+<h3 id="贪心算法简介"><a href="#贪心算法简介" class="headerlink" title="贪心算法简介"></a>贪心算法简介</h3><p>一个贪心算法总是做出当前最好的选择，也就是说，它期望通过局部最优选择从而得到全局最优的解决方案。</p>
+<p>使用贪心算法的条件：</p>
+<ul>
+<li><p><strong>贪心选择性质</strong>：原问题的整体最优解可以通过一系列局部最优的选择得到</p>
+</li>
+<li><p><strong>最优子结构</strong>：一个问题的最优解包含其子问题的最优解</p>
+</li>
+</ul>
+<p>冒泡排序、选择排序，是否用到了贪心算法？</p>
+<p>拿冒泡排序为例，每一次遍历，找到的最大的元素，下一次遍历，是在剩余的部分再去寻找最大的元素。贪心策略就是每一次从剩下的序列中选一个最大的数，把这些最大的数放在一起，就是排序后的结果。</p>
+<h3 id="贪心算法demo"><a href="#贪心算法demo" class="headerlink" title="贪心算法demo"></a>贪心算法demo</h3><h4 id="最优装载问题"><a href="#最优装载问题" class="headerlink" title="最优装载问题"></a>最优装载问题</h4><p>海盗船载重量为C，每件财宝的重量为wi，如何装载最多数量的财宝？</p>
+<p>显然，这里我们贪心的东西是数量，所以贪心策略就是从小的开始装，这样会得到最大的数量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> w = [<span class="number">4</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">14</span>, <span class="number">2</span>]; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">w.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a - b &#125;); <span class="comment">// 首先对重量进行排序</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> carry = <span class="number">30</span>; <span class="comment">// 船的载重量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> temp = <span class="number">0</span>; <span class="comment">// 已经在船上的重量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ans = <span class="number">0</span>; <span class="comment">// 已经在船上的数量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; w.length; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  temp += w[i]; <span class="comment">// 把财宝放到船上</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (temp &lt;= carry) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    ans++; <span class="comment">// 没超重-&gt; 计数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">break</span>; <span class="comment">// 超重 -&gt; 直接退出循环</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'最后带走的财宝数量：'</span> + ans);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> temp1 = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ans1 = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; w.length; j++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">  temp1 += w[j];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (temp1 &gt;= carry) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (temp1 == carry) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">      ans1 = j + <span class="number">1</span>; <span class="comment">// 正好装潢 -&gt; 最后一个可以放</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">      ans1 = j; <span class="comment">// 已经超出，最后一个不能放</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'最后带走的财宝数量：'</span> + ans1);</span></pre></td></tr></table></figure>
+
+<h4 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h4><p>n种宝物，每种宝物都有对应的重量w和对应的价值v，一次只能运走m重量的宝物，一种宝物只能拿一样，宝物可以分割。如何带走最大价值的宝物？</p>
+<p>这种情况下的贪心策略就是去装单位重量内最值钱的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Treasure</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">constructor</span>(w, v) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 传入重量和价值</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.w = w;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.v = v;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.p = v / w;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wArr = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vArr = [<span class="number">3</span>, <span class="number">8</span>, <span class="number">18</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">20</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">15</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> len = wArr.length;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> treasureArr = [];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  treasureArr[i] = <span class="keyword">new</span> Treasure(wArr[i], vArr[i]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 得到对象数组</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">treasureArr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> b.p - a.p &#125;); <span class="comment">// 按照单位重量的价值进行排序（从大到小）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="number">30</span>; <span class="comment">// 总的承重</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>; <span class="comment">// 运走的总价值</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (m &gt; treasureArr[j].w) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 如果可以把第j个物品装满，就去装</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    m -= treasureArr[j].w;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">    sum += treasureArr[j].v;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">  &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 如果第j个物品装不满，就把剩余的重量用这个物品装满</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">    sum += m * treasureArr[j].p;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">break</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'带走财宝的总价值：'</span> + sum);</span></pre></td></tr></table></figure>
+
+<p>如果物品不可分割，那么这个问题就不能使用贪心策略，举个例子：</p>
+<p>物品列表中，有一个100斤的黄金和100克的废铁。承重量是30斤。那么一开始选择黄金，装不下，由于不可分割，算法结束，啥也没装，不可能是最优解。</p>
+<p>不可分割的问题叫做： 0-1背包问题。关于这个问题后续会给出其他算法。</p>
+<h4 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h4><p>在初学编程的时候，我们都做过这样的题：将考试分数转化成等级，90分以上的为A，80<del>90的为B，70</del>80的为C，60~70的为D，60以下的为不及格。我们会写出这样的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(score &gt;= <span class="number">90</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">'优秀'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score &gt;=<span class="number">80</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">'良好'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score &gt;=<span class="number">70</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">'中等'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(score &gt;= <span class="number">60</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">'及格'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">'不及格！！！'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>显然这样的代码没有任何问题，但是我们考虑的点不在这里。我们要考虑，学生的分数呈正态分布，我们应该把频率最高的放在第一个，这样比较多的数据只需要比较一次，从而减少总的比较次数，提升效率。</p>
+<p>如果这个例子不够清晰，我们再举出其他的例子：如果我们要去猜一个老教授的年龄，我们先猜老教授是否是1岁，如果不是，再猜老教授是否是2岁，以此类推。其实，这个问题和上面分数的问题是同一类问题。我们优化一下上面的分数问题。</p>
+<p>假设优秀、良好、中等、及格、不及格这五种情况的频率分别是0.1、0.2、0.4、0.2、0.1。我们可以这样改写程序：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (score &lt; <span class="number">80</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (score &lt; <span class="number">70</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (score &lt; <span class="number">60</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> <span class="string">'不及格'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> <span class="string">'及格'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="string">'中等'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (score &lt; <span class="number">90</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">'良好'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">'优秀'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>根据上面的频率，假设现在有100个学生，那么第一种情况的比较次数大约为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">100*0.1*1 + 100*0.2*2 + 100*0.4*3 + 100*0.2*4 + 100*0.1*5 &#x3D; 300(次)</span></pre></td></tr></table></figure>
+
+<p>第二种情况的比较次数大约为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">100*0.1*3 + 100*0.2*3 + 100*0.4*2 + 100*0.2*2 + 100*0.1*2 &#x3D; 230(次)</span></pre></td></tr></table></figure>
+
+<p>两种方法的差别还是不可忽视的。其实我们可以总结规律：把频率大的部分靠近树根，一次成功的概率会大大提升。</p>
+<p>哈夫曼编码的思想其实和这个一样，用字符的使用频率作为权构建一颗哈夫曼树。构建方法是自底向上，进行合并。核心思想是<code>权值越大的元素离根越近</code>。</p>
+<p>贪心策略：<code>每次从树的集合中取出没有双亲且权值最小的两棵树左右子树，构造出一棵新树。</code></p>
+<p>下面来看一下哈弗曼树的构建步骤：</p>
+<p>以（7,18,3,32,5,26,12,8） 为例：</p>
+<p>1、初始状态</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman01.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>2、找到权值最小的两个节点，进行合并，如下图，我们把3和5合并成8</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman02.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>3、对剩余节点和新合成的节点，再次寻找权值最小的两个节点，进行合并，7和8可以合成15，这里两个8，随机选择，不影响结果。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman03.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>4、下一步操作，选择8和12，合并成20</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman04.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>5、下一步操作，15和18，合成33</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman05.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>6、下一步操作，20和26，合并成46</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman06.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>7、下一步操作，33和32，合并成65</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman07.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>8、下一步操作，65和46，合并成111，此时只剩一个节点，这个节点作为根节点，算法结束</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman08.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>看一下根节点的位置：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/algorithm/huffman/huffman09.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>如图，我们看到，距离根越近的节点，权值越大。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-01-27T11:03:03.545Z" itemprop="dateUpdated">2021-01-27 19:03:03</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/15/greedy/&title=《算法系列——贪心算法》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/15/greedy/&title=《算法系列——贪心算法》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/01/02/shadowsocks/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">科学上网工具——shadowsocks</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/04/divive/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">算法系列——分治法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/15/greedy/&title=《算法系列——贪心算法》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/15/greedy/&title=《算法系列——贪心算法》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3ay27CMBAFUP7/p1Op6qIVJL0zNkixj1cVodiHxTAPPx7xOr5X8vrZO38/fV7PTx/vWBgYGLdlHJert8HZJ1w/TV4/PQkGBsYGjOtgevbP19v3AnTvczAwMDCSUHsdlKOgiYGBgTGVkSeReYKIgYGBcc1Iithks95BP1qLY2Bg3JBRHQx88u83zjcwMDBuwjiKa257bvw8P5+DgYGxNGOkuZ8PIHujhXJTDwMDY1FG9SjVRlv1y0rO82IvDAyMDRizUrpeaM6vi52yMTAwtmH0mvJ5OthrukXlNAYGxtKMajFZPVZCTQJ3HvoxMDDWY1Qb9PmWvQCdn+G0FsfAwFiUkZesIwVn/gVVvywMDIy1GXliV2h+tTLTJCn8J4XFwMDYgJGXr7OCaRJGCwEdAwNjA0b1uNXBQF6aVr9cDAyMfRjVo48ca2RgEP1uYGBgLM243ibfoDqSrBauhWsWGBgYN2ckV6+SRC1//6x22+l8AwMDYzlGNex+phlXTTcxMDDWZoyMJJOAO5JK5mEdAwNjH0avQT9ysSwP6OUMFwMDYyFGNYA2A2KwZe9aWPN3AAMD41aMo7iagS8eYeatuj9PMTAwlmbka6S5nxTJeSHdK7MxMDDuzkiC7PiAM7+K2hxRYGBgbMDoNfHHL2pMu2yBgYGBEQ8A8sA9Pv7EwMDAGDlcXoLmjGg8gIGBsTSjV8RWw+XckI2BgbEPY+5gIAfnw4MJw0sMDIy7Mr4AtPn1GyFcjvgAAAAASUVORK5CYII=" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

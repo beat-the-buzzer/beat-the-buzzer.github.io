@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="前端学习笔记">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;page&#x2F;2&#x2F;index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" target="_blank" rel="noopener" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            前端学习笔记
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            前端学习笔记
+        </h1>
+        <h5 class="subtitle">
+            
+                        平庸不止于平庸，巅峰不甘于巅峰
+                            
+        </h5>
+    </div>
+
+    
+
+</header>
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-http-cache"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-11 00:00:00" datetime="2021-03-10T16:00:00.000Z"  itemprop="datePublished">2021-03-11</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/11/http-cache/">http缓存：强制缓存和协商缓存</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        cache-control：缓存控制，可以设置有效期，可以跳过强缓存，可以不缓存。
+etag 和 last-modified：设置协商缓存，需要客户端和服务端共同处理。
+发请求–&gt;看资源是否过期–&gt;过期–&gt;请求服务器–&gt;服务器对比资源是否真的过期–&gt;没过期–&gt;返回304状态码–&gt;客户端用缓存的老资源。
+我们可以在性能优化的问题里提到强制缓存和协商缓存...
+    
+
+        <a href="/2021/03/11/http-cache/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-http-type"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/10/http-type/">HTTP请求类型总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        GET: 获取资源GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器 端解析后返回响应内容。
+例如：请求图片资源、html资源
+POST: 传输实体主体POST方法用来传输实体的主体。虽然用GET方法也可以传输实体的主体，但一般不用GET方法进行传输，而是用 POST 方法。虽说POST的功能与GET很相似，但POST的主要目的并不是获取响应的主体内容。
+GET参数会带到U...
+    
+
+        <a href="/2021/03/10/http-type/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-http-code"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/10/http-code/">HTTP状态码总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        什么是状态码HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。
+状态码的类别
+
+
+状态码
+类别
+原因
+
+
+
+1XX
+信息性状态码
+接收的请求正在处理
+
+
+2XX
+成功状态码
+请求正常处理完毕
+
+
+3XX
+重定向状态码
+需要进行附加操作以完成请求
+
+
+4XX
+客户端错误状态码
+服务器无法处理请求
+
+
+5XX
+服务器错误状态码
+服务器处理请求出...
+    
+
+        <a href="/2021/03/10/http-code/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-deep-copy"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-08 00:00:00" datetime="2021-03-07T16:00:00.000Z"  itemprop="datePublished">2021-03-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/08/deep-copy/">逐步实现深拷贝和浅拷贝</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        数据类型和存储方式JavaScript的数据类型分为基本数据类型和引用数据类型。
+基本数据类型：number，string，boolean，null，undefined，symbol
+引用数据类型：统称为Object类型，细分的话，有：Object，Array，Date，Function等。
+基本数据类型保存在栈内存，栈内存中分别存储着变量的标识符以及变量的值。
+1let a = 1;
+
+引...
+    
+
+        <a href="/2021/03/08/deep-copy/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-display"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-03-08 00:00:00" datetime="2021-03-07T16:00:00.000Z"  itemprop="datePublished">2021-03-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/03/08/display/">CSS——display详解</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        display有很多属性值，我们在这里只介绍几个常用的，重要的，以及他们之间可能存在的一些问题和差异。
+block设置了block元素，那么这个元素就遵循盒子模型的规则，宽高、边距都是可以设置的。
+块元素独占一行。
+inlineinline元素理解为盒子内部的“流”元素，他的形状完全取决于容器，手动设置宽高都是无效的。
+inline-block外部看是“流”，内部看是“块”，比如一行内有多个...
+    
+
+        <a href="/2021/03/08/display/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-reading-tips-3"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-01-27 00:00:00" datetime="2021-01-26T16:00:00.000Z"  itemprop="datePublished">2021-01-27</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/01/27/reading-tips-3/">读书笔记系列——少有人走的路：心智成熟的旅程</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+                
+                    
+                    
+                
+                
+            
+
+点击下载读书笔记的PDF
+书名：《少有人走的路——心智成熟的旅程》
+作者：M·斯科特·派克
+
+【内容简介】
+这本书处处透露出沟通与理解的意味，它跨越时代的限制，帮助我们探索爱的本...
+    
+
+        <a href="/2021/01/27/reading-tips-3/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-writing-code02"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2020-12-28 00:00:00" datetime="2020-12-27T16:00:00.000Z"  itemprop="datePublished">2020-12-28</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2020/12/28/writing-code02/">前端面试之手写代码系列（应用篇）</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        防抖与节流关于防抖与节流，在之前一篇文章里已经写了：防抖节流操作总结
+文章里还做了科里化的操作，就是下面即将要写的，目的是把防抖和节流做成一个公共的方法。
+科里化与函数式编程关于科里化与函数式编程，在之前一篇文章里已经写了：函数式编程
+文章里有大量的举例和应用场景。
+深拷贝简单版本1：先stringfy再parse，无法处理值为日期、函数等类型的数据；
+简单版本2：ES6扩展运算符，只能处理...
+    
+
+        <a href="/2020/12/28/writing-code02/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-writing-code01"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2020-12-28 00:00:00" datetime="2020-12-27T16:00:00.000Z"  itemprop="datePublished">2020-12-28</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2020/12/28/writing-code01/">前端面试之手写代码系列（基础篇）</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        下面的几个是JS里面比较基础和常用的东西，通过用代码实现，可以让我们更深刻地了解这些方法的底层原理，以及解决了哪些问题。大部分的方法实现在《你不知道的JavaScript》里面都有。
+疫情的存在，使得我们几乎都是线上面试，几乎无法现场手写代码。但是，手写代码是面试中很重要的一环，因为这个比较综合、全面、深刻。
+new
+先创建一个新的、空的实例对象
+
+将实例对象的原型指向构造函数的原型
+
+将构...
+    
+
+        <a href="/2020/12/28/writing-code01/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-writing-code03"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2020-12-28 00:00:00" datetime="2020-12-27T16:00:00.000Z"  itemprop="datePublished">2020-12-28</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2020/12/28/writing-code03/">前端面试之手写代码系列（进阶篇）</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        EventBus1// 组件通信，一个触发与监听的过程2class EventEmitter &#123;3  constructor () &#123;4    // 存储事件5    this.events = this.events || new Map()6  &#125;7  // 监听事件8  addListener (type, fn) &#123;9    if (!this...
+    
+
+        <a href="/2020/12/28/writing-code03/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-interview-for-vue02"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2020-12-23 00:00:00" datetime="2020-12-22T16:00:00.000Z"  itemprop="datePublished">2020-12-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2020/12/23/interview-for-vue02/">面试题系列——vue相关（应用篇）</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+Vue、React相关的东西，我们如果仅仅停留在使用的层面，那么我们将无法通过任何一场面试。下面的一些关于Vue的问题，是我总结的一些使用技巧，以问题的方式总结出来。
+
+Vue 如何在组件间传值
+父组件传给子组件，props，
+
+子组件传给父组件，父组件绑定了一个事件之后，子组件使用 $emit 
+
+另外，父组件可以拿到子组件对象，然后去调用子组件的方法或者获取子组件里面定义的值；
+
+兄弟...
+    
+
+        <a href="/2020/12/23/interview-for-vue02/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    </div>
+</nav>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/page/2/&title=前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/page/2/&title=前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwklEQVR42u3aQY7CMAwFUO5/aUaa3Qg1+NtNYKTXFSolfWFhJd95PMrX8/d6vbO+Xp9cj3nbhYuLO+bWX3n1OSWun796BhcX9zx3XbzWE+j9tjIaLi7u93PXxai3PsHFxf3v3MqiZE38cN3FxcUNuWm0UdkgVaaxca+Gi4s74KaB6Y7PG/NdXFzckPsMr3oZuuuNf8bExcU9wl03UOut1rQwTbZDuLi4u7n1OCNti6alsBKq4uLifg83DUxTYv3QBi4u7hlueoiql7vcvJXCxcX9ELdyp7dx6hW+N4UMFxd3M7f++noUkv4db8bExcU9wq0Ho73DGfc2Y3BxcXdzJy+ub43Sf+uyrYKLi3uEOyk6aaQyWVrh4uKe5K6PO6RLk3kU8qYU4uLiHuGm0DQomeMuA1NcXNxt3Hob495GS/PYBy4u7kFurylSn0alOJYiElxc3IPcu7Yo6fIo7vbg4uIe4U7arpNFzJsEt/AtLi7ubm5avNIC1Bvn8ltcXNyD3DRnTUtYb3rNmoqLi3uQOylqldFK08PFxf1Kbm8Ckzu4uLif4qZtkrQB05v2KBbBxcUdcNPAtHeEYt6+xcXFPcL9ARBwJQvpIi91AAAAAElFTkSuQmCC" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

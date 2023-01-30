@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ESLint配置教程（VSCode插件版） | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript,ESLint,VSCode">
+    <meta name="description" content="Git项目地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;eslint-test.git ESLint简介ESLint 是一个ECMAScript&#x2F;JavaScript 语法规则和代码风格的检查工具，它的目标是保证代码的一致性和减少错误。 JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。因为没有编译程序，为了寻找 JavaScript 代码错误通常需">
+<meta name="keywords" content="JavaScript,ESLint,VSCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESLint配置教程（VSCode插件版）">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2019&#x2F;11&#x2F;28&#x2F;eslint&#x2F;index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="Git项目地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;eslint-test.git ESLint简介ESLint 是一个ECMAScript&#x2F;JavaScript 语法规则和代码风格的检查工具，它的目标是保证代码的一致性和减少错误。 JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。因为没有编译程序，为了寻找 JavaScript 代码错误通常需">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-01-27T11:02:41.835Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" target="_blank" rel="noopener" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            ESLint配置教程（VSCode插件版）
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            ESLint配置教程（VSCode插件版）
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-11-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ESLint简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">ESLint简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ESLint的配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">ESLint的配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置步骤"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#先使用npm-yarn安装一些东西"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">先使用npm/yarn安装一些东西</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装VSCode的ESLint插件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">安装VSCode的ESLint插件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定义规则"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">定义规则</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-eslint"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ESLint配置教程（VSCode插件版）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-28 00:00:00" datetime="2019-11-27T16:00:00.000Z"  itemprop="datePublished">2019-11-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Git项目地址：<a href="https://github.com/beat-the-buzzer/eslint-test.git">https://github.com/beat-the-buzzer/eslint-test.git</a></p>
+<h3 id="ESLint简介"><a href="#ESLint简介" class="headerlink" title="ESLint简介"></a>ESLint简介</h3><p>ESLint 是一个ECMAScript/JavaScript 语法规则和代码风格的检查工具，它的目标是保证代码的一致性和减少错误。</p>
+<p>JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。因为没有编译程序，为了寻找 JavaScript 代码错误通常需要在执行过程中不断调试。像 ESLint 这样的可以让程序员在编码的过程中发现问题而不是在执行的过程中。</p>
+<p>使用ESLint，有时候编辑器会强制我们去使用ES6，这样有助于我们对ES6的学习。</p>
+<p>使用ESLint，不仅仅是为了写更加规范的代码，更重要的原因是，编辑器指出了代码中不规范的地方，我们可以从中学会如何去写规范的代码，最终目标是在没有ESLint的时候也能写出规范的代码。</p>
+<h3 id="ESLint的配置"><a href="#ESLint的配置" class="headerlink" title="ESLint的配置"></a>ESLint的配置</h3><p>我们知道<code>vue-cli</code>集成了<code>webpack</code>，其中我们可以选择是否使用ESLint。不过<code>vue-cli</code>里面自带的ESLint有一些不方便的地方，就是一旦出现不符合规范的代码，就会直接编译报错，页面上打印了错误信息。但是有时候，我们在开发阶段，临时写了一些不规范的代码，此时如果ESLint提示出错，就会很困扰。</p>
+<p>我们可以使用VSCode里面的ESLint插件，这样，我们就会在VSCode底部的“问题控制台”看到报错信息，但是不影响项目的运行。</p>
+<h3 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h3><h4 id="先使用npm-yarn安装一些东西"><a href="#先使用npm-yarn安装一些东西" class="headerlink" title="先使用npm/yarn安装一些东西"></a>先使用npm/yarn安装一些东西</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install -g eslint # 全局安装eslint</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">npm init -y  # 调过设置，生成package.json</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">eslint --init # 跟着提示一步步走，中间会让你安装对应的模块</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## 下面是一些配置</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1. How <span class="keyword">do</span> you like to use ESLint?  To check syntax, find problems, and enforce code style</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 2. What <span class="built_in">type</span> of modules dose your project use? 根据项目需要去选择</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Which framework does your project use? 根据项目需要去选择，这个选择体现在后面安装模块上</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Where does your code run? 一般选择browser</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> How would you like to define a style <span class="keyword">for</span> your project? Use a popular style guide.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Which style guide <span class="keyword">do</span> you want to follow? 推荐使用Airbnb</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> What format <span class="keyword">do</span> you want your config file to be <span class="keyword">in</span>? Javascript</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## 上面选择完成之后，就会去安装相关的模块</span></span></span></pre></td></tr></table></figure>
+
+<h4 id="安装VSCode的ESLint插件"><a href="#安装VSCode的ESLint插件" class="headerlink" title="安装VSCode的ESLint插件"></a>安装VSCode的ESLint插件</h4><p>这个在VSCode左边搜索一下就能找到了</p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>先激活上面下载的ESLint插件</p>
+<p>点击VSCode的设置，然后在设置里面搜索ESLint，就能看到很多关于ESLint的设置。</p>
+<p>这里可以选择“用户设置”和“工作区设置”，“用户设置”可以理解为VSCode打开的项目都会使用这个设置，“工作区设置”，这里面的设置只会影响单个项目。在“工作区设置”里面进行个性化设置的时候，会在项目目录下生成一个<code>.vscode文件夹</code>。</p>
+<p>在工作区设置里面，点击<code>在settings.json中编辑</code>，会进入<code>.vscode/settings.json</code>文件。</p>
+<p>在这个文件里面设置ESLint配置文件目录</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">"eslint.options"</span>: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">"configFile"</span>: <span class="string">"./.eslintrc.js"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>经过上面的步骤，我们就可以使用ESLint来优化代码了。</p>
+<h4 id="定义规则"><a href="#定义规则" class="headerlink" title="定义规则"></a>定义规则</h4><p>我们写一段最简单的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(num);</span></pre></td></tr></table></figure>
+
+<p>此时编辑器会有一些报错信息或者警告：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Unexpected var, use let or const instead.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Unexpected console statement.</span></pre></td></tr></table></figure>
+
+<p>根据提示，我们需要把var改成const，因为num没有进行过第二次赋值，</p>
+<p>ESLint的默认规则，当使用console的时候，会报警告，但是我们在开发阶段需要console，此时我们需要把这个规则关掉，我们需要去编辑<code>.eslintrc.js</code>文件的rules。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="string">'no-console'</span>: <span class="number">0</span></span></pre></td></tr></table></figure>
+
+<p>前面的是规则名，后面的值是数字，0表示不启用这个规则，1表示warn，2表示error。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-01-27T11:02:41.835Z" itemprop="dateUpdated">2021-01-27 19:02:41</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ESLint/" rel="tag">ESLint</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/11/28/eslint/&title=《ESLint配置教程（VSCode插件版）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/11/28/eslint/&title=《ESLint配置教程（VSCode插件版）》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/29/git/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Git基本用法总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/27/c3-animation/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CSS3 动画</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/11/28/eslint/&title=《ESLint配置教程（VSCode插件版）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/11/28/eslint/&title=《ESLint配置教程（VSCode插件版）》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQW6DQAwF0N7/0lSquogUMfn2kKg1b1YoTYDH4neM/fUVr+NnPR4/fvL8zed19tf15xcvDAyMf8s4luvs1tc3cXZDOal6ZgwMjDswkpBdH6/jeP2r5GG9uGcMDAyMOILzlUc5BgYGRpWxLjKTOO6FOwYGBkYSi9VtXDVwqyGOgYFxH0avMfCZ47f3NzAwMP4842itnVdj15bBv7/FwMAYzagWq/sDFuuzbT0yDAyMoYxrX/fvbzrzUI46nxgYGIMY61isXr4a33mIn14dAwPjBoyd0+WPoze6EZXEGBgYoxm9lmRyu+uz5VvM8mYUAwNjNKO3vdsvdHsldKGpiYGBMYhRLWjz7+wUvdXSFwMDYypj/3Rvea5xlGNgYNyHce0GsToWVi2eX3Q5MDAwxjHykawXrcRWG3K/hYCBgTGbkZegn2xDViMYAwPjDoxeyPaal4WxiRiJgYFxB0YeptVYvLb9cHpFDAyMmzHKtW+rtRlt+OJCFwMDYzajepk8QKsFcPIIyjNuGBgYIxjVYjUZoehRd0Y6MDAwZjN6r+Orr8/esemMOrEYGBgjGEdxJRvHPIJ7DYZoFAwDA2MQI187E2fVsYxeaxMDA2M2IwnZPI7zuOy9HWz+98DAwBjB6IVs70Fc1Rw97cdiYGBgtArg3ku6whgHBgYGRrFk7d3WVhWOgYFxA8ZVG7tquZtsAaNRDwwMjNGMamNgH5Z8vzkzgoGBMY3xDcxWUfcWnVajAAAAAElFTkSuQmCC" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>函数式编程 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript,函数式编程">
+    <meta name="description" content="Git地址： https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;functional-programming.git 抛砖引玉从一道容易出错的题开始： 1[&amp;apos;1&amp;apos;, &amp;apos;2&amp;apos;, &amp;apos;3&amp;apos;].map(parseInt);  看到这样的代码，我们就能瞬间理解代码这样写的意图，就是把数组中的所有元素都调用parseInt方法，输出一个纯数字的数组。但是我们在控制台上打印出来的结果，和预期">
+<meta name="keywords" content="JavaScript,函数式编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数式编程">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;2019&#x2F;12&#x2F;01&#x2F;functional-programming&#x2F;index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="Git地址： https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;functional-programming.git 抛砖引玉从一道容易出错的题开始： 1[&amp;apos;1&amp;apos;, &amp;apos;2&amp;apos;, &amp;apos;3&amp;apos;].map(parseInt);  看到这样的代码，我们就能瞬间理解代码这样写的意图，就是把数组中的所有元素都调用parseInt方法，输出一个纯数字的数组。但是我们在控制台上打印出来的结果，和预期">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-01-27T11:02:47.475Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" target="_blank" rel="noopener" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            函数式编程
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            函数式编程
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-12-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#抛砖引玉"><span class="post-toc-number">1.</span> <span class="post-toc-text">抛砖引玉</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是函数式编程"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是函数式编程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#柯里化和偏函数应用"><span class="post-toc-number">3.</span> <span class="post-toc-text">柯里化和偏函数应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#术语介绍"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">术语介绍</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#柯里化"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">柯里化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#为什么需要柯里化？"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">为什么需要柯里化？</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#偏函数应用"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">偏函数应用</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用Demo——处理请求返回"><span class="post-toc-number">4.</span> <span class="post-toc-text">应用Demo——处理请求返回</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用Demo——缓存效果"><span class="post-toc-number">5.</span> <span class="post-toc-text">应用Demo——缓存效果</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-functional-programming"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">函数式编程</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-01 00:00:00" datetime="2019-11-30T16:00:00.000Z"  itemprop="datePublished">2019-12-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Git地址： <a href="https://github.com/beat-the-buzzer/functional-programming.git">https://github.com/beat-the-buzzer/functional-programming.git</a></p>
+<h4 id="抛砖引玉"><a href="#抛砖引玉" class="headerlink" title="抛砖引玉"></a>抛砖引玉</h4><p>从一道容易出错的题开始：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map(<span class="built_in">parseInt</span>);</span></pre></td></tr></table></figure>
+
+<p>看到这样的代码，我们就能瞬间理解代码这样写的意图，就是把数组中的所有元素都调用parseInt方法，输出一个纯数字的数组。但是我们在控制台上打印出来的结果，和预期不符：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>]</span></pre></td></tr></table></figure>
+<p>造成这种情况的原因是，我们想当然地认为了map方法是让数组的值都执行一次map传入的函数，所以，我们的思路是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'2'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'3'</span>);</span></pre></td></tr></table></figure>
+
+<p>但事实上，map方法给处理函数传的参数有三个，分别是value,index，array，另外，parseInt这个方法可以接受的参数有两个，第一个是待转换的字符串，第二个是进制。因此，上面的语句转换一下，就是这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>].map(<span class="function">(<span class="params">value,index,arr</span>) =&gt;</span> <span class="built_in">parseInt</span>(value,index,arr));</span></pre></td></tr></table></figure>
+
+<p>所以，我们实际上调用了这样的方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>,<span class="number">0</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'2'</span>,<span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'3'</span>,<span class="number">2</span>);</span></pre></td></tr></table></figure>
+
+<p>parseInt第二个参数是0的时候，表示按十进制转换；<br>parseInt第二个参数是1的时候，没听说过一进制，所以是NaN；<br>parseInt第二个参数是2的时候，表示按二进制转换，但是很遗憾，二进制的世界里只有0和1，没有3，如果我们把数组的最后一个元素改成字符串’11’，转换之后，就会得到3；</p>
+<p>所以最开始的问题，得到了[1, NaN, NaN]的结果。</p>
+<p>正确的打开方式是这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>].map(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(value);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>
+
+<p>我们使用下面的方法，也就是<strong>函数式编程</strong>的思想：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> unary = <span class="function">(<span class="params">fn</span>) =&gt;</span> fn.length === <span class="number">1</span> ? fn : <span class="function">(<span class="params">arg</span>) =&gt;</span> fn(arg)</span></pre></td></tr></table></figure>
+
+<p>这是一个函数，它的参数是另一个函数，我们检查传入的函数的参数列表，如果传入的函数只有一个参数，那么就不做处理，如果有多个参数，那么就把这个函数转换成接收一个参数的函数。因此：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>].map(unary(<span class="built_in">parseInt</span>));</span></pre></td></tr></table></figure>
+
+<p>就能得到[1, 2, 3]的结果了。</p>
+<blockquote>
+<p>《JavaScript ES6函数式编程入门经典》，文中的所有内容都来自于这本书。其实，我研究一下函数式编程，有两个原因，一个是这是我的知识盲点，虽然偶尔听到过类似“函数式编程、柯里化”等术语，但是我依旧没有好好地学习这方面的知识；另一个原因是在学习Redux的时候，里面有一个connect函数，这是一个高阶函数，但是redux里面的源码我看不懂，所以我想先充实一下自己的知识，然后再去学习更深层次的东西。</p>
+</blockquote>
+<h4 id="什么是函数式编程"><a href="#什么是函数式编程" class="headerlink" title="什么是函数式编程"></a>什么是函数式编程</h4><p>言归正传，<strong>高阶函数是接受函数作为参数并且/或者返回函数作为输出的函数。</strong></p>
+<p><strong>函数式编程的核心思想是：把操作抽象为函数。</strong></p>
+<p>举个例子：我们要遍历数组，最初级的方式是什么，我们不经过大脑也能写出来：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(array[i]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>我们需要把遍历的操作抽象出来：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> forEach = <span class="function">(<span class="params">array, fn</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> i;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    fn(array[i]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h4 id="柯里化和偏函数应用"><a href="#柯里化和偏函数应用" class="headerlink" title="柯里化和偏函数应用"></a>柯里化和偏函数应用</h4><h5 id="术语介绍"><a href="#术语介绍" class="headerlink" title="术语介绍"></a>术语介绍</h5><ul>
+<li>一元函数——只接受一个参数的函数</li>
+<li>二元函数——接受两个参数的函数</li>
+<li>变参函数——接受可变数量参数的函数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variadic = <span class="function">(<span class="params">a,...variadic</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(a);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(variadic);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">variadic(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// [2,3]</span></span></pre></td></tr></table></figure>
+
+<h5 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h5><p>柯里化其实并不是什么太复杂的概念，只是因为我们对它陌生罢了。</p>
+<blockquote>
+<p>柯里化是把一个多参数函数转换为一个嵌套的一元函数的过程。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x + y;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> addCurried = <span class="function"><span class="params">x</span> =&gt;</span> <span class="function"><span class="params">y</span> =&gt;</span> x + y;</span></pre></td></tr></table></figure>
+
+<p>我们可以这样调用函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">addCurried(<span class="number">4</span>)(<span class="number">4</span>); <span class="comment">// 8</span></span></pre></td></tr></table></figure>
+
+<p>我们用es5写一个柯里化函数，这样可以更好地看到嵌套的效果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个函数名看起来好眼熟啊！</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> curry = <span class="function">(<span class="params">binaryFn</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">firstArg</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">secondArg</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> binaryFn(firstArg,secondArg);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> autoCurriedAdd = curry(add);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">autoCurriedAdd(<span class="number">2</span>)(<span class="number">2</span>); <span class="comment">// 4</span></span></pre></td></tr></table></figure>
+
+<h5 id="为什么需要柯里化？"><a href="#为什么需要柯里化？" class="headerlink" title="为什么需要柯里化？"></a>为什么需要柯里化？</h5><p>实际上，平时工作中很少用到柯里化函数，但是，柯里化和“闭包、arguments、apply、call、bind”有很强的联系。比起运用柯里化，我们更需要注意的是在学习柯里化的过程中强化我们的基础知识。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> curry = <span class="function">(<span class="params">fn</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">'No function Provided'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">curriedFn</span>(<span class="params">...args</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (args.length &lt; fn.length) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> curriedFn.apply(<span class="literal">null</span>,args.concat(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">          [].slice.call(<span class="built_in">arguments</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        ))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> fn.apply(<span class="literal">null</span>,args);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+
+<p>使用curry函数包裹我们需要调用的函数，就可以完成柯里化了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b, c</span>) =&gt;</span> a + b + c;</span></pre></td></tr></table></figure>
+
+<p>正常调用方式是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span></pre></td></tr></table></figure>
+
+<p>柯里化的调用方式是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">curry(add)(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">curry(add)(<span class="number">1</span>)(<span class="number">2</span>,<span class="number">3</span>);</span></pre></td></tr></table></figure>
+
+<p>很遗憾，上面的柯里化调用方法只能处理三个参数，因为我们的add函数有三个参数。我试图写一个可变参数的add函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">...args</span>) =&gt;</span> args.reduce(<span class="function">(<span class="params">x, y</span>) =&gt;</span> x + y);</span></pre></td></tr></table></figure>
+
+<p>但是，这个函数不能使用上面的柯里化方法，原因是，这个函数的length值始终是0。</p>
+<h5 id="偏函数应用"><a href="#偏函数应用" class="headerlink" title="偏函数应用"></a>偏函数应用</h5><blockquote>
+<p>Partial Application(偏函数应用) 是指使用一个函数并将其应用一个或多个参数，但不是全部参数，在这个过程中创建一个新函数。</p>
+</blockquote>
+<p>我们可以通过bind来实现这个效果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add3</span>(<span class="params">a, b, c</span>) </span>&#123; <span class="keyword">return</span> a + b + c; &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">add3(<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>);  <span class="comment">// 14</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add6 = add3.bind(<span class="keyword">this</span>, <span class="number">2</span>, <span class="number">4</span>);  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">add6(<span class="number">8</span>);  <span class="comment">// 14</span></span></pre></td></tr></table></figure>
+
+<p>上面这个例子中，我们定义了add6这个函数，这个函数是add3固定了两个参数之后生成的，add6只接受一个参数，并且计算的结果是给add6的参数加上6。</p>
+<p>如果你已经有了 curry() ，那么意味着你也已经有偏函数应用！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add6 = curry(add3)(<span class="number">2</span>)(<span class="number">4</span>);  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">add6(<span class="number">8</span>); <span class="comment">// 14</span></span></pre></td></tr></table></figure>
+
+<p>更新add方法：</p>
+<p>我在书上看到了一个add方法，可以计算出任意参数的add</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">add(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">add(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">add(<span class="number">1</span>,<span class="number">2</span>)(<span class="number">3</span>,<span class="number">4</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">add(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)(<span class="number">4</span>);</span></pre></td></tr></table></figure>
+
+<p>代码如下：<a href="https://github.com/beat-the-buzzer/functional-programming/blob/master/add.js">https://github.com/beat-the-buzzer/functional-programming/blob/master/add.js</a></p>
+<p>add方法必须返回一个函数，但是我们的目标是计算累加值，所以使用了重写toString的方式，来计算累加值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> adder = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 将参数用闭包捕获 args</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> adder_temp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">      args.push(...arguments);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> adder_temp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    adder_temp.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> args.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> a + b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">      &#125;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> adder_temp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> adder(...args);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = add(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = add(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>, <span class="number">4</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(+a); <span class="comment">// 10</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b.toString()); <span class="comment">// 10</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;c&#125;</span>`</span>); <span class="comment">// 10</span></span></pre></td></tr></table></figure>
+
+<h4 id="应用Demo——处理请求返回"><a href="#应用Demo——处理请求返回" class="headerlink" title="应用Demo——处理请求返回"></a>应用Demo——处理请求返回</h4><p>下面来实现一个高阶函数，这是我平时工作的时候遇到的一个新需求。</p>
+<p>看下面这段代码，是我们项目中已有的调用接口的方式，我们在调用接口的时候，需要在我们自己的业务模块里面处理数据，例如，把GRID0的每一项进行分割。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params">onSend, success, error, other</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> res = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    data: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">      success: <span class="literal">true</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">      msg: <span class="string">'假设返回的数据'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">      GRID0: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="string">'123|456|789'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="string">'abc|def|ghi'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      ],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">      KEY1INDEX: <span class="number">0</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      KEY2INDEX: <span class="number">1</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">      KEY3INDEX: <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  success(res);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">getData(&#123;&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 处理数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>
+
+<p>现在我们要把处理数据的代码写在公共的部分，也就是说，在调用接口的时候，成功的回调里面直接就能拿到处理后的数据。我觉得这样的需求，很适合用高阶函数。我们的目标是：<code>HOFgetData(getData)</code>这个函数，第二个参数是个回调函数，我们要让这个回调函数的参数变成我们想要的数据格式。下面我将一一实现。</p>
+<p>1、我们定义的HOFgetData传入一个函数，返回一个新的函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HOFgetData</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> newFunc = <span class="function"><span class="keyword">function</span> (<span class="params">obj, success</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    args[<span class="number">0</span>].call(<span class="literal">null</span>, obj, success);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> newFunc;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>这段代码，就是实现不做任何操作的高阶函数。</p>
+<p>2、我们要对成功的回调函数进行处理，说具体点，就是成功的回调函数的参数。所以，我又写了一个高阶函数，来处理成功的回调函数，使得<code>hofsuccess(success)</code>的参数是我们需要的数据格式。</p>
+<p>hofsuccess也是传入一个函数，返回一个新函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hofsuccess = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> tempFunc = [].slice.call(<span class="built_in">arguments</span>); <span class="comment">// 传入的success函数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> temp = [].slice.call(<span class="built_in">arguments</span>); <span class="comment">// 得到success的参数，就是返回值</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> data = temp[<span class="number">0</span>].data;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 处理数组GRID0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> LIST0 = data.GRID0.map(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">var</span> item = value.split(<span class="string">'|'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        KEY1: item[data.KEY1INDEX],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        KEY2: item[data.KEY2INDEX],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        KEY3: item[data.KEY3INDEX]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> obj = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">      LIST0: LIST0,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">      msg: data.msg</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    tempFunc[<span class="number">0</span>](obj);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+
+<p>3、HOFgetData里面取调用新的成功的回调：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newFunc = <span class="function"><span class="keyword">function</span> (<span class="params">obj, success</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  args[<span class="number">0</span>].call(<span class="literal">null</span>, obj, hofsuccess(success));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>4、调用新的函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  param: <span class="string">'param'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* 高阶函数赋值，得到的newGetData是个函数，并且这个函数的参数个getData一样</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* 这里第二个参数在HOFgetData内部做了高阶函数处理，使得返回的结果是处理后的数据结构</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment">*/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newGetData = HOFgetData(getData);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">newGetData(obj, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>
+
+<p>返回的结果是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  LIST0: [&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    KEY1: <span class="string">"123"</span>, </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    KEY2: <span class="string">"456"</span>, </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    KEY3: <span class="string">"789"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;, &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    KEY1: <span class="string">"abc"</span>, </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    KEY2: <span class="string">"def"</span>, </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    KEY3: <span class="string">"ghi"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  &#125;], </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  msg: <span class="string">"假设返回的数据"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/beat-the-buzzer/functional-programming/blob/master/hof.js">点击查看完整代码整合</a></p>
+<p>得到的newGetData就是我们想要的新的调用函数的方法，并且，这个方法对原有的功能不会造成影响。</p>
+<h4 id="应用Demo——缓存效果"><a href="#应用Demo——缓存效果" class="headerlink" title="应用Demo——缓存效果"></a>应用Demo——缓存效果</h4><p>下面还有一个高阶函数的应用，可以应用在平时的工作中。</p>
+<p>经常会有这样的业务场景：查询某一天的历史数据。下面，我将实现一个缓存效果，曾经访问过的值暂时缓存起来。当然，不是使用localStorage或者sessionStorage，而是高阶函数的方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="number">0</span>; <span class="comment">// 模拟数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">postData</span>(<span class="params">date</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// ... 省略逻辑</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">'发送请求，得到数据'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> result = (++data) + <span class="string">':'</span> + date; <span class="comment">// 模拟数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> result;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义的高阶函数，传入的参数是一个函数，返回一个新的函数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">superPostData</span>(<span class="params">fn</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> cache = &#123;&#125;; <span class="comment">// 缓存的对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> cachedItem = cache[args[<span class="number">0</span>]];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(cachedItem) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">      <span class="built_in">console</span>.log(<span class="string">'从缓存中取数据'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> cachedItem;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">      cache[args[<span class="number">0</span>]] = fn.apply(fn, args); <span class="comment">// 缓存结果</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> cache[args[<span class="number">0</span>]];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newPostData = superPostData(postData); <span class="comment">// 使用高阶函数，产生一个新的函数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">newPostData(<span class="string">'20190101'</span>); <span class="comment">// 发送请求，得到数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">newPostData(<span class="string">'20190102'</span>); <span class="comment">// 发送请求，得到数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">newPostData(<span class="string">'20190101'</span>); <span class="comment">// 从缓存中取数据</span></span></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/beat-the-buzzer/functional-programming/blob/master/cache.js">点击查看完整代码整合</a></p>
+<p>从例子中，我们可以看到，第一次查询20190101的数据，缓存里没有，于是调用接口，得到数据并缓存；然后，查询20190102的数据，缓存里也没有，于是调用接口，得到数据并缓存。当我们再次查询20190101的数据，发现缓存里有这条数据，于是直接取出来，这样就减少了http请求，提升了性能。</p>
+<p>以上就是我想要讲的关于函数式编程的所有内容，如果能弄懂上面的add函数，相信你会对函数、闭包这一类的概念有了更深的理解。建议大家在以后学习React的时候，试着去写一些高阶组件，相信不会太难理解。</p>
+<p>其他应用：</p>
+<p><a href="https://beat-the-buzzer.github.io/2020/09/12/debounce-throttle/" target="_blank" rel="noopener">防抖节流操作总结</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-01-27T11:02:47.475Z" itemprop="dateUpdated">2021-01-27 19:02:47</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/01/functional-programming/&title=《函数式编程》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/01/functional-programming/&title=《函数式编程》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/02/strict-loose-equality/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">宽松相等和严格相等</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/30/markdown/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Markdown语法总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/01/functional-programming/&title=《函数式编程》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/01/functional-programming/&title=《函数式编程》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3a0Y7iMAwF0Pn/n2aleVppabm2Y2Clkyc0hTSnIyWu7Z+feDx+x9VfHn+Nq+8ns13N+e/VwwMPDw+vtfT76a6mvrrx/fern3P8k/vi4eHhrfEmS8kfTfXASNbzYgY8PDy8j/Kqiz714PDw8PD+X16SPqimNnqHCh4eHt438JLbTNIHeTo4v+PhXAseHh5ezOtt5Z/9vFjfw8PDwxtU1fNtNzkMkk0/SeMW1omHh4e3wMunrgbBZ5O8kwYvPDw8vA1ejqmSelt/7+DJWxDw8PDwJrz5hnsfQE9asnoJ3yfBNB4eHt5RXrL5Tk6bvEVg0lgQnXJ4eHh4h3jV21eD6V7yN09qvKDi4eHhfYh3tqGquujJo8fDw8Pb4CUF/moZrJc+yGfLw3E8PDy8PV6v0aqahO01UU2Kc3h4eHgbvPvgtRocV5cyab0qp3Hx8PDw3sKbvPxPguxTYToeHh7ee3i9xoL7JU5aqUaBOB4eHt4Cb54syEe1tasXsuPh4eFt80Yba/HYyAPxSbLjSUiNh4eHd5SXJ2rzq5OmhGoSuVzlw8PDwxvz5oX/JHXbS/4m5a4Xa8bDw8Nb4+U/y1MJk8d37BDCw8PDW+NVN/fmNl0MiJO1vUgc4+Hh4S3w5smInJo3Ud3zelfx8PDw3sPLg+PeIZEHzb3kCB4eHt4er/fyf/bAyBu2yi8AeHh4eG/hVQ+DydXR0k9V+fDw8PBi3qM4qmnWXitVNd3woukKDw8P7ygvH+UfFBdULarlaWI8PDy8Dd4kETApelX/A70gHg8PD2+P1yuJ5TfrFdgmxw8eHh7e9/B6LVnz31YTHHh4eHjfwEsC5d6GXm2uKqwNDw8Pb413tuSfbNnJpp+srRxx4+Hh4Y15vQJYjj/VIrBY5cPDw8NLeX8AA327YCCkB7IAAAAASUVORK5CYII=" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
