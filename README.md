@@ -35,7 +35,7 @@ hexo server
 
 ```shell
 npm install hexo-deployer-git --save
-hexo deploy
+hexo deploy # 目前需要node的版本 10.15.3
 ```
 
 8、新建文章
