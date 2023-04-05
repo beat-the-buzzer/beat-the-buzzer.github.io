@@ -10,7 +10,7 @@
     "depy": "git subtree push --prefix=public origin master "
   },
   "hexo": {
-    "version": "4.0.0"
+    "version": "4.2.1"
   },
   "dependencies": {
     "hexo": "^4.0.0",
