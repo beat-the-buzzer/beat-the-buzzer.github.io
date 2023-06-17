@@ -109,6 +109,33 @@ sendMsg() {
 
 此时对方在12:00:01发送的消息就不在消息列表中。
 
+4. 消息回执的处理
+
+Qos级别设置为1或2的时候，服务端在接受到消息之后，会发送一条回执消息给用户，用于标识消息已成功发送。我们在mqtt源码里，能找到对应的对消息回执的处理，一般服务端会把消息的id回填过来，需要我们去解析数据：
+
+```js
+case PUBACK:
+	// ...
+```
+
+根据服务端定义的消息的位数（一般是16位或者64位），调用不同的解析方法：
+
+```js
+// 解析16位数据
+function readUint16(buffer, offset) {
+	return 256 * buffer[offset] + buffer[offset + 1]
+}
+
+// 解析64位数据：注意如果使用number类型，数据会越界，使用bigInt再将其转成字符串
+function readUint64(buffer, offset) {
+	const uint64 = buffer.slice(offset, offset + 8)
+	const uint64Array = new Uint8Array(uint64)
+	const hexString = Array.from(uint64Array, (byte) => ('0' + byte.toString(16)).slice(-2)).join('')
+	const uint64Str = BigInt(`0x${hexString}`).toString()
+	return uint64Str
+}
+```
+
 开发建议：
 
 1. 将聊天记录记录在本地，下次进入页面无需调用聊天记录接口（类似QQ、微信的做法）
