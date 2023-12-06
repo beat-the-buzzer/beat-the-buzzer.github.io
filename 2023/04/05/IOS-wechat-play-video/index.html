@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>iOS微信自动播放视频的处理方案 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="疑难问题,视频">
+    <meta name="description" content="iOS微信自动播放视频的处理方案现象：iOS的微信会阻止视频和音频的加载，因此我们设置的autoplay属性是不会生效的，并且在iOS微信上，视频的duration也不会被加载出来。 处理方式： 123456789101112131415161718192021222324252627document.addEventListener(&#39;WeixinJSBridgeReady&#39;, play, fa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS微信自动播放视频的处理方案">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2023/04/05/IOS-wechat-play-video/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="iOS微信自动播放视频的处理方案现象：iOS的微信会阻止视频和音频的加载，因此我们设置的autoplay属性是不会生效的，并且在iOS微信上，视频的duration也不会被加载出来。 处理方式： 123456789101112131415161718192021222324252627document.addEventListener(&#39;WeixinJSBridgeReady&#39;, play, fa">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.242Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="疑难问题">
+<meta property="article:tag" content="视频">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            iOS微信自动播放视频的处理方案
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            iOS微信自动播放视频的处理方案
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-04-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-04-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/">疑难问题</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iOS微信自动播放视频的处理方案"><span class="post-toc-number">1.</span> <span class="post-toc-text">iOS微信自动播放视频的处理方案</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-IOS-wechat-play-video"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">iOS微信自动播放视频的处理方案</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-04-05 00:00:00" datetime="2023-04-04T16:00:00.000Z"  itemprop="datePublished">2023-04-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/">疑难问题</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="iOS微信自动播放视频的处理方案"><a href="#iOS微信自动播放视频的处理方案" class="headerlink" title="iOS微信自动播放视频的处理方案"></a>iOS微信自动播放视频的处理方案</h3><p>现象：iOS的微信会阻止视频和音频的加载，因此我们设置的autoplay属性是不会生效的，并且在iOS微信上，视频的duration也不会被加载出来。</p>
+<p>处理方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'WeixinJSBridgeReady'</span>, play, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">play</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 如果视频出现在视口内，并且设置了自动播放，就去执行播放操作</span></span><br><span class="line">	<span class="keyword">if</span> (isElementInView(videoDom) &amp;&amp; autoplay) &#123;</span><br><span class="line">		<span class="keyword">const</span> promise = videoDom.play() <span class="comment">// 返回一个Promise</span></span><br><span class="line">		<span class="keyword">if</span> (promise != <span class="literal">undefined</span>) &#123;</span><br><span class="line">			promise</span><br><span class="line">				.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">					videoDom.play()</span><br><span class="line">				&#125;)</span><br><span class="line">				.catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">					videoDom.muted = <span class="literal">false</span>;</span><br><span class="line">				&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isElementInView</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">const</span> rect = el.getBoundingClientRect()</span><br><span class="line">	<span class="keyword">const</span> inView =</span><br><span class="line">		rect.top &gt;= <span class="number">0</span> &amp;&amp;</span><br><span class="line">		rect.left &gt;= <span class="number">0</span> &amp;&amp;</span><br><span class="line">		rect.bottom &lt;= (<span class="built_in">window</span>.innerHeight || <span class="built_in">document</span>.documentElement.clientHeight) &amp;&amp;</span><br><span class="line">		rect.right &lt;= (<span class="built_in">window</span>.innerWidth || <span class="built_in">document</span>.documentElement.clientWidth)</span><br><span class="line">	<span class="keyword">return</span> inView</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式可以成功的两个重要原理：</p>
+<ol>
+<li><p>WeixinJSBridgeReady和用户的真实操作来（touchend、click、doubleclick 或 keydown 事件等标准的事件）触发调用video.play()，才能自动播放视频。</p>
+</li>
+<li><p>video.play()是一个异步操作，返回一个Promise，并不是一个瞬时的操作。因此，一个src为空的video触发了play，会等到src赋值正确之后再去进行播放。</p>
+</li>
+</ol>
+<p>最终页面的加载流程：</p>
+<p>video的Dom结构渲染 ===&gt; 监听weixinJsBridgeReady ===&gt; 触发weixinJsBridgeReady，执行video的play ===&gt; 拿到video的src，进行赋值 ===&gt; 播放</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.242Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/" rel="tag">疑难问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2023/04/05/IOS-wechat-play-video/&title=《iOS微信自动播放视频的处理方案》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2023/04/05/IOS-wechat-play-video/&title=《iOS微信自动播放视频的处理方案》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2023/06/03/underline/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">仿微信公众号文章内容划线技术方案研究</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/01/30/laws/survivorship-bias/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">幸存者偏差</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2023/04/05/IOS-wechat-play-video/&title=《iOS微信自动播放视频的处理方案》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2023/04/05/IOS-wechat-play-video/&title=《iOS微信自动播放视频的处理方案》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3awW4iQQwE0Pz/T2evkbJAld1NOLw5IQQz/QZp2pT99RUf3z+O3+8n7/w+8s8/+uSxAw8PD2+x9OennmGef/7R+Z9fPVkzHh4e3m3eo0s+v9jsMzkj+dYLCx4eHt7H8PJbkJxzs23g4eHhfT4v2QaS4GBWRuPh4eF9Dq8NW/NIosW0ZzuWteDh4eHFvLyL9Dmvr/T38PDw8NZd9bbZ396mTRMuWi0eHh7eBV6+uFk0MBu6ygORaDgMDw8P7xovb1md2kI2g1b5EAMeHh7eWV77UN4EvrMAt80covodDw8Pb8Gb5Z+zNlgbQ8wC5QiJh4eHt+DlgexsNGoWbSQP/eJXwsPDwzvKyx/o7cBT8rhP3m+v8jBrwcPDwzvKy6vvWSzbLujUZoOHh4f3Ht7mSM65efTn0QkeHh7e3/KS4afN4tpW3HAwCw8PD+8yb9aYn7W42hs3K/3x8PDwTvHatv2V+3pv48HDw8O7xrvX+moD4vYWv/guHh4e3gVeuz3kowD5BrAptYvfEA8PD+8QL2nSt4VsstykmG5v4n9e4+Hh4V3gzUaa8qXvxwjaNtjDkhoPDw/vEK+NEtpoIG+V5VfMty48PDy8d/LaUYA8dGhL59mgFR4eHt493ixEeF4QR4/s8sx53Fy0wfDw8PAWvP1AQB7U5mXxsSIeDw8P7xrvVPGat8raq8zCXzw8PLzbvHb0ql1o23hrt4fozuHh4eEteN/lkRfQs+CgDSNehCl4eHh4F3j7P/ybcjlZ+uY1Hh4e3j1eHuPm1DYabq+76uzh4eHhHeK1D/R8S8gHuQ6nLHh4eHgfw2tb/me3nGFJjYeHh/envM0QVVsizwJiPDw8vPfwZsFB3spqm155iysausLDw8M7ytv84U8K5WEpXDbGViNceHh4eCnvH+pWK/AMFyKYAAAAAElFTkSuQmCC" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

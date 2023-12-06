@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>仿微信公众号文章内容划线技术方案研究 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="微信公众号上线了一个功能：用户可以对微信公众号内的文字进行划线，也能看到好友对同一篇文章的划线。该功能现在正在灰度中。我们思考一下如何去实现这样的功能？ 长按的文字操作栏的自定义长按选中后，禁止系统的操作控件，通知H5展示操作工具栏。  安卓：监听：onPrepareActionMode，阻止弹出系统的工具栏。监听：onActionModeStarted，通知H5展示操作工具。 IOS：监听UIM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="仿微信公众号文章内容划线技术方案研究">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2023/06/03/underline/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="微信公众号上线了一个功能：用户可以对微信公众号内的文字进行划线，也能看到好友对同一篇文章的划线。该功能现在正在灰度中。我们思考一下如何去实现这样的功能？ 长按的文字操作栏的自定义长按选中后，禁止系统的操作控件，通知H5展示操作工具栏。  安卓：监听：onPrepareActionMode，阻止弹出系统的工具栏。监听：onActionModeStarted，通知H5展示操作工具。 IOS：监听UIM">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.248Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            仿微信公众号文章内容划线技术方案研究
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            仿微信公众号文章内容划线技术方案研究
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-06-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-06-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/">技术方案</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#长按的文字操作栏的自定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">长按的文字操作栏的自定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#划线记录的数据是什么？"><span class="post-toc-number">2.</span> <span class="post-toc-text">划线记录的数据是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何将选中的内容进行划线-amp-如何通过给定的文本位置把指定内容进行划线"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何将选中的内容进行划线&amp;如何通过给定的文本位置把指定内容进行划线</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如果文本内容发生了改变，已经记录的划线的位置该如何处理？"><span class="post-toc-number">4.</span> <span class="post-toc-text">如果文本内容发生了改变，已经记录的划线的位置该如何处理？</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-underline"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">仿微信公众号文章内容划线技术方案研究</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-06-03 00:00:00" datetime="2023-06-02T16:00:00.000Z"  itemprop="datePublished">2023-06-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/">技术方案</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>微信公众号上线了一个功能：用户可以对微信公众号内的文字进行划线，也能看到好友对同一篇文章的划线。该功能现在正在灰度中。我们思考一下如何去实现这样的功能？</p>
+<h3 id="长按的文字操作栏的自定义"><a href="#长按的文字操作栏的自定义" class="headerlink" title="长按的文字操作栏的自定义"></a>长按的文字操作栏的自定义</h3><p>长按选中后，禁止系统的操作控件，通知H5展示操作工具栏。</p>
+<ul>
+<li>安卓：监听：onPrepareActionMode，阻止弹出系统的工具栏。监听：onActionModeStarted，通知H5展示操作工具。</li>
+<li>IOS：监听UIMenuController的显示，通知H5弹出自定义弹窗</li>
+<li>H5：如何确定弹窗的位置？<code>window.getSelection()</code>对象，可以拿到选中内容的位置信息。这样我们就可以实现一个跟随选中内容的弹窗了。</li>
+</ul>
+<h3 id="划线记录的数据是什么？"><a href="#划线记录的数据是什么？" class="headerlink" title="划线记录的数据是什么？"></a>划线记录的数据是什么？</h3><p>记录文本位置和文本内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取文章的文本信息</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArticleText</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> articleBody = $(<span class="string">'article'</span>)[<span class="number">0</span>].cloneNode(<span class="literal">true</span>) <span class="comment">// 拷贝后的DOM结构</span></span><br><span class="line">  <span class="keyword">var</span> innerText = articleBody.innerText</span><br><span class="line">  <span class="keyword">return</span> innerText</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取文章选中内容的位置【该方法有缺陷，如果段落的文字一模一样，就没有办法区分位置了。建议这里给文章的段落进行编号】</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSelectionPos</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> selection = <span class="built_in">window</span>.getSelection() <span class="comment">// 获取Selection对象</span></span><br><span class="line">  <span class="keyword">var</span> range = selection.getRangeAt(<span class="number">0</span>) <span class="comment">// 获取Range对象</span></span><br><span class="line">  <span class="comment">// 获取选中文本在整篇文章文本中的起始位置</span></span><br><span class="line">  <span class="keyword">var</span> startIndex = range.startOffset</span><br><span class="line">  <span class="keyword">var</span> startContainer = range.startContainer</span><br><span class="line">  <span class="keyword">var</span> startContainerIndex = getArticleText().indexOf(startContainer.wholeText) <span class="comment">// 当前段落相对于整体的</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> endIndex = range.endOffset</span><br><span class="line">  <span class="keyword">var</span> endContainer = range.endContainer</span><br><span class="line">  <span class="keyword">var</span> endContainerIndex = getArticleText().indexOf(endContainer.wholeText) <span class="comment">// 当前段落相对于整体的</span></span><br><span class="line">  <span class="keyword">return</span> [startContainerIndex + startIndex, endIndex + endContainerIndex]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何将选中的内容进行划线-amp-如何通过给定的文本位置把指定内容进行划线"><a href="#如何将选中的内容进行划线-amp-如何通过给定的文本位置把指定内容进行划线" class="headerlink" title="如何将选中的内容进行划线&amp;如何通过给定的文本位置把指定内容进行划线"></a>如何将选中的内容进行划线&amp;如何通过给定的文本位置把指定内容进行划线</h3><p>关键方法：<code>document.createTreeWalker()</code></p>
+<p>大概思路就是把文章的内容进行分块，文本按照DOM节点、文本节点进行分块，然后根据<code>window.getSelection()</code>对象拿到选中文字的位置，在我们的小分块中找到对应的内容，然后用一个类名包裹。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defaultGetKeyByRange</span>(<span class="params">&#123; start: e, end: t &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;e&#125;</span>-<span class="subst">$&#123;t&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getKeyByRange</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;e.start&#125;</span>-<span class="subst">$&#123;e.end&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">needFilterNode</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> e.classList &amp;&amp;</span><br><span class="line">    (<span class="string">"IFRAME"</span> == e.nodeName ||</span><br><span class="line">      e.classList.contains(<span class="string">"ignoreDom"</span>)</span><br><span class="line">    ? NodeFilter.FILTER_REJECT</span><br><span class="line">    : NodeFilter.FILTER_ACCEPT;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">splitRange</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;</span><br><span class="line">    startContainer: t,</span><br><span class="line">    startOffset: n,</span><br><span class="line">    endContainer: i,</span><br><span class="line">    endOffset: A,</span><br><span class="line">  &#125; = e,</span><br><span class="line">    o = <span class="built_in">document</span>.createRange(),</span><br><span class="line">    r = getCharBottom(t, n);</span><br><span class="line">  <span class="keyword">if</span> (r === getCharBottom(i, A - <span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> o.setStart(t, n), o.setEnd(i, A), [o];</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">const</span> e = findRowLastChar(r, t, n, i, A);</span><br><span class="line">    o.setStart(t, n), o.setEnd(e.node, e.offset + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">const</span> s = e.offset + <span class="number">1</span> === e.node.textContent.length;</span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">      o,</span><br><span class="line">      ...splitRange(&#123;</span><br><span class="line">        startContainer: s ? e.node._next : e.node,</span><br><span class="line">        startOffset: s ? <span class="number">0</span> : e.offset + <span class="number">1</span>,</span><br><span class="line">        endContainer: i,</span><br><span class="line">        endOffset: A,</span><br><span class="line">      &#125;),</span><br><span class="line">    ];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UnderlineAction</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 如果没有getKeyByRange方法，则使用默认方法</span></span><br><span class="line">  !e.getKeyByRange &amp;&amp; (e.getKeyByRange = defaultGetKeyByRange);</span><br><span class="line">  <span class="keyword">let</span> t = [];</span><br><span class="line">  <span class="keyword">const</span> n = &#123;&#125;,</span><br><span class="line">    i = &#123;&#125;;</span><br><span class="line">  <span class="comment">// 判断节点是否为文本节点</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"#text"</span> === e.nodeName &amp;&amp; e.textContent.length;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 在指定范围内插入下划线</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">insertSpanInRange</span>(<span class="params">i, A, o, r = !<span class="number">1</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> s = [];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">n, i, A, o</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">const</span> r = n.textContent.slice(<span class="number">0</span>, i),</span><br><span class="line">        a = n.textContent.slice(i, A),</span><br><span class="line">        l = n.textContent.slice(A),</span><br><span class="line">        c = n.splitText(i),</span><br><span class="line">        d = <span class="built_in">document</span>.createDocumentFragment(),</span><br><span class="line">        p = (<span class="function"><span class="keyword">function</span> (<span class="params">t, n</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">const</span> i = <span class="built_in">document</span>.createElement(e.tag || <span class="string">"span"</span>);</span><br><span class="line">          <span class="keyword">return</span> (</span><br><span class="line">            (i.textContent = t),</span><br><span class="line">            (i.className = <span class="string">"underline"</span>),</span><br><span class="line">            s.push(i),</span><br><span class="line">            <span class="built_in">Object</span>.keys(n).forEach(<span class="function">(<span class="params">e</span>) =&gt;</span> (i[e] = n[e])),</span><br><span class="line">            i</span><br><span class="line">          );</span><br><span class="line">        &#125;)(a, o),</span><br><span class="line">        m = p.childNodes[<span class="number">0</span>];</span><br><span class="line">      <span class="comment">// 将下划线的位置添加到t数组中</span></span><br><span class="line">      <span class="keyword">if</span> (</span><br><span class="line">        (t.fill(m, n._wordoffset + i, n._wordoffset + A),</span><br><span class="line">          (m._wordoffset = n._wordoffset + i),</span><br><span class="line">          d.appendChild(p),</span><br><span class="line">          l)</span><br><span class="line">      ) &#123;</span><br><span class="line">        <span class="keyword">const</span> e = <span class="built_in">document</span>.createTextNode(l);</span><br><span class="line">        (m._next = e),</span><br><span class="line">          (e._prev = m),</span><br><span class="line">          (e._wordoffset = n._wordoffset + A),</span><br><span class="line">          n._next</span><br><span class="line">            ? ((e._next = n._next),</span><br><span class="line">              (n._next._prev = e),</span><br><span class="line">              t.fill(e, n._wordoffset + A, n._next._wordoffset))</span><br><span class="line">            : t.fill(e, n._wordoffset + A),</span><br><span class="line">          d.appendChild(e);</span><br><span class="line">      &#125; <span class="keyword">else</span> n._next &amp;&amp; ((m._next = n._next), (n._next._prev = m));</span><br><span class="line">      <span class="comment">// 将下划线添加到文本节点中</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        r</span><br><span class="line">          ? ((n._next = m), (m._prev = n))</span><br><span class="line">          : (n._prev &amp;&amp; ((n._prev._next = m), (m._prev = n._prev)), n.remove()),</span><br><span class="line">        c.parentNode.insertBefore(d, c),</span><br><span class="line">        c.remove(),</span><br><span class="line">        m</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (A &lt;= i) <span class="keyword">return</span>;</span><br><span class="line">      <span class="keyword">const</span> l = e.getKeyByRange(&#123; <span class="attr">start</span>: i, <span class="attr">end</span>: A, <span class="attr">props</span>: o &#125;),</span><br><span class="line">        c = t[i],</span><br><span class="line">        d = t[A - <span class="number">1</span>];</span><br><span class="line">      <span class="keyword">if</span> (!c || !d) <span class="keyword">return</span>;</span><br><span class="line">      <span class="keyword">let</span> p = c;</span><br><span class="line">      <span class="keyword">if</span> (c === d)</span><br><span class="line">        a(p, i - p._wordoffset, A - p._wordoffset, &#123; ...o, <span class="attr">underlineKey</span>: l &#125;);</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (p === c)</span><br><span class="line">            p = a(p, i - p._wordoffset, p.textContent.length, &#123;</span><br><span class="line">              ...o,</span><br><span class="line">              underlineKey: l,</span><br><span class="line">            &#125;);</span><br><span class="line">          <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (p === d) &#123;</span><br><span class="line">              p = a(p, <span class="number">0</span>, A - p._wordoffset, &#123; ...o, <span class="attr">underlineKey</span>: l &#125;);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            p = a(p, <span class="number">0</span>, p.textContent.length, &#123; ...o, <span class="attr">underlineKey</span>: l &#125;);</span><br><span class="line">          &#125;</span><br><span class="line">          p = p._next;</span><br><span class="line">        &#125; <span class="keyword">while</span> (p);</span><br><span class="line">      <span class="comment">// 将下划线的位置添加到n或i对象中</span></span><br><span class="line">      <span class="keyword">return</span> r ? s : ((n[l] = s), l);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (l) &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(l);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n = e.parentNode;</span><br><span class="line">    <span class="keyword">let</span> i, o;</span><br><span class="line">    <span class="keyword">for</span> (; (i = e.childNodes[<span class="number">0</span>]);) n.insertBefore(i, e);</span><br><span class="line">    e.remove(),</span><br><span class="line">      n.childNodes.forEach(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        A(e)</span><br><span class="line">          ? (o || (o = e),</span><br><span class="line">            t.fill(o, e._wordoffset, e._wordoffset + e.textContent.length),</span><br><span class="line">            e._next &amp;&amp; (e._next._prev = o),</span><br><span class="line">            (o._next = e._next))</span><br><span class="line">          : (o = <span class="literal">null</span>);</span><br><span class="line">      &#125;),</span><br><span class="line">      n.normalize();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">removeSpanByKey</span>(<span class="params">e, t = !<span class="number">1</span></span>) </span>&#123;</span><br><span class="line">    t</span><br><span class="line">      ? i[e] &amp;&amp; <span class="function">(<span class="params">i[e].forEach((e</span>) =&gt;</span> e.remove()), <span class="keyword">delete</span> i[e])</span><br><span class="line">      : n[e] &amp;&amp; (n[e].forEach(r), <span class="keyword">delete</span> n[e]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getSpanByKey</span>(<span class="params">e, t = !<span class="number">1</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t ? i[e] || [] : n[e] || [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 该函数用于获取文本节点数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns <span class="type">&#123;Array&#125;</span> </span>返回文本节点数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'看看这一行'</span>)</span><br><span class="line">    t = [];</span><br><span class="line">    <span class="keyword">const</span> n =</span><br><span class="line">      <span class="string">"string"</span> == <span class="keyword">typeof</span> e.selector</span><br><span class="line">        ? <span class="built_in">document</span>.querySelector(e.selector)</span><br><span class="line">        : e.selector;</span><br><span class="line">    <span class="keyword">if</span> (!n) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>,</span><br><span class="line">      o = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">const</span> r = <span class="built_in">document</span>.createTreeWalker(</span><br><span class="line">      n,</span><br><span class="line">      NodeFilter.SHOW_ALL,</span><br><span class="line">      &#123; <span class="attr">acceptNode</span>: e.needFilterNode || <span class="function">(<span class="params">(</span>) =&gt;</span> NodeFilter.FILTER_ACCEPT) &#125;,</span><br><span class="line">      !<span class="number">0</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">let</span> s = r.currentNode;</span><br><span class="line">    <span class="keyword">for</span> (; s;) &#123;</span><br><span class="line">      <span class="keyword">if</span> (((s._wordoffset = i), A(s))) &#123;</span><br><span class="line">        o &amp;&amp; ((o._next = s), (s._prev = o));</span><br><span class="line">        <span class="keyword">const</span> e = i + s.textContent.length;</span><br><span class="line">        (t.length = e), t.fill(s, i, e), (i = e), (o = s);</span><br><span class="line">      &#125;</span><br><span class="line">      s = r.nextNode();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">window</span>.t = t</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"t"</span>, t) <span class="comment">// 分块的内容</span></span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    l(),</span><br><span class="line">    &#123;</span><br><span class="line">      insertSpanInRange: insertSpanInRange,</span><br><span class="line">      removeSpanByKey: removeSpanByKey,</span><br><span class="line">      getSpanByKey: getSpanByKey</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.underlineAction = UnderlineAction(&#123;</span><br><span class="line">  selector: <span class="string">'article'</span>,</span><br><span class="line">  getKeyByRange: getKeyByRange,</span><br><span class="line">  needFilterNode: needFilterNode</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="如果文本内容发生了改变，已经记录的划线的位置该如何处理？"><a href="#如果文本内容发生了改变，已经记录的划线的位置该如何处理？" class="headerlink" title="如果文本内容发生了改变，已经记录的划线的位置该如何处理？"></a>如果文本内容发生了改变，已经记录的划线的位置该如何处理？</h3><p>把改动的细节上报给服务端，服务端去更新已经记录的划线数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 生成文本对比工具</span></span><br><span class="line"><span class="keyword">const</span> JsDiff = <span class="built_in">require</span>(<span class="string">'diff'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compareText</span>(<span class="params">text1, text2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> diff = JsDiff.diffChars(text1, text2)</span><br><span class="line">  <span class="keyword">let</span> index = <span class="number">0</span> <span class="comment">// 添加计数器变量</span></span><br><span class="line">  <span class="keyword">const</span> newDiff = []</span><br><span class="line">  diff.forEach(<span class="function"><span class="params">part</span> =&gt;</span> &#123;</span><br><span class="line">    part.index = text1.indexOf(part.value, index) <span class="comment">// 添加 part 在 text1 中的索引</span></span><br><span class="line">    <span class="keyword">if</span>(part.added || part.removed) &#123;</span><br><span class="line">      part.index = index </span><br><span class="line">      newDiff.push(part)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      index = part.index + part.value.length <span class="comment">// 更新计数器变量</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> newDiff <span class="comment">// 返回索引数组</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> text1 = <span class="string">'Hello, world!'</span>;</span><br><span class="line"><span class="keyword">const</span> text2 = <span class="string">'Hello, JavaScript!'</span>;</span><br><span class="line"><span class="keyword">const</span> comparedText = compareText(text1, text2)</span><br><span class="line"><span class="built_in">console</span>.log(comparedText)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输出内容</span></span><br></pre></td></tr></table></figure>
+
+<p>根据我们已划线的位置和内容的变化，我们最终计算出新的文本里的划线位置。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.248Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2023/06/03/underline/&title=《仿微信公众号文章内容划线技术方案研究》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2023/06/03/underline/&title=《仿微信公众号文章内容划线技术方案研究》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2023/12/03/plop/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ctrl ACV工程师的提效之路——plop</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/04/05/IOS-wechat-play-video/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">iOS微信自动播放视频的处理方案</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2023/06/03/underline/&title=《仿微信公众号文章内容划线技术方案研究》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2023/06/03/underline/&title=《仿微信公众号文章内容划线技术方案研究》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aQW7DMAwEwP7/0y5Q9BCgtbuklKChR6fAsRWOD4oo8uMjHsfXePx8duXx+tk8Z/cnMywNDAyMt2Ucl+M69GSGn2Elz+axYWBg3Iexa5G9XjSvSWe/m8yDgYGBkZPOlvJ8E4mBgYGxzsifzbd6GBgYGAkjSSaTRfP62WtwNT3GwMC4D6NXGHjN56fXNzAwMP494yiOvBiZvI71eL5nw8DAGM1IEs7qlq5aMOi9iGiHi4GBMZRRPfDK8Xl63EuVMTAwZjPyRe063LyZbKUJrJDuYmBgjGP0SgK9YmQeVk7CwMCYysiDyI/Mqm0T1ZkLB20YGBiDGNXmsF3NE7265C/zYGBgjGbkR/P5prA3T28hxsDAuAMjTz6TKyv1xOp287RnBAMD4zaMlbatXnD5Id0fx20YGBjjGL1jspUWrmp5MtloYmBgzGZs1gf3Vxs4opInBgbGaEZeyOwdtD2jbHn6ojEwMIYy8uRzF2A93S3k4hgYGCMY1ZR1ZTnO/wGqiS4GBsZsRt76sGtruOtbDAyMezJ6Qa+UJ6tlhmbPCAYGxpszmuliUG6ssjcksRgYGEMZR3Hkae3KQVu1FQMDA2M24zVbumrj10qii4GBMZWx9yittwXMeYWeEQwMjHGMXhKblxPy39rQbIGBgXFjRi+slTJnEg8GBgZGb2tYbdqoLr4YGBj3ZOwtBiRpcHJnIRIMDIzRjPVOjV4a3Ct8NgEYGBjvyvgENwDWLNiDcMsAAAAASUVORK5CYII=" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

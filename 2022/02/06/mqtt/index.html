@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MQTT介绍：简单的实时通讯功能（web端） | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="通信">
+    <meta name="description" content="MQTT是一个轻量级的发布&#x2F;订阅消息传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。 如何接入MQTT？ 一般我们通过paho.mqtt来接入MQTT。 服务端定义消息的结构： 1234567message Message &amp;#123;	required uint64 message_id &#x3D; 1;	required uint64 sender_id &#x3D; 2;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MQTT介绍：简单的实时通讯功能（web端）">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2022/02/06/mqtt/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="MQTT是一个轻量级的发布&#x2F;订阅消息传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。 如何接入MQTT？ 一般我们通过paho.mqtt来接入MQTT。 服务端定义消息的结构： 1234567message Message &amp;#123;	required uint64 message_id &#x3D; 1;	required uint64 sender_id &#x3D; 2;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.246Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="通信">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            MQTT介绍：简单的实时通讯功能（web端）
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            MQTT介绍：简单的实时通讯功能（web端）
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-02-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2022-02-06
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%80%9A%E4%BF%A1/">通信</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实时通讯遇到的问题（技术-业务）"><span class="post-toc-number">1.</span> <span class="post-toc-text">实时通讯遇到的问题（技术+业务）</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-mqtt"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MQTT介绍：简单的实时通讯功能（web端）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-06 00:00:00" datetime="2022-02-05T16:00:00.000Z"  itemprop="datePublished">2022-02-06</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%80%9A%E4%BF%A1/">通信</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>MQTT是一个轻量级的发布/订阅消息传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。</p>
+<p>如何接入MQTT？</p>
+<p>一般我们通过<code>paho.mqtt</code>来接入MQTT。</p>
+<p>服务端定义消息的结构：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">message Message &#123;</span><br><span class="line">	required uint64 message_id = <span class="number">1</span>;</span><br><span class="line">	required uint64 sender_id = <span class="number">2</span>;</span><br><span class="line">	required string content = <span class="number">3</span>;</span><br><span class="line">	required uint64 create_time = <span class="number">4</span>;</span><br><span class="line">	required uint64 receiver_id = <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以把服务端定义的消息结构编译成JS，这样就能够在web端解析消息了。</p>
+<p>如何编译？<a href="https://github.com/protocolbuffers/protobuf/releases"></a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc --js_out=import_style=commonjs,binary:./ messages.proto</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">message ServiceMessage &#123;</span><br><span class="line">	required uint64 message_id = 1 [jstype = JS_STRING]; // 解决js丢失大数字精度问题</span><br><span class="line">	required uint64 user_id = 2;</span><br><span class="line">	required ServiceType service_type = 3;</span><br><span class="line">	required MessageType message_type = 4;</span><br><span class="line">	required string content = 5;</span><br><span class="line">	required uint64 create_date = 6;</span><br><span class="line">	required ServiceMessageDirection direction = 7;</span><br><span class="line">	optional uint64 agent_id = 8;</span><br><span class="line">	optional uint32 post_proc = 9;</span><br><span class="line">	optional uint32 to_reply = 10;</span><br><span class="line">	optional string extend = 11;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/protocolbuffers/protobuf/releases/download/v21.8/protoc-21.8-linux-x86_64.zip"></a></p>
+<p>注意长数字的转换，会有精度丢失的问题。因为前端的大数字会丢失精度，所以需要在编译的时候将其转成字符串。</p>
+<p>引用 paho_mqtt.js：<a href="https://github.com/eclipse/paho.mqtt.javascript"></a> 引用 paho_mqtt.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sendMessage <span class="keyword">from</span> <span class="string">'./msg_pb.js'</span></span><br><span class="line"><span class="keyword">import</span> Paho <span class="keyword">from</span> <span class="string">'./paho-mqtt.js'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// MQTT的连接</span></span><br><span class="line"><span class="keyword">this</span>.client = <span class="keyword">new</span> Paho.MQTT.Client(HOSTNAME, PORT, CLIENTID)</span><br><span class="line"><span class="keyword">this</span>.client.onConnectionLost = <span class="keyword">this</span>.onConnectionLost <span class="comment">// 注册连接断开处理事件</span></span><br><span class="line"><span class="keyword">this</span>.client.onMessageArrived = <span class="keyword">this</span>.onMessageArrived <span class="comment">// 注册消息接收处理事件</span></span><br><span class="line"><span class="keyword">this</span>.client.onMessageDelivered = <span class="keyword">this</span>.onMessageDelivered <span class="comment">// 发送消息成功之后的回调函数</span></span><br><span class="line"></span><br><span class="line">onConnectionLost(msg) &#123;</span><br><span class="line">	<span class="comment">// 重连的逻辑</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMessageArrived(msg) &#123;</span><br><span class="line">	<span class="comment">// 消息接收的逻辑</span></span><br><span class="line">	<span class="keyword">let</span> message = sendMessage.BaseUserUnreadStatics.deserializeBinary(msg.payloadBytes)</span><br><span class="line">	<span class="keyword">let</span> protoBuf = message.toObject() <span class="comment">// 解析出来的消息</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMessageDelivered(msg) &#123;</span><br><span class="line">	<span class="comment">// 消息发送成功之后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送消息</span></span><br><span class="line">sendMsg() &#123;</span><br><span class="line">	<span class="keyword">let</span> message = <span class="keyword">new</span> sendMessage.Message()</span><br><span class="line">	message.setMessageId(<span class="string">'xxx'</span>)</span><br><span class="line">	message.setSenderId(<span class="string">'xxx'</span>)</span><br><span class="line">	message.setContent(<span class="string">'xxx'</span>)</span><br><span class="line">	message.setCreateTime(<span class="string">'xxx'</span>)</span><br><span class="line">	message.setReceiverId(<span class="string">'xxx'</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">let</span> bytes = message.serializeBinary() <span class="comment">// 序列化</span></span><br><span class="line">	<span class="keyword">let</span> msgSend = <span class="keyword">new</span> Paho.MQTT.Message((bytes))</span><br><span class="line">	msgSend.topic = <span class="string">'xx'</span></span><br><span class="line">	<span class="keyword">this</span>.client.send(msgSend) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实时通讯遇到的问题（技术-业务）"><a href="#实时通讯遇到的问题（技术-业务）" class="headerlink" title="实时通讯遇到的问题（技术+业务）"></a>实时通讯遇到的问题（技术+业务）</h2><ol>
+<li><p>消息发送和接收的时间有误差，导致消息的顺序不正确。</p>
+</li>
+<li><p>业务：我们需要实时记录未回复的消息。无法准确评判未回复的通讯对象：</p>
+<ul>
+<li>按照服务端接收消息的顺序</li>
+<li>按照客户端接收消息的顺序</li>
+</ul>
+</li>
+<li><p>HTTP请求和TCP的消息有一个时间差。</p>
+<ul>
+<li>12:00:00的时候，调用接口获取聊天记录</li>
+<li>12:00:01的时候，对方发送了一条消息</li>
+<li>12:00:02的时候，获取聊天记录的接口回来了</li>
+</ul>
+</li>
+</ol>
+<p>此时对方在12:00:01发送的消息就不在消息列表中。</p>
+<ol start="4">
+<li>消息回执的处理</li>
+</ol>
+<p>Qos级别设置为1或2的时候，服务端在接受到消息之后，会发送一条回执消息给用户，用于标识消息已成功发送。我们在mqtt源码里，能找到对应的对消息回执的处理，一般服务端会把消息的id回填过来，需要我们去解析数据：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> PUBACK:</span><br><span class="line">	<span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+
+<p>根据服务端定义的消息的位数（一般是16位或者64位），调用不同的解析方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 解析16位数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">readUint16</span>(<span class="params">buffer, offset</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">256</span> * buffer[offset] + buffer[offset + <span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解析64位数据：注意如果使用number类型，数据会越界，使用bigInt再将其转成字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">readUint64</span>(<span class="params">buffer, offset</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">const</span> uint64 = buffer.slice(offset, offset + <span class="number">8</span>)</span><br><span class="line">	<span class="keyword">const</span> uint64Array = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(uint64)</span><br><span class="line">	<span class="keyword">const</span> hexString = <span class="built_in">Array</span>.from(uint64Array, (byte) =&gt; (<span class="string">'0'</span> + byte.toString(<span class="number">16</span>)).slice(<span class="number">-2</span>)).join(<span class="string">''</span>)</span><br><span class="line">	<span class="keyword">const</span> uint64Str = BigInt(<span class="string">`0x<span class="subst">$&#123;hexString&#125;</span>`</span>).toString()</span><br><span class="line">	<span class="keyword">return</span> uint64Str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>开发建议：</p>
+<ol>
+<li>将聊天记录记录在本地，下次进入页面无需调用聊天记录接口（类似QQ、微信的做法）</li>
+<li>实时记录未回复的消息，需要给消息新增回执，即对方已经收到消息的标志。类似于钉钉的消息是否已读的功能。</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.246Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2022/02/06/mqtt/&title=《MQTT介绍：简单的实时通讯功能（web端）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2022/02/06/mqtt/&title=《MQTT介绍：简单的实时通讯功能（web端）》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/02/20/command-api/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Command API</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/01/04/vscode-plugins-v2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">VSCode装机必备的插件(二）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2022/02/06/mqtt/&title=《MQTT介绍：简单的实时通讯功能（web端）》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2022/02/06/mqtt/&title=《MQTT介绍：简单的实时通讯功能（web端）》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3a3arCMBBFYd//pSucK0HsWXsmFTtZuRKsbb4KYf4eD7yOv/X6+XW9X0m+5b9atmTIkHFbxnG6zh9zlBZ5TXxvMmTI2IfRuTU/UskT+ZUyZMiQcd2B++kOKViGDBkyaiEa2VDtVzJkyJBBjsXzTfAiGnlBF+biMmTIuCGj1hj4zufL+xsyZMj4ecbRXucHLi+utfYgQ4aM0YzrBil4qS69A8rFZciQMY5Bmog87ewEneevNQgcZciQMY6RFv3TUYna3fjohgwZMvZhpLdIE9r0EE8LfzJkyJjKKLpBWb+WsvJr0P8gQ4aMcQwSunUGI9LBiyBhliFDxmhGOmCRJqW1QzmlypAhYwdGenTW2pb9chsKEGXIkDGUURshRcX6peku2qcMGTLGMfgD+k1NgkzT2vg9yZAh47YMftQGow+lI5jvSoYMGTsz+DhXGgKmGI6UIUPGbEZ/62kCnHYqePtThgwZUxn9QLBf7q8drx9zcRkyZIxjrA3valtMU180MyJDhoxBjNqYFw/+0ldD0uliVCtDhozbMng5Ph02Jfh0olaGDBl7Mo5wpQU1XkQj38qQIWNPBl+doG3xpC1+WTJkyJjE4Icsb3PykLFzHMuQIWM3xqrBCJ709pNY1I+VIUPGxgw+csG32xrjkCFDhgxcFOtsq5WFy5AhYwNGJ4ld22DgDYN/hsNkyJAxiFFrDNQalquGLZb1N2TIkPHrjCcezVvRGUiFPQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

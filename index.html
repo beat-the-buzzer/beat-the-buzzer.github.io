@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="前端学习笔记">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="WangTao">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect active">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            前端学习笔记
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            前端学习笔记
+        </h1>
+        <h5 class="subtitle">
+            
+                        平庸不止于平庸，巅峰不甘于巅峰
+                            
+        </h5>
+    </div>
+
+    
+
+</header>
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-npm-yarn-pnpm"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-12-06 00:00:00" datetime="2023-12-05T16:00:00.000Z"  itemprop="datePublished">2023-12-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2023/12/06/npm-yarn-pnpm/">简介npm、yarn、pnpm</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        npm的问题在npm@3之前安装依赖时会出现依赖之间互相嵌套，就像树结构一样一层一层，过深的层级嵌套会带来大量重复的文件，有些依赖会重复安装，占用磁盘空间。
+12345678node_modules└─ a   ├─ index.js   ├─ package.json   └─ node_modules      └─ b         ├─ index.js         └─ pa...
+    
+
+        <a href="/2023/12/06/npm-yarn-pnpm/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-reading-tips-5"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-12-04 00:00:00" datetime="2023-12-03T16:00:00.000Z"  itemprop="datePublished">2023-12-04</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2023/12/04/reading-tips-5/">读书笔记系列——学会提问</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        书名：《学会提问》
+作者：
+
+【内容简介】
+
+
+
+【精彩摘抄】批判性思维论题和结论理由是什么意义不明的词
+    
+
+        <a href="/2023/12/04/reading-tips-5/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-plop"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-12-03 00:00:00" datetime="2023-12-02T16:00:00.000Z"  itemprop="datePublished">2023-12-03</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2023/12/03/plop/">Ctrl ACV工程师的提效之路——plop</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        作为一名业务开发熟练的 Ctrl ACV 工程师，我每天的工作就是做业务需求，基本上都是表格增删改查，都是复制一下类似的代码，然后在这个基础上进行改动。久而久之，我发现每个人的代码都自成一派，交互方式也是千奇百怪。
+为了解决交互一致的问题，我们需要有一个模板，包含了增删改查、导出导出等功能，每次功能都来源于这个模板，而不是复制粘贴已有的业务代码。
+示例技术框架：vben-admin。Demo...
+    
+
+        <a href="/2023/12/03/plop/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8F%90%E6%95%88/" rel="tag">提效</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-underline"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-06-03 00:00:00" datetime="2023-06-02T16:00:00.000Z"  itemprop="datePublished">2023-06-03</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/">技术方案</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2023/06/03/underline/">仿微信公众号文章内容划线技术方案研究</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        微信公众号上线了一个功能：用户可以对微信公众号内的文字进行划线，也能看到好友对同一篇文章的划线。该功能现在正在灰度中。我们思考一下如何去实现这样的功能？
+长按的文字操作栏的自定义长按选中后，禁止系统的操作控件，通知H5展示操作工具栏。
+
+安卓：监听：onPrepareActionMode，阻止弹出系统的工具栏。监听：onActionModeStarted，通知H5展示操作工具。
+IOS：监听...
+    
+
+        <a href="/2023/06/03/underline/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-IOS-wechat-play-video"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-04-05 00:00:00" datetime="2023-04-04T16:00:00.000Z"  itemprop="datePublished">2023-04-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/">疑难问题</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2023/04/05/IOS-wechat-play-video/">iOS微信自动播放视频的处理方案</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        iOS微信自动播放视频的处理方案现象：iOS的微信会阻止视频和音频的加载，因此我们设置的autoplay属性是不会生效的，并且在iOS微信上，视频的duration也不会被加载出来。
+处理方式：
+123456789101112131415161718192021222324252627document.addEventListener('WeixinJSBridgeReady', play,...
+    
+
+        <a href="/2023/04/05/IOS-wechat-play-video/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/" rel="tag">疑难问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-laws/survivorship-bias"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-01-30 00:00:00" datetime="2023-01-29T16:00:00.000Z"  itemprop="datePublished">2023-01-30</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AE%9A%E5%BE%8B/">定律</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2023/01/30/laws/survivorship-bias/">幸存者偏差</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        “幸存者偏差”，是一种以偏概全的思维方式。就字面意思而言，“幸存者偏差”是指在收集信息的时候，只关注幸存者，而忽略死者，因为“死人是不会说话的”，这就会导致收集的信息不全面，进而使得出的结论与实际情况存在偏差。从心理学上讲，“幸存者偏差”是一种比较常见的逻辑谬误，是指通过某些经过筛选的信息得出结论，而没有意识到筛选的过程，也没有意识到被筛选掉的关键信息。
+飞机防护案例二战期间，美国军方研究返...
+    
+
+        <a href="/2023/01/30/laws/survivorship-bias/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A4%E7%9F%A5/" rel="tag">认知</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-laws/IT-3-laws"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-01-30 00:00:00" datetime="2023-01-29T16:00:00.000Z"  itemprop="datePublished">2023-01-30</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AE%9A%E5%BE%8B/">定律</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2023/01/30/laws/IT-3-laws/">网络三定律</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        摩尔定律——揭示信息技术进步速度
+集成电路上可以容纳的晶体管数目在大约每经过18个月到24个月便会增加一倍。
+
+吉尔德定律
+也叫胜利者浪费定律 ，由乔治·吉尔德提出，最为成功的商业运作模式是价格最低的资源将会被尽可能的消耗，以此来保存最昂贵的资源。
+
+麦特卡夫定律
+网络价值同网络用户数量的平方成正比，即 N 个联结能创造 N 的2次方效益。如果将机器联成一个网络，在网络上，每一个人都可以看到...
+    
+
+        <a href="/2023/01/30/laws/IT-3-laws/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-git-auth"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-06-01 23:59:03" datetime="2022-06-01T15:59:03.000Z"  itemprop="datePublished">2022-06-01</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2022/06/01/git-auth/">GitHub SSH认证</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        GitHub提交代码现在需要密钥。
+参考
+
+    
+
+        <a href="/2022/06/01/git-auth/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-command-api"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-02-20 00:00:00" datetime="2022-02-19T16:00:00.000Z"  itemprop="datePublished">2022-02-20</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2022/02/20/command-api/">Command API</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        最近在浏览器上调试的时候，无意中使用了JQuery的一些语句，但是在我的项目中没有引用过JQuery。然后在代码里使用$(&#39;body&#39;)是会报错的
+
+    
+
+        <a href="/2022/02/20/command-api/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mqtt"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-02-06 00:00:00" datetime="2022-02-05T16:00:00.000Z"  itemprop="datePublished">2022-02-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E9%80%9A%E4%BF%A1/">通信</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2022/02/06/mqtt/">MQTT介绍：简单的实时通讯功能（web端）</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        MQTT是一个轻量级的发布/订阅消息传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。
+如何接入MQTT？
+一般我们通过paho.mqtt来接入MQTT。
+服务端定义消息的结构：
+1234567message Message &#123;	required uint64 message_id = 1;	required uint64 sender_id = ...
+    
+
+        <a href="/2022/02/06/mqtt/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%80%9A%E4%BF%A1/" rel="tag">通信</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/&title=前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/&title=前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABy0lEQVR42u3aSQ6DMBBEUe5/abKNlNBUVbudQd8rZIF53lg9+Djkcb6M5/mr5/qr55nFAy5cuG3uWQ6FpWzs6r+6AS5cuPu57nL1O/WMsu3Lebhw4X49txOBwIUL9z+4ynLuluDChfvN3KyQofzyY7kaXLhwG9xs6bXPI/VduHDhRtwzGv1SafZ3uHDh7uG6h04NqqF12GQUTeDChTvMdX/vNlT0ZElKt+DChbuFm5UksmaqsqaUFMGFC3eYqwQZWZFUWdM9QOHChbuHq7/kLmqELGbbFS5cuHu47kGm49zV7OQHLly4Y1w3v1AuZLjBUx1IwYULdz8368D0WylhgAUXLtxhrp5yKAGHXkxRZuxSCFy4cAe4SrBSp0Bu6KN/BRcu3J3cznGmB0D6V9KhCRcu3GGuztKPNqPcKRRo3iQ/cOHCHebad7jMNknGvbmiARcu3GHuaY5VVzHctsrNPuDChbuU2z9c+u3YVk8YLly4Y1wXkRVNsvBIaqjAhQt3jGsUJholVD25ggsX7q9wO4ddFvocSl8XLly4H+W623BbNSMhDly4cBvcrNiRNU3dA+5N5wcuXLjD3M5liM4FLL0xs+zuBly4cO+5DxGa/DP0bzf0AAAAAElFTkSuQmCC" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

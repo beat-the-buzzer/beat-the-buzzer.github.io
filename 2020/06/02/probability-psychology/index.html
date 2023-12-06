@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>当概率论遇到心理学 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="感悟">
+    <meta name="description" content="人的行为，是一个很好的研究素材，分析行为背后的原理，能学到很多有趣的知识。今天分享一些心理学和概率论的一些案例。  让别人先排查问题 真实案例：一个项目有安卓、iOS和H5。某次更新之后，安卓的某个功能出问题了，iOS的是正常的。此时需要排查问题：安卓说：“更新H5之前没问题，更新完就有问题了，是H5的问题。” H5说：“安卓有问题，iOS没有问题，那应该是安卓有问题。”总之，就是一个不确定问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="当概率论遇到心理学">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2020/06/02/probability-psychology/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="人的行为，是一个很好的研究素材，分析行为背后的原理，能学到很多有趣的知识。今天分享一些心理学和概率论的一些案例。  让别人先排查问题 真实案例：一个项目有安卓、iOS和H5。某次更新之后，安卓的某个功能出问题了，iOS的是正常的。此时需要排查问题：安卓说：“更新H5之前没问题，更新完就有问题了，是H5的问题。” H5说：“安卓有问题，iOS没有问题，那应该是安卓有问题。”总之，就是一个不确定问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.246Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="感悟">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            当概率论遇到心理学
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            当概率论遇到心理学
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-06-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2020-06-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/">生活感悟</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#让别人先排查问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">让别人先排查问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试提的Bug才是Bug"><span class="post-toc-number">2.</span> <span class="post-toc-text">测试提的Bug才是Bug</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#先把功能实现，优化以后再做"><span class="post-toc-number">3.</span> <span class="post-toc-text">先把功能实现，优化以后再做</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#那个推荐你买股票基金的人，并不是真的希望你赚钱"><span class="post-toc-number">4.</span> <span class="post-toc-text">那个推荐你买股票基金的人，并不是真的希望你赚钱</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#偶然的东西多次重复之后，就变成了必然"><span class="post-toc-number">5.</span> <span class="post-toc-text">偶然的东西多次重复之后，就变成了必然</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于赌博"><span class="post-toc-number">6.</span> <span class="post-toc-text">关于赌博</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-probability-psychology"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">当概率论遇到心理学</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-06-02 00:00:00" datetime="2020-06-01T16:00:00.000Z"  itemprop="datePublished">2020-06-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/">生活感悟</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>人的行为，是一个很好的研究素材，分析行为背后的原理，能学到很多有趣的知识。今天分享一些心理学和概率论的一些案例。</p>
+</blockquote>
+<h3 id="让别人先排查问题"><a href="#让别人先排查问题" class="headerlink" title="让别人先排查问题"></a>让别人先排查问题</h3><blockquote>
+<p>真实案例：一个项目有安卓、iOS和H5。某次更新之后，安卓的某个功能出问题了，iOS的是正常的。此时需要排查问题：安卓说：“更新H5之前没问题，更新完就有问题了，是H5的问题。” H5说：“安卓有问题，iOS没有问题，那应该是安卓有问题。”总之，就是一个不确定问题出在哪，需要多方排查的问题。</p>
+</blockquote>
+<p>心理分析：对于问题原因五五开的情况，很多人都极力否认自己的问题，或者声称自己很忙，让对方先去排查。如果对方排查出来了问题在对方那里，那么自己就省了排查和修改力气；如果对方排查发现是自己的问题，那么自己省了排查的力气，只是修改一下就行了；如果对方也不确定问题在哪，这个时候才去认真排查问题。所以，这里就是后发制人，后排查的人有更大的概率减少工作量。</p>
+<p>推荐做法：寻找一个第三方，共同讨论这个问题可能出现的原因，然后敦促多方排查这个问题，从而提升效率。</p>
+<h3 id="测试提的Bug才是Bug"><a href="#测试提的Bug才是Bug" class="headerlink" title="测试提的Bug才是Bug"></a>测试提的Bug才是Bug</h3><blockquote>
+<p>真实案例：前后端共同开发一个功能模块。在对接接口的时候，前端发现了有一个接口特别慢，从请求到返回需要十几秒，于是他把这个问题反馈给后端，让他看一下。但是后端一直都不处理，直到测试人员在测试的时候也发现了这个问题，提了bug之后才去修改。</p>
+</blockquote>
+<p>心理分析：这样的人在工作的时候，只和少数人紧密联系，并且和这几个人联系的目的，是解决自己<code>必须要做</code>的工作。他可能心存侥幸，有小部分的概率测试人员没有发现或者不关心这个问题，这样就能减少工作量了。就算最终测试还是提了这个Bug，无非是多一个要改的Bug而已，只是修改时间的问题。</p>
+<p>推荐做法：提交版本前自测的时候，看看对方有没有解决这个问题，如果没有解决，就把这个问题提前反馈给测试。为什么要这么做呢？主要是为了减少团队的工作量和沟通成本。</p>
+<h3 id="先把功能实现，优化以后再做"><a href="#先把功能实现，优化以后再做" class="headerlink" title="先把功能实现，优化以后再做"></a>先把功能实现，优化以后再做</h3><p>这句话我们经常挂在嘴边，或者经常听到别人说，实际上，70%以上的人都没有真的去做优化。“先把功能实现，以后再优化”这句话仿佛是一个缓兵之计，只是解决当前的问题，并没有从长远考虑。</p>
+<p>实际上，80%以上所谓的“未来优化计划”，最终都没有真正落实，结果就是，我们的项目背上了越来越多的技术债，到后面变得很难维护。</p>
+<p>推荐做法：经常进行代码审查，或者把优化作为平时开发的任务之一，或者把优化作为下一期必须要做的事，这对于需要长期维护的项目来说很重要。</p>
+<h3 id="那个推荐你买股票基金的人，并不是真的希望你赚钱"><a href="#那个推荐你买股票基金的人，并不是真的希望你赚钱" class="headerlink" title="那个推荐你买股票基金的人，并不是真的希望你赚钱"></a>那个推荐你买股票基金的人，并不是真的希望你赚钱</h3><p>如果你身边的人经常劝你买一些股票基金，或者经常晒出自己的收益来诱惑你，这时候要有清醒的头脑，他们不是真的希望你赚钱。</p>
+<p>从两个角度来证明：</p>
+<p>假设买了A推荐的股票最终赚了，A就会以“高手”的身份自居，享受萌新的膜拜；</p>
+<p>假设买了A推荐的股票最终亏了，也是正常的事，A肯定也亏了，不过A会觉得不只是自己吃亏，心里又得到一点安慰。</p>
+<h3 id="偶然的东西多次重复之后，就变成了必然"><a href="#偶然的东西多次重复之后，就变成了必然" class="headerlink" title="偶然的东西多次重复之后，就变成了必然"></a>偶然的东西多次重复之后，就变成了必然</h3><p>有一种炒股诈骗方式，就是所谓的“大师”出去讲座，给100个人推荐了100个不同的股票，根据概率，有大约一半的人认为“大师”有点水平，然后“大师”再次联系这50个人，再推荐一波，又有大约25个人相信了大师。连续两次，差不多打消了疑虑，最终上当受骗。</p>
+<p>爱情公寓5有一集冒充幼儿园园长诈骗的方式，其实原理差不多，赚的是概率的钱。</p>
+<p>我们要保持清醒的头脑，偶然事件必然发生，都是人为操控的。我们也可以往好的方向去想：假设做一件事成功的概率是1%，我们如果重复100次，那么我们至少成功一次的概率是多少？</p>
+<p>1 - 0.99 ^ 100 = 63.4%</p>
+<h3 id="关于赌博"><a href="#关于赌博" class="headerlink" title="关于赌博"></a>关于赌博</h3><p>我村有几个人沉迷于赌博，无论是线上还是线下，我在这里从多个角度来证明赌博必输。</p>
+<p>角度1: 无论是线上还是线下，赌博本身都不是收费的，资金是从参与者流向平台或者棋牌室。举个极端的例子，四个人打麻将，一局一元，每局胡牌的人要给棋牌室一元。100局过后，求解最终四个人中至少有一个人赢钱的概率。</p>
+<p>角度2: 假设把赌博作为随机事件，因为需要付钱给棋牌室，把这个也作为收益，输钱的概率就略大于赢钱的概率，也就是输多赢少。显然，输多赢少就是输，这个是公理，无需论证。</p>
+<p>角度3: 风险极大。假设别人出千或者在网络上暗箱操作，输钱的概率进一步增大；假设自己出千，就要冒着被抓住的风险，侥幸心理不能有。两条路都是绝路。</p>
+<p>赌王为什么富有，因为他不赌，他是第三方平台。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.246Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%84%9F%E6%82%9F/" rel="tag">感悟</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/06/02/probability-psychology/&title=《当概率论遇到心理学》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/06/02/probability-psychology/&title=《当概率论遇到心理学》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/06/27/vue-decorator01/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue修饰符总结（上篇）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/06/01/gulp-basic/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">前端工程化——Gulp简单使用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2020/06/02/probability-psychology/&title=《当概率论遇到心理学》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2020/06/02/probability-psychology/&title=《当概率论遇到心理学》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3ay67iQAwFQP7/p5nt1UhJju02sKisEOTRBVLb2H694uP957h6/++n9+/nT8mvHR14eHh4g6VPlnt1ztUTc1jyrMvn4uHh4a3x7hdxdes8PCTU+/OTIIGHh4f3y7x5ypvAqqk5Hh4e3i/zqulvXnrI03c8PDy87/Kqt054vTOT1Hyl1oKHh4cX83rp73dfr/T38PDw8MZd9fsNd9KsOtXff7gKDw8Pb4GXb7i9FLaamifPLQ+H4eHh4R3l5cNP1QbVZOtProqSbzw8PLwF3qSG0QsJky+ougY8PDy8DV5eaOiVEnqbe289l/8V8PDw8JZ51eZ9dYs/UDupRjw8PDy8NV6vYX9qMKva8Y/Wj4eHh7fGm5ch7sNANbGet8oOV1nw8PDwbnm9jTgJFckXVC1kPKwKDw8Pb413dnwqH0fIN/1qKo+Hh4e3zUs28XnRNk+d88T6ociLh4eH90FeXthNUt5qOaOX6B+rMePh4eEV++z5YEFexq2OCPTOf7gWDw8Pb4GXJ9DVYsSkwFENJNFviIeHh3eId7ZEW21c5QttDorh4eHhHeJVN9z5SNapEYHR0BUeHh7egDcpy/ZKvcfKsnmbDQ8PD+8jvN5N52XZ+dAVHh4e3nd57/jIG2l5SEjab1HRBA8PD2+NV116bwxrPmRQDi14eHh4H+HlSXOvNVVFNgu4eHh4eMu86ju9r6Za+DhwDh4eHt5R3rt45ElzNZme3PnyUzw8PLwF3qn2fG+AoBpaqq/x8PDw9niT1lShhT9IzUeBAQ8PD2+Nlw82Ja2yZGdeb33h4eHh/Qwvv3VekjgVci5Tajw8PLyv8k61tfIBr15AwsPDw9vmTZpPSUOrGjzyEauHteHh4eEt8CZ/+BeLCK1BhNfZpeDh4eH9f/wDkI19gmDBdcoAAAAASUVORK5CYII=" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

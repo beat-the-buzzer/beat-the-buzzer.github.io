@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>逐步实现深拷贝和浅拷贝 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="数据类型和存储方式JavaScript的数据类型分为基本数据类型和引用数据类型。 基本数据类型：number，string，boolean，null，undefined，symbol 引用数据类型：统称为Object类型，细分的话，有：Object，Array，Date，Function等。 基本数据类型保存在栈内存，栈内存中分别存储着变量的标识符以及变量的值。 1let a &#x3D; 1;  引用数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="逐步实现深拷贝和浅拷贝">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2021/03/08/deep-copy/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="数据类型和存储方式JavaScript的数据类型分为基本数据类型和引用数据类型。 基本数据类型：number，string，boolean，null，undefined，symbol 引用数据类型：统称为Object类型，细分的话，有：Object，Array，Date，Function等。 基本数据类型保存在栈内存，栈内存中分别存储着变量的标识符以及变量的值。 1let a &#x3D; 1;  引用数据">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.243Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            逐步实现深拷贝和浅拷贝
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            逐步实现深拷贝和浅拷贝
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2021-03-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型和存储方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型和存储方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浅拷贝和深拷贝"><span class="post-toc-number">2.</span> <span class="post-toc-text">浅拷贝和深拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深拷贝的实现方式"><span class="post-toc-number">3.</span> <span class="post-toc-text">深拷贝的实现方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结一下"><span class="post-toc-number">4.</span> <span class="post-toc-text">小结一下</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-deep-copy"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">逐步实现深拷贝和浅拷贝</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-08 00:00:00" datetime="2021-03-07T16:00:00.000Z"  itemprop="datePublished">2021-03-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="数据类型和存储方式"><a href="#数据类型和存储方式" class="headerlink" title="数据类型和存储方式"></a>数据类型和存储方式</h3><p>JavaScript的数据类型分为<strong>基本数据类型</strong>和<strong>引用数据类型</strong>。</p>
+<p>基本数据类型：number，string，boolean，null，undefined，symbol</p>
+<p>引用数据类型：统称为Object类型，细分的话，有：Object，Array，Date，Function等。</p>
+<p>基本数据类型保存在栈内存，栈内存中分别存储着变量的标识符以及变量的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>引用数据类型保存在栈内存，变量名存在栈内存中，值存在于堆内存中，但是栈内存会提供一个引用的地址指向堆内存中的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;; <span class="comment">// 假设存的地址是xxx</span></span><br></pre></td></tr></table></figure>
+
+<p>所以这两种类型，赋值的时候就能体现出不同之处了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> b = a; <span class="comment">// 重新开辟了一个空间存储b，重新开辟了一个空间存储b的值，也就是1</span></span><br><span class="line"><span class="keyword">let</span> obj1 = obj; <span class="comment">// 重新开辟了一个空间存储obj1,重新开辟了一个空间存储obj1的值，也就是xxx(上面的假设)</span></span><br></pre></td></tr></table></figure>
+
+<p>所以我们现在得出，obj存的xxx指向的值发生变化的时候，xxx是不变的，此时通过obj2去访问属性，也是会变化的。</p>
+<h3 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h3><p>浅拷贝：创建一个新的数据，这个数据有着原始数据属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值，如果属性是引用类型，拷贝的就是内存地址，所以如果其中一个数据改变了这个地址，就会影响到另一个数据。</p>
+<p>深拷贝：深拷贝会拷贝所有的属性，并拷贝属性指向的动态分配的内存。当对象和它所引用的对象一起拷贝时即发生深拷贝。深拷贝相比于浅拷贝速度较慢并且花销较大。在堆中重新分配内存，拥有不同的地址，且值是一样的，复制后的对象与原来的对象是完全隔离，互不影响。</p>
+<h3 id="深拷贝的实现方式"><a href="#深拷贝的实现方式" class="headerlink" title="深拷贝的实现方式"></a>深拷贝的实现方式</h3><ol>
+<li>先 stringify 再 parse</li>
+</ol>
+<p>缺点：忽略了undefined、symbol和函数；对象循环引用时，会报错；</p>
+<ol start="2">
+<li>Object#assign 扩展运算符</li>
+</ol>
+<p>缺点：只能实现一层深拷贝</p>
+<ol start="3">
+<li>jQuery的 $.extends 方法</li>
+</ol>
+<p>缺点：需要引用第三方库</p>
+<ol start="3">
+<li>使用递归的方式，遍历对象中的属性</li>
+</ol>
+<p>step1: 遍历对象中的属性，先创建一个新的对象。遍历属性的时候，如果这个属性值是一个对象，那么我们需要把这个属性值再次做拷贝操作。如果属性值是基本类型，就直接赋值给前面创建的新对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> objClone = <span class="built_in">Array</span>.isArray(obj) ? []: &#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span>(obj &amp;&amp; <span class="keyword">typeof</span> obj === <span class="string">"object"</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">      <span class="keyword">if</span>(obj.hasOwnProperty(key))&#123;</span><br><span class="line">        <span class="comment">//判断obj子元素是否为对象，如果是，递归复制</span></span><br><span class="line">        <span class="keyword">if</span>(obj[key] &amp;&amp; <span class="keyword">typeof</span> obj[key] === <span class="string">"object"</span>)&#123;</span><br><span class="line">          objClone[key] = deepClone(obj[key]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="comment">//如果不是，简单复制</span></span><br><span class="line">          objClone[key] = obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> objClone;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">step2: 我们需要解决循环引用的问题，如果我们对象里其中一个属性指向了上一层的那个对象，那么我们上面的操作就会死循环。对于循环引用的问题，我们需要在进行拷贝之前，先判断这个对象之前是否被拷贝过，如果被拷贝过，就不需要再进行拷贝，直接返回这个对象就行了。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">target, map = new Map(</span>)) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (target &amp;&amp; <span class="keyword">typeof</span> target === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> cloneTarget = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span> (map.get(target)) &#123;</span><br><span class="line">      <span class="comment">// 先去存储的对象里找一下，该对象有没有被拷贝过，如果有 直接返回</span></span><br><span class="line">      <span class="keyword">return</span> map.get(target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 下面的代码标识该对象没有被拷贝过，此时我们要先把该对象存起来，然后再进行进一步的拷贝操作</span></span><br><span class="line">    map.set(target, cloneTarget);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">      cloneTarget[key] = clone(target[key], map);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cloneTarget;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> target;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Map数据结构，允许字符串以外的类型的数据作为Map的key，并且这个key是唯一的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myMap = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="keyword">var</span> keyObj = &#123;&#125;;</span><br><span class="line">myMap.set(keyObj, <span class="string">"和键 keyObj 关联的值"</span>);</span><br><span class="line">myMap.get(keyObj); <span class="comment">// "和键 keyObj 关联的值"</span></span><br><span class="line">myMap.get(&#123;&#125;); <span class="comment">// undefined, 因为 keyObj !== &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>step3: 对于一些不可继续拷贝的对象，例如函数、Date()等，我们需要判断具体的类型，使用<code>Object#toString</code>方法。</p>
+<h3 id="小结一下"><a href="#小结一下" class="headerlink" title="小结一下"></a>小结一下</h3><p>实现深拷贝的方式，上面说了很多种，有些可能是项目中使用的，有些是比较完整，但是项目中为了图省事没有这么写的。这里注意的是，如果我们是在面试的过程中被问到了这个问题，我们需要回答比较完整的那种方案，可以循循善诱，先把其他几种简单的说一下，然后说出这些方式的缺点，最后为了解决这些缺点，我们使用了XXX方案，这样才是面试官希望听到的答案。</p>
+<p>回答要点：</p>
+<p>step1: 其他几种方式极其缺点</p>
+<p>step2: 描述递归：先判断目标的类型是否是可拷贝的值，然后创建一个新的空对象，再进行遍历属性，如果属性值也是一个可拷贝的值，就继续调用这个拷贝函数，如果不是，就直接返回这个值。然后可以解释一下什么叫做可拷贝的值，以及如何判断该值是可拷贝的值。</p>
+<p>step3: 解决循环引用的问题，我们需要一个新的空间来存储已经被拷贝过的对象，每次在遍历对象之前，先去这个空间找一下该对象是否曾经被拷贝过。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.243Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2021/03/08/deep-copy/&title=《逐步实现深拷贝和浅拷贝》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2021/03/08/deep-copy/&title=《逐步实现深拷贝和浅拷贝》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/03/10/http-type/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">HTTP请求类型总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/03/08/display/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CSS——display详解</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2021/03/08/deep-copy/&title=《逐步实现深拷贝和浅拷贝》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2021/03/08/deep-copy/&title=《逐步实现深拷贝和浅拷贝》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3ay46cMBAF0Pn/n55I2UUJ9L1lepS2j1ctBDSHReF6fH3F6/v3ujqerKvz748/vDAwMD6Wkf/93+ev36FlX1IxMDAOYNwH2SQIJo8yuzb6AGBgYGBcPEoSHBMMBgYGxrMBN08+2zvkgR4DA+NMxqxMthKgk9LeW3JxDAyMD2S0jYGf/P3G/gYGBsaHML4X1qxJMGtnvrgbBgbG1oy8cN8G33bjmB+Jwi4GBsZGjFk5LNmVrZT782T1j+8GBgbG1oyV8Yg2ZLdF/+gzgIGBcQDj6oIkUD4VppfaDBgYGAcwZk3Bdszi/jW151wW2jAwMDZl3A9DzLaMSaF/JaH9R38DAwPjAEa+EZw96DCYJmdiYGBszbgPqbNEtB3FaNucl2EaAwNjU0Z7Wf5uZgW1YfKMgYFxAGNlQ9amwXmgL0bQMDAwjmFEzcLR0Ma7pyMwMDBOY8xam3m5bbZezINhYGBszZg1L1veU82AKN3FwMA4hjH7s3wgo91uFh8DDAyMTRlt8pm3JFtw2y6N/gADA2MjxiwdfWpTmBTmXoRjDAyMrRmzga08uW2PtyEbAwNjb8ZKgb5NX9t2aTJ4gYGBcQIjX7PSWDsclo+CYWBgnMZIgmz7Vtphi7a4hoGBcSYjqbQ/FYJnUf/FK8DAwMAISLPRsXaDWO9eMTAwDmO0xbV8s5g/ejRsgYGBsSkjH7OYFfrzpuas5IeBgbE349mt20oBLv8MPNbfwMDA+N8ZvwCZdg8sZKzQhwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

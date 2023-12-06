@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>算法系列——排序算法 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript,算法">
+    <meta name="description" content="Git地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;algorithm-for-javascript&#x2F;tree&#x2F;master&#x2F;sort 选择排序 遍历数组，每次遍历，把较小数的索引存起来。第一次遍历，找到了最小的数，和数组的第一个元素进行交换，第二次遍历，从第二个开始，找到了剩余最小的数，和数组的第二个元素进行交换。以此类推。  下面展示我的代码和注释： 123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法系列——排序算法">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2019/12/03/sort/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="Git地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;algorithm-for-javascript&#x2F;tree&#x2F;master&#x2F;sort 选择排序 遍历数组，每次遍历，把较小数的索引存起来。第一次遍历，找到了最小的数，和数组的第一个元素进行交换，第二次遍历，从第二个开始，找到了剩余最小的数，和数组的第二个元素进行交换。以此类推。  下面展示我的代码和注释： 123456">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.248Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            算法系列——排序算法
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            算法系列——排序算法
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-12-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择排序"><span class="post-toc-number">1.</span> <span class="post-toc-text">选择排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#交换的实现"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">交换的实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#冒泡排序"><span class="post-toc-number">2.</span> <span class="post-toc-text">冒泡排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么要在一开始复制一份数组？"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">为什么要在一开始复制一份数组？</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#归并排序"><span class="post-toc-number">3.</span> <span class="post-toc-text">归并排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#浅拷贝，也可以去利用"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">浅拷贝，也可以去利用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速排序"><span class="post-toc-number">4.</span> <span class="post-toc-text">快速排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优化快速排序"><span class="post-toc-number">5.</span> <span class="post-toc-text">优化快速排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入排序"><span class="post-toc-number">6.</span> <span class="post-toc-text">插入排序</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-sort"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">算法系列——排序算法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-03 00:00:00" datetime="2019-12-02T16:00:00.000Z"  itemprop="datePublished">2019-12-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Git地址：<a href="https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/sort">https://github.com/beat-the-buzzer/algorithm-for-javascript/tree/master/sort</a></p>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><blockquote>
+<p>遍历数组，每次遍历，把较小数的索引存起来。第一次遍历，找到了最小的数，和数组的第一个元素进行交换，第二次遍历，从第二个开始，找到了剩余最小的数，和数组的第二个元素进行交换。以此类推。</p>
+</blockquote>
+<p>下面展示我的代码和注释：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选择排序算法实现</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> arrCopy = [...arr]; <span class="comment">// 复制一份数组</span></span><br><span class="line">  <span class="keyword">const</span> len = arrCopy.length;</span><br><span class="line">  <span class="keyword">let</span> tempIndex; <span class="comment">// 保存最小的数的索引</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    tempIndex = i;</span><br><span class="line">  <span class="comment">// j是从i+1开始，因为每次趟下来最小的已经确定了，</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arrCopy[tempIndex] &gt; arrCopy[j]) &#123;</span><br><span class="line">        tempIndex = j;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 一趟for循环，找到了最小的元素的索引，并且把它存在tempIndex中，下面就是交换这个最小的元素和第i个元素</span></span><br><span class="line">    [arrCopy[tempIndex], arrCopy[i]] = [arrCopy[i], arrCopy[tempIndex]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arrCopy;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">8</span>];</span><br><span class="line">selectSort(arr);</span><br></pre></td></tr></table></figure>
+
+<p>这里有一些操作，我会在这里慢慢展示。</p>
+<h4 id="交换的实现"><a href="#交换的实现" class="headerlink" title="交换的实现"></a>交换的实现</h4><p>我们平常想到交换两个数的方式就是弄一个临时变量，其实可以一行搞定。这里使用了ES6的数组解构赋值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">[a, b] = [b, a];</span><br></pre></td></tr></table></figure>
+
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><blockquote>
+<p>遍历数组，比较相邻的两个数，如果前面的较大，就交换，这样一趟下来，最大的数必然在最后一个。最大的数慢慢沉下去，我称之为“石头算法”。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 冒泡排序算法实现</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> arrCopy = [...arr];</span><br><span class="line">  <span class="keyword">const</span> len = arrCopy.length;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 每次for循环，最大的元素都会沉底，所以内层的j每次都会减少</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arrCopy[j] &gt; arrCopy[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        [arrCopy[j], arrCopy[j + <span class="number">1</span>]] = [arrCopy[j + <span class="number">1</span>], arrCopy[j]];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arrCopy;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(bubbleSort(arr)); <span class="comment">// arr已经排完序</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="为什么要在一开始复制一份数组？"><a href="#为什么要在一开始复制一份数组？" class="headerlink" title="为什么要在一开始复制一份数组？"></a>为什么要在一开始复制一份数组？</h4><p>我在同一个JS文件里面写了两个排序算法，在没有复制数组，调用的时候，我是这样操作的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectSort</span> (<span class="params"></span>) </span>&#123;...&#125; <span class="comment">// 没有复制数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span> (<span class="params"></span>) </span>&#123;...&#125; <span class="comment">// 没有复制数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(selectSort(arr));</span><br><span class="line"><span class="built_in">console</span>.log(bubbleSort(arr)); <span class="comment">// arr已经排完序</span></span><br></pre></td></tr></table></figure>
+
+<p>如果我们不去复制一份数组，每次调用排序算法之后，原数组也被改变了。第二次调用的时候，传入的数组本来就是有序的。这是浅拷贝的问题，造成外部变量无意之间发生了改变。</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序的思想就是分治法，先分再合。先说“合”：我们需要写一个函数，这个函数可以把两个有序的数组合并成一个有序的数组。合并的方法是，给两个数组准备两个指针，并且准备一个空数组用于存储合并后的值。比较两个指针对应位置的值，较小的值存入准备的空数组中，然后较小的值对应的指针向后移动。简单举个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> A = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> B = [<span class="number">2</span>, <span class="number">4</span>];</span><br><span class="line"><span class="comment">// 比较1和2，发现1较小，把1存在数组中：[1]</span></span><br><span class="line"><span class="comment">// A的指针向后移动，比较3和2，把2存在数组中：[1,2]</span></span><br><span class="line"><span class="comment">// B的指针向后移动；比较3和4，把3存在数组中：[1,2,3]</span></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+
+<p>有了这个方法，我们接下来就是去“分”。很显然，如果数组中只有一个元素，那么它肯定是有序的。所以我们每次把数组一分为二，直到不能分的时候，我们再去执行合并的操作，这样到最后，就是有序的数组了。</p>
+<p>在代码里，我没有真正意义上去分割数组，数组永远还是这个数组，我使用了变量去分割，也就是说，我的合并函数，是把前半部分和后半部分都是有序的，这样的数组“合并”成一个有序的数组，举个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+
+<p>这个数组的前半部分是1、3、5、7，后半部分是2、4、6、8，都是有序的，我把这个数组“合并”成[1,2,3,4,5,6,7,8]，下面看看代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">arr, low, high</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> arrCopy = [...arr]; <span class="comment">// 复制一份原始数组，因为我们要对传入的数组本身进行操作。</span></span><br><span class="line">  <span class="keyword">let</span> i = low; <span class="comment">// 上半部分的起始位置</span></span><br><span class="line">  <span class="keyword">let</span> mid = <span class="built_in">parseInt</span>((low + high) / <span class="number">2</span>); <span class="comment">// 上半部分的结束位置</span></span><br><span class="line">  <span class="keyword">let</span> j = mid + <span class="number">1</span>; <span class="comment">// 下半部分的起始位置</span></span><br><span class="line">  <span class="comment">// high是下半部分的结束位置</span></span><br><span class="line">  <span class="keyword">let</span> k = low;</span><br><span class="line">  <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arrCopy[i] &lt; arrCopy[j]) &#123;</span><br><span class="line">      arr[k++] = arrCopy[i++];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      arr[k++] = arrCopy[j++];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 可能后半部分遍历完了，前半部分还有剩余</span></span><br><span class="line">  <span class="keyword">while</span> (i &lt;= mid) &#123;</span><br><span class="line">    arr[k++] = arrCopy[i++];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 可能前半部分遍历完了，后半部分还有剩余</span></span><br><span class="line">  <span class="keyword">while</span> (j &lt;= high) &#123;</span><br><span class="line">    arr[k++] = arrCopy[j++];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>low是数组的初始位置，high是数组的末位置。事实上，上面这个方法可以对数组的连续子集进行部分操作。</p>
+<p>“分”的方法就是递归了，能分就分，不能分就开始合，其实就是看初始位置和末位置，如果初始位置小于末位置，说明至少有两个元素，还能继续分，否则，就去执行合并操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">arr, low, high</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">    <span class="keyword">const</span> mid = <span class="built_in">parseInt</span>((low + high) / <span class="number">2</span>);</span><br><span class="line">    mergeSort(arr, <span class="number">0</span>, mid);</span><br><span class="line">    mergeSort(arr, mid + <span class="number">1</span>, high);</span><br><span class="line">    merge(arr, low, high);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">8</span>];</span><br><span class="line">mergeSort(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+
+<h4 id="浅拷贝，也可以去利用"><a href="#浅拷贝，也可以去利用" class="headerlink" title="浅拷贝，也可以去利用"></a>浅拷贝，也可以去利用</h4><p>我在这里归并排序的写法就是直接对数组进行操作，所以我们可以直接对传入的参数进行操作，由于浅拷贝，这样做的结果就是改变了原数组。</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序的思想其实很简单，就是把在数组中找一个“基准”，然后通过交换元素，把所有比基准小的元素放在基准左边，把所有比基准大的元素放在基准右边，然后对左右两部分分别做上面的操作，这样到最后，数组就有序了。我们就拿数组第一个元素作为基准，看看排序的过程是什么样子的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span> (<span class="params">arr, low, high</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = low;</span><br><span class="line">  <span class="keyword">var</span> j = high;</span><br><span class="line">  <span class="keyword">var</span> pivot = arr[low]; <span class="comment">// 基准值</span></span><br><span class="line">  <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[j] &gt; pivot) &#123;</span><br><span class="line">      j--; <span class="comment">// 如果后面的元素比基准大，指针就往左走，这样就找到了右边比基准小的元素的索引</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">      [arr[i], arr[j]] = [arr[j], arr[i]]; <span class="comment">// 找到了右边比基准小的元素的索引，此时需要交换，然后左边指针加一</span></span><br><span class="line">      i++; <span class="comment">// 这样最左边的元素必然是比基准小的元素</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[i] &lt;= pivot) &#123;</span><br><span class="line">      i++; <span class="comment">// 如果前面的元素比基准小，指针就往右走，这样就找到了左边比基准大的元素的索引</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">      [arr[i], arr[j]] = [arr[j], arr[i]]; <span class="comment">// 找到了左边比基准大的元素的索引，此时需要交换，然后右边指针减一</span></span><br><span class="line">      j--; <span class="comment">// 这样最右边的元素必然是比基准大的元素</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> i; <span class="comment">// 最终得到基准值所在位置，并且此时基准左边都比基准小，右边都比基准大</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arrQuickTest = [<span class="number">5</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>];</span><br><span class="line">partition(arrQuickTest, <span class="number">0</span>, arrQuickTest.length - <span class="number">1</span>); <span class="comment">// 返回结果是4，也就是说，前四个都是比第五个小的，arrQuickTest变成[4, 1, 2, 3, 5, 9, 8, 7, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 接下来就是递归了，我们需要对前四和后四这两部分再次划分，当不能再划分的时候，说明已经拍好了</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort1</span> (<span class="params">arr, low, high</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> mid = partition(arr, low, high); <span class="comment">// 得到一次排序之后基准的位置</span></span><br><span class="line">  <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">    quickSort1(arr, low, mid - <span class="number">1</span>); <span class="comment">// 比基准小的部分进行快速排序操作</span></span><br><span class="line">    quickSort1(arr, mid + <span class="number">1</span>, high); <span class="comment">// 比基准大的部分进行快速排序操作</span></span><br><span class="line">    <span class="comment">// mid的位置是正确的，不需要再次排序了</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">quickSort1(arrQuickTest, <span class="number">0</span>, arrQuickTest.length - <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arrQuickTest);</span><br></pre></td></tr></table></figure>
+
+<p>其实重点在于前面的划分函数。我们来慢动作回放：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">5</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>] <span class="comment">// 初始值</span></span><br><span class="line">[<span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">6</span>] <span class="comment">// 右边向左边走，找到了4，比基准值小，交换，左边指针向右走一步，右边指针指向基准值5</span></span><br><span class="line">[<span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>] <span class="comment">// 左边向右走，找到了7.比基准值大，交换，右边指针向左一步，左边指针指向基准值5</span></span><br><span class="line">[<span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>] <span class="comment">// 同理，5和2交换</span></span><br><span class="line">[<span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>] <span class="comment">// 同理，9和5交换，一趟结束</span></span><br></pre></td></tr></table></figure>
+
+<p>慢动作最终结果和上面的注释是一样的。然后我们递归地对基准左边和基准右边进行同样的操作，最终得到了有序的数组。</p>
+<h3 id="优化快速排序"><a href="#优化快速排序" class="headerlink" title="优化快速排序"></a>优化快速排序</h3><p>在上面的快速排序里，我们每次都是和基准值进行交换，其实这个没有必要。我们的目的是把数组分成以基准值为边界的两个字序列，左边的都比基准值小，右边的都比基准值大。我们可以双向扫描，找到左边的那个比基准值大的元素，找到右边那个比基准值小的元素，这两个进行交换，这样做，比起上面的方法，交换次数少了很多。</p>
+<p>我们继续表演慢动作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">5</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>] <span class="comment">// 初始值</span></span><br><span class="line">[<span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>] <span class="comment">// 右边的指针找到了4，左边的指针找到了7，二者交换</span></span><br><span class="line">[<span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>] <span class="comment">// 继续，右边的指针找到了2，左边的指针找到了9，交换</span></span><br><span class="line">[<span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>] <span class="comment">// 右边指针向左走，走到2的位置，此时指针相遇，交换这个相遇的点和基准值，这样一趟排序结束</span></span><br></pre></td></tr></table></figure>
+
+<p>下面是完整代码：貌似书上的代码会导致数组溢出，我在这里进行了处理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition2</span>(<span class="params">arr, low, high</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = low;</span><br><span class="line">  <span class="keyword">var</span> j = high;</span><br><span class="line">  <span class="keyword">var</span> pivot = arr[low];</span><br><span class="line">  <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[j] &gt; pivot) &#123;</span><br><span class="line">      j--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[i] &lt;= pivot) &#123;</span><br><span class="line">      i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 得到右边比基准值小的值的索引和左边比基准值大的值的索引</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">      [arr[i], arr[j]] = [arr[j], arr[i]];</span><br><span class="line">      i++;</span><br><span class="line">      j--;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 经过上面的循环，和j应该相遇了，此时我们要看看下标为i的元素是否比基准大</span></span><br><span class="line">  <span class="keyword">if</span> (i &lt;= high) &#123;</span><br><span class="line">    <span class="comment">// 书中的代码貌似会溢出，所以当i超出数组范围的时候，不作处理</span></span><br><span class="line">    <span class="keyword">if</span> (arr[i] &gt; pivot) &#123;</span><br><span class="line">      <span class="comment">// 此时交换基准和i-1对应的元素</span></span><br><span class="line">      [arr[low], arr[i - <span class="number">1</span>]] = [arr[i - <span class="number">1</span>], arr[low]];</span><br><span class="line">      <span class="keyword">return</span> i - <span class="number">1</span>; <span class="comment">// 返回基准位置</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      [arr[low], arr[i]] = [arr[i], arr[low]];</span><br><span class="line">      <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort2</span>(<span class="params">arr, low, high</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> mid = partition2(arr, low, high); <span class="comment">// 得到一次排序之后基准的位置</span></span><br><span class="line">  <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">    quickSort2(arr, low, mid - <span class="number">1</span>); <span class="comment">// 比基准小的部分进行快速排序操作</span></span><br><span class="line">    quickSort2(arr, mid + <span class="number">1</span>, high); <span class="comment">// 比基准大的部分进行快速排序操作</span></span><br><span class="line">    <span class="comment">// mid的位置是正确的，不需要再次排序了</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arrQuickTest2 = [<span class="number">5</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>];</span><br><span class="line">quickSort2(arrQuickTest2, <span class="number">0</span>, arrQuickTest2.length - <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arrQuickTest2);</span><br></pre></td></tr></table></figure>
+
+<p>快速排序是不稳定的排序，它的效率和基准值有关，如果正好是倒序的数组，就是最差的情况。</p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arrCopy = [...arr];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arrCopy.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> temp = arr[i]; <span class="comment">// 记住这个元素，因为一会这个位置会被替换</span></span><br><span class="line">    <span class="keyword">var</span> j = i - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; arrCopy[j] &gt; temp) &#123;</span><br><span class="line">      arrCopy[j + <span class="number">1</span>] = arrCopy[j];</span><br><span class="line">      j--;</span><br><span class="line">    &#125;</span><br><span class="line">    arrCopy[j + <span class="number">1</span>] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arrCopy;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> insertSortArr = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(insertSort(insertSortArr));</span><br></pre></td></tr></table></figure>
+
+<p>其实插入排序的原理十分通俗易懂，我称之为“麻将排序”。排序的过程就和麻将一样，举个最简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一万  三万  二万</span><br><span class="line">把三万往右拉一个位置，再把二万放在三万之前的位置</span><br></pre></td></tr></table></figure>
+<p>整理麻将的过程就是插入排序，下面我将一步一步把上面的例子整理出来：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> <span class="number">2</span> <span class="number">1</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line">=&gt; 记录<span class="number">2</span></span><br><span class="line">=&gt; 比较<span class="number">4</span>、记录的<span class="number">2</span> 满足循环条件 赋值 =&gt; <span class="number">4</span> <span class="number">4</span> <span class="number">1</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line">=&gt; 循环结束，把记录的<span class="number">2</span>放在指定位置 =&gt; <span class="number">2</span> <span class="number">4</span> <span class="number">1</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line">=&gt; 记录<span class="number">1</span></span><br><span class="line">=&gt; 比较<span class="number">4</span>、记录的<span class="number">1</span> 满足循环条件 赋值 =&gt; <span class="number">2</span> <span class="number">4</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line">=&gt; 循环继续，比较<span class="number">2</span>、记录的<span class="number">1</span> 满足循环条件 赋值 <span class="number">2</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line">=&gt; 循环结束，把记录的<span class="number">1</span>放在指定位置 =&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line">=&gt; 记录<span class="number">5</span></span><br><span class="line">=&gt; 比较<span class="number">4</span>、记录的<span class="number">5</span>，循环直接结束，把记录的<span class="number">5</span>放在指定位置，也就是原位置 =&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line">=&gt; 记录<span class="number">3</span></span><br><span class="line">=&gt; 比较<span class="number">5</span>、记录的<span class="number">3</span> 满足循环条件 赋值 =&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span> <span class="number">5</span></span><br><span class="line">=&gt; 循环继续，比较<span class="number">4</span>、记录的<span class="number">3</span> 满足循环条件 赋值 =&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">=&gt; 循环结束，把记录的<span class="number">3</span>放在指定位置 =&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">结束</span><br></pre></td></tr></table></figure>
+
+<p>这里顺便提一下，谷歌浏览器V8引擎，对Array.prototype.sort()的实现用到的就是插入排序和快速排序。当数组元素小于等于22时，使用插入排序，大于22时，使用快速排序，这个有兴趣的话，可以看看V8的代码，GitHub上能搜到。火狐浏览器用的是归并排序。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.248Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/03/sort/&title=《算法系列——排序算法》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/03/sort/&title=《算法系列——排序算法》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/04/divive/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">算法系列——分治法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/02/strict-loose-equality/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">宽松相等和严格相等</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/03/sort/&title=《算法系列——排序算法》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/03/sort/&title=《算法系列——排序算法》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3asbKDMAxEUf7/p3lNijQ2u6vwZixdqgxDwCfFxpK4Lvm4v479NfvPyrf215cOGDBgHMu4t8fqAZUz2XNX18CAAWMOQw9QNzofHr+4Xl8bDBgwYKyuqUewHrgwYMCA4TKMW2/DdP8DwYABA0ZWxOrNOGXpyrNeqcVhwIBxIEPvuv//51fmGzBgwDiKcZuHErLuYLJS6H6+BQMGjNYMt+nvtsOyDZ+7HhgwYPRmhG45RpUzSjQ/rBMGDBitGUoU6tdklWaluF3+b8CAAaMRwx0oZiPJX8Xx8j4wYMAYwMgKyEpAZ6PNZQTDgAGjNSPb0rkbPndbmYUvDBgwejOyKHQ3cHooZ6UvDBgwujKUxVUKTqMQjQaiMGDAmMDQB4eVElcfi1bafDBgwOjKcF/V0scAegsve9kCBgwYMCrxp7fyKwOJ5SQWBgwY7Rh67Oq3q5Sy7ktmxmQVBgwYxzIqjTY9apXz7hpgwIAxh+G2+90XwvQNotvCgwEDxjSG3d6Sw9c9XPayiIUBA0ZThr4UNxDdtlpY4sKAAWMYoz6qdH8Ut9H2UJHDgAGjESPbuinjTH0rWRmOXtk+FAYMGEcxss2ZEq/ZIMFtzNkwGDBgHMuohOwbv59bNsOAAWMOQw+++msZ2SDTHmHCgAFjMEOPZjs05Vc9Lv12MGDAGMlwo1DfelbuAAMGjAkMt6GWfcsdiBpRDgMGjNYMvXRUztQ3lJV2HgwYMNox/gB/L9E/k9RCngAAAABJRU5ErkJggg==" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

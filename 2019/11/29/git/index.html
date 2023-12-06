@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Git基本用法总结 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Git,GitHub">
+    <meta name="description" content="用户配置查看当前配置的用户名和邮箱： 12git config user.namegit config user.email  配置用户名和邮箱： 12git config --global user.name &#39;name&#39;git config --global user.email &#39;email&#39;  密码操作： 1git config --global credential.helper sto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基本用法总结">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2019/11/29/git/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="用户配置查看当前配置的用户名和邮箱： 12git config user.namegit config user.email  配置用户名和邮箱： 12git config --global user.name &#39;name&#39;git config --global user.email &#39;email&#39;  密码操作： 1git config --global credential.helper sto">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.244Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="GitHub">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            Git基本用法总结
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            Git基本用法总结
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-28T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-11-29
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">用户配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建操作"><span class="post-toc-number">2.</span> <span class="post-toc-text">新建操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看操作"><span class="post-toc-number">3.</span> <span class="post-toc-text">查看操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提交代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">提交代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分支合并的操作"><span class="post-toc-number">5.</span> <span class="post-toc-text">分支合并的操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#版本回退的操作"><span class="post-toc-number">6.</span> <span class="post-toc-text">版本回退的操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除分支的操作"><span class="post-toc-number">7.</span> <span class="post-toc-text">删除分支的操作</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-git"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Git基本用法总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-29 00:00:00" datetime="2019-11-28T16:00:00.000Z"  itemprop="datePublished">2019-11-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="用户配置"><a href="#用户配置" class="headerlink" title="用户配置"></a>用户配置</h3><p>查看当前配置的用户名和邮箱：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<p>配置用户名和邮箱：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 'name'</span><br><span class="line">git config --global user.email 'email'</span><br></pre></td></tr></table></figure>
+
+<p>密码操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建操作"><a href="#新建操作" class="headerlink" title="新建操作"></a>新建操作</h3><p>新建分支的操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git branch [mybranch] 创建本地分支</span><br><span class="line">git checkout [mybranch] 切换本地分支</span><br><span class="line">git checkout -b [mybranch] 创建并切换分支</span><br><span class="line">git checkout -b [mybranch] origin/[分支名] 从之前的某个分支里拉一个分支出来，也就是说，这里复制了某个分支的代码</span><br><span class="line">git push origin [mybranch] 本地推送到远程（同时创建了远程分支）</span><br><span class="line">git subtree push --prefix=dist origin gh-pages 将文件前缀为dist的文件夹内容推送到gh-pages远程</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看操作"><a href="#查看操作" class="headerlink" title="查看操作"></a>查看操作</h3><p>查看当前文件状态：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>查看本地分支：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>查看远程分支：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+
+<p>查看远程地址： </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add [文件名]</span><br><span class="line">git reset HEAD // 撤销上次add</span><br><span class="line">git commit -m '[提交日志]'</span><br><span class="line">git reset --soft HEAD^ // 撤销上次提交</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支合并的操作"><a href="#分支合并的操作" class="headerlink" title="分支合并的操作"></a>分支合并的操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge [test] (至当前分支)</span><br></pre></td></tr></table></figure>
+
+<p>分支合并之前的操作：保证test分支是最新的，切换到test分支，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout [test] 切换到test分支</span><br><span class="line">git fetch 获取更新（一般的图形工具都会有自动fetch的功能）</span><br><span class="line">git pull 拉取代码</span><br></pre></td></tr></table></figure>
+
+<p>然后切换到当前分支，合并test至当前分支。</p>
+<h3 id="版本回退的操作"><a href="#版本回退的操作" class="headerlink" title="版本回退的操作"></a>版本回退的操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log 找到需要回退到这个版本的commit ID</span><br><span class="line">git reset --hard [commit id]</span><br><span class="line">git push -f -u origin [branchname]</span><br></pre></td></tr></table></figure>
+
+<p>最好不要在需要回退的版本上直接操作，应该先在那个分支上面拉一个分支，然后在分支上进行操作。</p>
+<h3 id="删除分支的操作"><a href="#删除分支的操作" class="headerlink" title="删除分支的操作"></a>删除分支的操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete [mybranch] // 删除远程分支</span><br><span class="line">git branch -d [mybranch] // 删除本地分支</span><br></pre></td></tr></table></figure>
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.244Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/11/29/git/&title=《Git基本用法总结》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/11/29/git/&title=《Git基本用法总结》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/30/markdown/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Markdown语法总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/28/eslint/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ESLint配置教程（VSCode插件版）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/11/29/git/&title=《Git基本用法总结》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/11/29/git/&title=《Git基本用法总结》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQY7jMAwEwPn/p7PXBXZjd4vxAJFKp0HGsFQ+EBTJn594vf5a73759/nPvvMDCwMD42sZr8t1vcH1lvkbkn3fPYOBgXEOIzlEfvSWfc2IAjoGBgZGGSjzIyYBFwMDA2ON0SZ217+s7YuBgXEaIw98k+DYvueRuzgGBsYXMvKq++///Uh/AwMD46sYr3IlDchJKF88FQYGxtaMpwcj8iSvTfswMDBOY0y2bC+ra5+mSBYxMDAOYOTNyPy/ayW2vI2KgYFxAqMNnZNhi/y7tqknBgbGrow8mcsLZ+0z7ajZf86MgYGxNWMSHPOmY0KaB18MDIxdGU8cqA27eUnu7WkxMDC2ZtzcboNotlYma1O9uoGKgYGxEWNyvWw3HlUEr0+IgYFxGGMeOpNWQdLgTEgYGBjnMK7DYl2UXyrkteCbuzgGBsZGjHyDtqDWrvYNN3NtGBgYBzDmTYK25rd2ncbAwDiNERW2SsZ8UCO/6GJgYJzDqMcayjZAknQulv8wMDCOYeQBtx2JaBuWdZjGwMA4jDEJrEkjYS1BvPk0GBgYmzImRf92LPW5ETQMDIy9GWstxuRSmgfWNkyvZYMYGBjfzsiP2H6VyUhrm4ZiYGCcwEjSu7Vw/KlGZt2JxcDAOJ6RJILtkyMqBgYGRnzctpC3VoAr+hsYGBgbMda2GQ1ylZfem0+JgYGxNSO/OraDF0kInrQHMDAwDmD8AfqgQc/SuGcjAAAAAElFTkSuQmCC" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>宽松相等和严格相等 | 前端学习笔记 | 平庸不止于平庸，巅峰不甘于巅峰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript,Vue">
+    <meta name="description" content="这篇文章有一个Vue标签，是因为做了一个Vue相关的项目，列举了几乎所有宽松相等和严格相等的情况，项目地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;vue-equality-table.git 提出问题宽松相等（loose equals） &#x3D;&#x3D; 和严格相等（strict equals）&#x3D;&#x3D;&#x3D; 一直困扰着众多开发者。和Java这样的语言不同，JavaScript更加自由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宽松相等和严格相等">
+<meta property="og:url" content="https://github.com/beat-the-buzzer/2019/12/02/strict-loose-equality/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="这篇文章有一个Vue标签，是因为做了一个Vue相关的项目，列举了几乎所有宽松相等和严格相等的情况，项目地址：https:&#x2F;&#x2F;github.com&#x2F;beat-the-buzzer&#x2F;vue-equality-table.git 提出问题宽松相等（loose equals） &#x3D;&#x3D; 和严格相等（strict equals）&#x3D;&#x3D;&#x3D; 一直困扰着众多开发者。和Java这样的语言不同，JavaScript更加自由">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-1.jpg">
+<meta property="og:image" content="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-2.jpg">
+<meta property="og:image" content="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-3.png">
+<meta property="og:image" content="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-4.png">
+<meta property="og:image" content="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-5.png">
+<meta property="article:published_time" content="2019-12-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T15:25:19.248Z">
+<meta property="article:author" content="WangTao">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-1.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide"
+     >
+        <div class="inner flex-row-vertical">
+            <a class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+                <i class="icon icon-lg icon-close"></i>
+            </a>
+            <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+                <div class="brand">
+                    <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+                    <hgroup class="introduce">
+                        <h5 class="nickname">
+                            WangTao
+                        </h5>
+                        <a href="mailto:mathwangtao@126.com" title="mathwangtao@126.com" class="mail">mathwangtao@126.com</a>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="scroll-wrap flex-col">
+                <ul class="nav">
+                    
+                        <li class="waves-block waves-effect">
+                            <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+                        </li>
+                        
+                        <li class="waves-block waves-effect">
+                            <a href="//github.com/beat-the-buzzer/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+                        </li>
+                        
+                </ul>
+            </div>
+        </div>
+</aside>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+            <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            宽松相等和严格相等
+        </div>
+        
+            <div class="search-wrap" id="search-wrap">
+                <a class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+                <a class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+                
+                    <a class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+                        <i class="icon icon-lg icon-share-alt"></i>
+                    </a>
+                    
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">
+            宽松相等和严格相等
+        </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-12-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+                    
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#提出问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">提出问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#类型相同的情况"><span class="post-toc-number">2.</span> <span class="post-toc-text">类型相同的情况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#类型不同，强制转换"><span class="post-toc-number">3.</span> <span class="post-toc-text">类型不同，强制转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#string-VS-number"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">string VS number</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#boolean-VS-others"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">boolean VS others</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#null-amp-undefined"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">null &amp; undefined</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#object-VS-others"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">object VS others</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#特殊情况"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">特殊情况</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">4.</span> <span class="post-toc-text">Demo</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-strict-loose-equality"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">宽松相等和严格相等</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-02 00:00:00" datetime="2019-12-01T16:00:00.000Z"  itemprop="datePublished">2019-12-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>这篇文章有一个Vue标签，是因为做了一个Vue相关的项目，列举了几乎所有宽松相等和严格相等的情况，项目地址：<a href="https://github.com/beat-the-buzzer/vue-equality-table.git">https://github.com/beat-the-buzzer/vue-equality-table.git</a></p>
+<h4 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a>提出问题</h4><p>宽松相等（loose equals） == 和严格相等（strict equals）=== 一直困扰着众多开发者。和Java这样的语言不同，JavaScript更加自由，但是自由的代价就是容易出错。下面就来深入研究一下宽松相等和严格相等。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-1.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<blockquote>
+<p>误解：== 检查值是否相等，=== 除了检查值之外，还检查了类型是否相同。</p>
+</blockquote>
+<p>听起来好像很有道理，但是，上面的说法并不准确。</p>
+<blockquote>
+<p>正解：== 允许在比较的过程中进行强制类型转换， === 不允许。</p>
+</blockquote>
+<p>ESLint中有一个规则：</p>
+<blockquote>
+<p>Use === and !== instead of == and !=. This avoids type coercion errors.</p>
+</blockquote>
+<p>这就是所谓的“严师出高徒”。严格相等可以避免一些意外的错误，下面我们来踩一下宽松相等带来的坑。</p>
+<h4 id="类型相同的情况"><a href="#类型相同的情况" class="headerlink" title="类型相同的情况"></a>类型相同的情况</h4><p>类型相同，就好办了，我们只需要比较两边的值是否相等就行了，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">110</span> == <span class="number">110</span>;</span><br><span class="line"><span class="string">'abc'</span> == <span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这里有一些特殊情况：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span>; <span class="comment">// false</span></span><br><span class="line">+<span class="number">0</span> == <span class="number">-0</span>; <span class="comment">// true</span></span><br><span class="line">&#123;&#125; == &#123;&#125;; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript中，对象是引用类型，所以，两个对象字面量分别属于两个不同的存储空间，所以是不相等的。</p>
+<h4 id="类型不同，强制转换"><a href="#类型不同，强制转换" class="headerlink" title="类型不同，强制转换"></a>类型不同，强制转换</h4><h5 id="string-VS-number"><a href="#string-VS-number" class="headerlink" title="string VS number"></a>string VS number</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'45'</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">45</span>;</span><br><span class="line">a == b; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>其实这个是我们经常会遇到的情况，尤其是在前后端交互的时候。有时候，后台人员自己也不知道什么时候就把数字转成字符串了。规范中，这种情况的比较是把字符串转成了数字，类似于：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(a) == b</span><br></pre></td></tr></table></figure>
+
+<h5 id="boolean-VS-others"><a href="#boolean-VS-others" class="headerlink" title="boolean VS others"></a>boolean VS others</h5><p> == 最容易出现错误的地方就是和布尔类型的值进行相等比较</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'45'</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line">a == b; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>我们知道，’45’是个真值，但是’45’却不等于true。</p>
+<p>从规范上说，如果布尔类型和其他类型比较，就需要把布尔类型转成数字类型，类似于</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a == <span class="built_in">Boolean</span>(b);</span><br><span class="line">=&gt; <span class="string">'45'</span> == <span class="number">1</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>但是，为什么说这个容易出错呢？那是因为我们经常写这样的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a是真值'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们受这样的代码的影响，自然而然地认为’45’ == true 成立。事实上，上面的代码应该写成这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Boolean</span>(a)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a是真值'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>知识的学习最后都需要去实践，根据上面说的，我们在平时写代码的时候，就需要自己格外注意：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'45'</span>;</span><br><span class="line"><span class="comment">// 错误的示范</span></span><br><span class="line"><span class="keyword">if</span>(a == <span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 也是错误的示范</span></span><br><span class="line"><span class="keyword">if</span>(a === <span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以这么写</span></span><br><span class="line"><span class="keyword">if</span>(a) &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 优化写法1</span></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">Boolean</span>(a)) &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 优化写法2</span></span><br><span class="line"><span class="keyword">if</span>(!!a) &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了减少出错的概率，我们在平时写代码的时候，坚决不要写类似 <code>a == true</code> 这样的代码。</p>
+<h5 id="null-amp-undefined"><a href="#null-amp-undefined" class="headerlink" title="null &amp; undefined"></a>null &amp; undefined</h5><p>null 和 undefined 都是假值，它们存在这样的关系：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>我们知道，还有其他的假值，false、’’、0，这些值和null、undefined有什么关系呢？</p>
+<p>答案是没有什么关系，null和undefined互相相等或者与其本身相等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">false</span>    <span class="comment">// false</span></span><br><span class="line"><span class="literal">undefined</span> == <span class="number">0</span>    <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="object-VS-others"><a href="#object-VS-others" class="headerlink" title="object VS others"></a>object VS others</h5><p>对象和基本类型的比较，都是把对象转成基本类型。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">45</span>] == <span class="number">45</span></span><br></pre></td></tr></table></figure>
+
+<p>首先，[45]调用valueOf方法，得到的结果还是[45]，不是基本类型，然后调用了toString方法，得到了”45”，然后就把问题转化成了”45” == 45</p>
+<p>来看一个问题，这个问题在开发中几乎不会出现，只是为了加深理解：</p>
+<p>[1] == 0 在什么情况下成立？</p>
+<p>根据上面的结论，我们重写valueOf方法就行了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.valueOf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>] == <span class="number">0</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>这就是传说中的指鹿为马！</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-2.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h5 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h5><ul>
+<li>‘’ == 0</li>
+</ul>
+<p>上面这种情况，其实之前也说到了，我们要弄清楚被转换的是哪一个。我们都知道，’0’ == 0是成立的，但是，’’ == 0也成立，这就有点颠覆了认知。但是，我们只需要明白一点，就是：</p>
+<blockquote>
+<p>字符串和数字的相等比较，要把字符串转换成数字。Number(‘’)的结果是0</p>
+</blockquote>
+<ul>
+<li>[] == ![]</li>
+</ul>
+<p>这个更加颠覆认知了，似乎这个值既是真值又是假值。</p>
+<p>我们还是一步一步来：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[] == ![]</span><br><span class="line">&lt;=&gt; [] == <span class="literal">false</span></span><br><span class="line">&lt;=&gt; [] == <span class="number">0</span></span><br><span class="line">&lt;=&gt; <span class="string">'0'</span> == <span class="number">0</span></span><br><span class="line">&lt;=&gt; <span class="number">0</span> == <span class="number">0</span>（显然成立）</span><br></pre></td></tr></table></figure>
+
+<p>这样，我们就得到了 [] == ![] 为 true的结论。</p>
+<h4 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h4><p>GitHub用户dorey制作了几个图表，其中包括了各种 == === 和 if()的值。我自己使用了Vue-cli把项目重构了一遍，希望能有所收获。</p>
+<p>项目运行截图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-3.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-4.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://gitee.com/beat-the-buzzer/pictures/raw/master/imooc/imooc008-5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>相信看到这里，第一张图片里面，派大星的问题应该可以轻松解决了。</p>
+<p>项目演示地址：</p>
+<p><a href="https://beat-the-buzzer.github.io/vue-equality-table/#/" target="_blank" rel="noopener">https://beat-the-buzzer.github.io/vue-equality-table/#/</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-12-06T15:25:19.248Z" itemprop="dateUpdated">2023-12-06 23:25:19</time>
+</span><br>
+
+
+        
+        关注我的GitHub： <a href="https://github.com/beat-the-buzzer" target="_blank" rel="external">https://github.com/beat-the-buzzer</a><br/>独上高楼，望尽天涯路。
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/beat-the-buzzer">
+            <img src="/img/avatar.jpg" alt="WangTao">
+            WangTao
+        </a>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <a id="rewardBtn" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+    </div>
+    
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+
+            
+    <div class="page-share-wrap">
+        
+
+    <div class="page-share" id="pageShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/02/strict-loose-equality/&title=《宽松相等和严格相等》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/02/strict-loose-equality/&title=《宽松相等和严格相等》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+            <a id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+            </a>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/03/sort/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">算法系列——排序算法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/01/functional-programming/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">函数式编程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+        <a class="close"><i class="icon icon-close"></i></a>
+        <h3 class="reward-title">
+            <i class="icon icon-quote-left"></i>
+            谢谢打赏~
+                <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+            
+                <div class="reward-code">
+                    <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+                </div>
+                
+                    <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+                    
+        </div>
+    </div>
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 知识共享  - 非商业性 - 相同方式共享  国际协议</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WangTao &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+    
+
+    <div class="global-share" id="globalShare">
+        <ul class="reset share-icons">
+            <li>
+                <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/beat-the-buzzer/2019/12/02/strict-loose-equality/&title=《宽松相等和严格相等》 — 前端学习笔记&pic=https://github.com/beat-the-buzzer/img/avatar.jpg" data-title="微博">
+                    <i class="icon icon-weibo"></i>
+                </a>
+            </li>
+            <li>
+                <a class="weixin share-sns wxFab" data-title="微信">
+                    <i class="icon icon-weixin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/beat-the-buzzer/2019/12/02/strict-loose-equality/&title=《宽松相等和严格相等》 — 前端学习笔记&source=" data-title=" QQ">
+                    <i class="icon icon-qq"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+        <div class="page-modal wx-share" id="wxShare">
+            <a class="close"><i class="icon icon-close"></i></a>
+            <p>扫一扫，分享到微信</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aS3bCMBAEQO5/aXIAYtPzEbAor/KIsFVaWKJnHo/4er5cyedXY65G3o9/Hbl24eHh4Y2nnjCuHnk/lfvPE3Z5CfDw8PCO8e6nkvxdnVYOS557+TkeHh7eD/DyA3f1npNtAw8PD++XefeH6eTOyaST/+Lh4eF9l1cNW/MDdBWTBBxHshY8PDy8A1Wk3/n7SH0PDw8Pb1xVT17WSdGrGjdUWxAuZ4uHh4d3gJe/cOeFqxzQC4gvFxoPDw/vGC9/1W6VuKoxbvPwjYeHh7fKmzQ8VaOBKmMtQcHDw8M7dlU3hl6ZqnfgTu75Zpnw8PDwVnlVUs6bb0i9di48PDy8c7zeS7kaNFSXo7dFvQkj8PDw8JZ41T0kjypydvUOhdIXHh4e3gHevECVHHzzA/pWnIGHh4d3mrfbdNUrbiUjRz0ReHh4eKu8PMzN89JqmjrZqC6/hYeHh3eAV/3xv9VeUF2g0caDh4eHt8rrtTflAUTylMIRuRgN4+Hh4Z3m5QfcXhmsFxP3luOfXwx4eHh4q7zqY/LIdf6KrxbV3vSU4eHh4S3xqiHFbtRbvWceVeDh4eGd41VfwZMQoZcS9Noa8PDw8E7wqg1Pva2iF+xOlgMPDw/vk7xetFot9uctCwuxLx4eHt5h3mN8VSc9OUZH38XDw8P7OG8S5m6FvKOyHB4eHt4x3mSrqB61881gYQweHh7e6phn8epR820jj4Ojch0eHh7eAV6vPH//gF57Qe9IPW87wMPDw+vx8vJ/vgS9F32zxNWr7+Hh4eGNeb0XelLmr353UnKLYlw8PDy8L/Emxa15U1dhPnh4eHg/wOtVmvLyf7VlISqD4eHh4R3g5cFB9WhbvXPSBFbeGPDw8PBWeQs/+MdjEsxyTQ8PDw+vw/sDKl+cccQDhTUAAAAASUVORK5CYII=" alt="微信分享二维码">
+        </div>
+        
+        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
